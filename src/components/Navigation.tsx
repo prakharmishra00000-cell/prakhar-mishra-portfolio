@@ -38,7 +38,7 @@ export default function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Link href="#contact" className={styles.cta}>
+          <Link href="mailto:prakharmishraflp@gmail.com" className={styles.cta}>
             Let's Talk
           </Link>
         </div>

@@ -47,7 +47,7 @@ export default function Hero() {
           <a href="#projects" className={`${styles.btn} ${styles.primary}`}>
             View My Work <ArrowRight size={18} />
           </a>
-          <a href="#contact" className={`${styles.btn} ${styles.secondary}`}>
+          <a href="mailto:prakharmishraflp@gmail.com" className={`${styles.btn} ${styles.secondary}`}>
             Let's Work Together <Mail size={18} />
           </a>
           <Link href="/resume" className={`${styles.btn} ${styles.tertiary}`}>
