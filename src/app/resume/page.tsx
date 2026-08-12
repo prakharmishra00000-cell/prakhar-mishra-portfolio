@@ -97,6 +97,22 @@ export default function ResumePage() {
               <li>Implemented comprehensive developer tools including an AI coding environment and technical doubt solver.</li>
             </ul>
           </div>
+
+          <div className={styles.experienceItem}>
+            <div className={styles.experienceHeader}>
+              <h4>Telegram Document Downloader</h4>
+              <span className={styles.date}>Live Platform</span>
+            </div>
+            <div className={styles.role}>Secure Web-Based Telegram File Extractor</div>
+            <p>
+              A web utility featuring secure user authentication to directly access and download Telegram documents through a clean browser interface.
+            </p>
+            <ul>
+              <li>Engineered a secure, encrypted authentication system for user sign-ins and session management.</li>
+              <li>Integrated seamless API connections to bypass native app restrictions for document retrieval.</li>
+              <li>Built a responsive, dark-mode focused UI for an optimal user extraction experience.</li>
+            </ul>
+          </div>
         </section>
 
         <section className={styles.section}>

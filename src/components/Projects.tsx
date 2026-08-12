@@ -32,6 +32,20 @@ const projects = [
     liveLink: "https://placement-prep-ai-tau.vercel.app/",
     githubLink: "#", // Placeholder
     image: "/prepos.png"
+  },
+  {
+    name: "Telegram Document Downloader",
+    role: "Secure Web-Based Telegram File Extractor",
+    problem: "Extracting specific documents from Telegram channels natively can be cumbersome and restricted to the app ecosystem.",
+    solution: "A web-based utility featuring secure user authentication to directly access and download Telegram documents through a clean browser interface.",
+    positioning: "A secure web utility for Telegram file extraction.",
+    metrics: [
+      { label: "Auth", value: "Encrypted" },
+      { label: "Type", value: "Web Utility" }
+    ],
+    liveLink: "https://telegram-file-downloader.vercel.app/",
+    githubLink: "#", // Placeholder
+    image: "/telegram.png"
   }
 ];
 
