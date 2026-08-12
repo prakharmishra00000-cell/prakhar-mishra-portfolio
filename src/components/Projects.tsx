@@ -46,6 +46,20 @@ const projects = [
     liveLink: "https://telegram-file-downloader.vercel.app/",
     githubLink: "#", // Placeholder
     image: "/telegram.png"
+  },
+  {
+    name: "AI Chat Bot",
+    role: "Intelligent Conversational Agent",
+    problem: "Standard chat interfaces often lack deep contextual understanding and struggle with natural, human-like conversational flow.",
+    solution: "A responsive, real-time AI chat interface powered by advanced language models designed to provide context-aware, seamless assistance.",
+    positioning: "An intelligent, context-aware digital assistant.",
+    metrics: [
+      { label: "Tech", value: "AI/LLMs" },
+      { label: "Type", value: "Assistant" }
+    ],
+    liveLink: "https://ai-chat-bot.vercel.app/",
+    githubLink: "https://github.com/prakharmishra00000-cell/ai-chat-bot",
+    image: "/aichatbot.png"
   }
 ];
 

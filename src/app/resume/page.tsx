@@ -113,6 +113,22 @@ export default function ResumePage() {
               <li>Built a responsive, dark-mode focused UI for an optimal user extraction experience.</li>
             </ul>
           </div>
+
+          <div className={styles.experienceItem}>
+            <div className={styles.experienceHeader}>
+              <h4>AI Chat Bot</h4>
+              <span className={styles.date}>Live Platform</span>
+            </div>
+            <div className={styles.role}>Intelligent Conversational Agent</div>
+            <p>
+              A responsive, real-time AI chat interface powered by advanced language models designed to provide context-aware, seamless assistance.
+            </p>
+            <ul>
+              <li>Developed a fluid, real-time conversational UI with minimal latency for seamless user interaction.</li>
+              <li>Integrated advanced language models to deliver highly contextual and accurate responses.</li>
+              <li>Engineered robust state management to maintain conversational history and user intent across sessions.</li>
+            </ul>
+          </div>
         </section>
 
         <section className={styles.section}>
