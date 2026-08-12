@@ -1,0 +1,218 @@
+.resumePage {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: center;
+}
+
+.document {
+  background: #ffffff; /* White background for resume */
+  color: #111111; /* Dark text for readability */
+  width: 100%;
+  max-width: 850px; /* A4-ish proportions */
+  padding: 4rem 5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  border-bottom: 2px solid #333;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.contact a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.summary {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.skillGroup {
+  margin-bottom: 1rem;
+}
+
+.skillGroup h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #000;
+}
+
+.skillGroup p {
+  display: inline;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.experienceItem {
+  margin-bottom: 1.5rem;
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.experienceHeader h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.experienceItem p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.experienceItem ul {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.experienceItem li {
+  margin-bottom: 0.25rem;
+}
+
+.educationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.educationItem h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.educationItem p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.printBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  transition: transform 0.2s;
+  z-index: 100;
+}
+
+.printBtn:hover {
+  transform: translateY(-2px);
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .resumePage {
+    padding: 0;
+    display: block;
+    min-height: auto;
+  }
+  .document {
+    padding: 0;
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .printBtn {
+    display: none;
+  }
+  /* Hide navigation and footer in print if needed, though they aren't on this layout unless included */
+}
+
+@media (max-width: 768px) {
+  .document {
+    padding: 2rem;
+  }
+  .experienceHeader {
+    flex-direction: column;
+  }
+  .educationItem {
+    flex-direction: column;
+  }
+}
