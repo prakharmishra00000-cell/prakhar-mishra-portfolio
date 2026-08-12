@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
+import { X } from 'lucide-react';
 import styles from './Resume.module.css';
 
 export default function ResumePage() {
@@ -10,6 +12,10 @@ export default function ResumePage() {
 
   return (
     <div className={styles.resumePage}>
+      <Link href="/" className={styles.closeBtn} aria-label="Close Resume">
+        <X size={24} />
+      </Link>
+      
       <button onClick={handlePrint} className={styles.printBtn}>
         Print / Save PDF
       </button>

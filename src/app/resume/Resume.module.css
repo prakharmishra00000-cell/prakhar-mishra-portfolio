@@ -185,6 +185,28 @@
   transform: translateY(-2px);
 }
 
+.closeBtn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  transition: transform 0.2s;
+  z-index: 100;
+}
+
+.closeBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
 @media print {
   body {
     background: #fff;
@@ -199,7 +221,7 @@
     max-width: 100%;
     box-shadow: none;
   }
-  .printBtn {
+  .printBtn, .closeBtn {
     display: none;
   }
   /* Hide navigation and footer in print if needed, though they aren't on this layout unless included */
