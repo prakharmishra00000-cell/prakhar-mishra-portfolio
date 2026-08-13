@@ -57,7 +57,7 @@ const projects = [
       { label: "Tech", value: "AI/LLMs" },
       { label: "Type", value: "Assistant" }
     ],
-    liveLink: "https://ai-chat-nrp2ruikf-app-generate-bot-s-projects.vercel.app/",
+    liveLink: "https://prakharmishra00000-cell.github.io/ai-chat-bot/",
     githubLink: "https://github.com/prakharmishra00000-cell/ai-chat-bot",
     image: "/aichatbot.png"
   }
