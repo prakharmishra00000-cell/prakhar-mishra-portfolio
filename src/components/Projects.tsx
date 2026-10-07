@@ -6,6 +6,20 @@ import styles from './Projects.module.css';
 
 const projects = [
   {
+    name: "Nexron AI",
+    role: "Living AI Learning Roadmap & Personal Career Mentor",
+    problem: "Self-directed learners struggle with rigid, static study curricula that fail to adapt when schedules change, daily availability fluctuates, or career goals shift.",
+    solution: "An intelligent, adaptive roadmap engine featuring live AI curriculum generation, dynamic schedule replanning, and personalized career mentoring.",
+    positioning: "A living AI learning roadmap and career mentor tailored to any skill or goal.",
+    metrics: [
+      { label: "Personalization", value: "Dynamic" },
+      { label: "Architecture", value: "AI-First" }
+    ],
+    liveLink: "https://studyflow-ai-tau-drab.vercel.app/",
+    githubLink: "#", // Placeholder
+    image: "/nexron.png"
+  },
+  {
     name: "ExamArena",
     role: "AI-Powered Engineering Career & Exam Discovery Platform",
     problem: "Engineering students face difficulty discovering suitable exams matching their branch, qualification, and career goals across fragmented sources.",

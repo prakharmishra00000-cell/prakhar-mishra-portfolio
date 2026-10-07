@@ -68,6 +68,22 @@ export default function ResumePage() {
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
+              <h4>Nexron AI</h4>
+              <span className={styles.date}>Live Platform</span>
+            </div>
+            <div className={styles.role}>Living AI Learning Roadmap & Personal Career Mentor</div>
+            <p>
+              An adaptive, AI-driven learning platform that dynamically builds, calibrates, and optimizes personalized study roadmaps tailored to individual schedules and career goals.
+            </p>
+            <ul>
+              <li>Architected an AI roadmap generation engine that crafts customized curriculums across technical disciplines and competitive goals.</li>
+              <li>Engineered real-time dynamic replanning to automatically rebalance study schedules based on time dedication changes, missed days, and fast-track goals.</li>
+              <li>Built an interactive, responsive dark-mode dashboard featuring milestone tracking, demo roadmaps, and continuous progress calibration.</li>
+            </ul>
+          </div>
+
+          <div className={styles.experienceItem}>
+            <div className={styles.experienceHeader}>
               <h4>ExamArena</h4>
               <span className={styles.date}>Live Platform</span>
             </div>
