@@ -76,9 +76,6 @@ export default function ResumePage() {
               </span>
             </div>
             <div className={styles.role}>AI-Powered Competitive Exam Intelligence Platform (17 Core Features)</div>
-            <div className={styles.projectImageContainer}>
-              <img src="/examintel.png" alt="ExamIntel Interface Preview" className={styles.projectPreviewImg} />
-            </div>
             <p>
               An enterprise-grade competitive exam intelligence and preparation platform integrating 17 AI-powered features for real-time exam comparison, prerequisite dependency mapping, and dynamic practice generation.
             </p>
