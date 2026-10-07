@@ -147,6 +147,22 @@
   margin-bottom: 0.25rem;
 }
 
+.projectImageContainer {
+  margin: 0.75rem 0 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.projectPreviewImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 280px;
+}
+
 .educationItem {
   display: flex;
   justify-content: space-between;
@@ -224,6 +240,9 @@
     box-shadow: none;
   }
   .printBtn, .closeBtn {
+    display: none;
+  }
+  .projectImageContainer {
     display: none;
   }
   /* Hide navigation and footer in print if needed, though they aren't on this layout unless included */

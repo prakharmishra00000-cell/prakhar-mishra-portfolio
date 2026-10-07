@@ -6,6 +6,20 @@ import styles from './Projects.module.css';
 
 const projects = [
   {
+    name: "ExamIntel",
+    role: "AI-Powered Competitive Exam Intelligence & Preparation Platform",
+    problem: "Aspirants preparing for competitive exams lack unified analytical intelligence—navigating fragmented sources for syllabus breakdowns, prerequisite relationships, and cross-exam overlaps.",
+    solution: "An enterprise-grade 17-feature exam intelligence platform featuring real-time Exam Comparison, Prerequisite Dependency Mapping, Personalized Paper Generation, and interactive AI mentoring powered by Google Gemini.",
+    positioning: "A full-scale AI exam intelligence and preparation ecosystem.",
+    metrics: [
+      { label: "AI Features", value: "17" },
+      { label: "Engine", value: "Gemini AI" }
+    ],
+    liveLink: "https://my-project-teal-two-91.vercel.app/",
+    githubLink: "https://github.com/prakharmishra00000-cell/examintel",
+    image: "/examintel.png"
+  },
+  {
     name: "Nexron AI",
     role: "Living AI Learning Roadmap & Personal Career Mentor",
     problem: "Self-directed learners struggle with rigid, static study curricula that fail to adapt when schedules change, daily availability fluctuates, or career goals shift.",

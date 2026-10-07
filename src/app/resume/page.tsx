@@ -68,8 +68,36 @@ export default function ResumePage() {
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
+              <h4>ExamIntel</h4>
+              <span className={styles.date}>
+                <a href="https://my-project-teal-two-91.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
+            </div>
+            <div className={styles.role}>AI-Powered Competitive Exam Intelligence Platform (17 Core Features)</div>
+            <div className={styles.projectImageContainer}>
+              <img src="/examintel.png" alt="ExamIntel Interface Preview" className={styles.projectPreviewImg} />
+            </div>
+            <p>
+              An enterprise-grade competitive exam intelligence and preparation platform integrating 17 AI-powered features for real-time exam comparison, prerequisite dependency mapping, and dynamic practice generation.
+            </p>
+            <ul>
+              <li>Integrated Google Gemini AI via direct API streaming for real-time, authentic exam analysis, interactive question explanations, and instant study mentoring.</li>
+              <li>Engineered Core AI Tools including Exam Comparison Engine, Prerequisite Dependency Mapper, Question AI, and Question Evolution Lab.</li>
+              <li>Implemented comprehensive Practice & Generation suites featuring Personalized Question Paper Generator, PDF Lab, Grounded MCQ Generator, and Formula Sheet Quizzes.</li>
+              <li>Designed an intuitive, responsive dark-mode dashboard with client-side state management, interactive graph visualizations, and instant test simulation.</li>
+            </ul>
+          </div>
+
+          <div className={styles.experienceItem}>
+            <div className={styles.experienceHeader}>
               <h4>Nexron AI</h4>
-              <span className={styles.date}>Live Platform</span>
+              <span className={styles.date}>
+                <a href="https://studyflow-ai-tau-drab.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
             </div>
             <div className={styles.role}>Living AI Learning Roadmap & Personal Career Mentor</div>
             <p>
@@ -85,7 +113,11 @@ export default function ResumePage() {
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
               <h4>ExamArena</h4>
-              <span className={styles.date}>Live Platform</span>
+              <span className={styles.date}>
+                <a href="https://exam-arena-two.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
             </div>
             <div className={styles.role}>AI-Powered Engineering Career & Exam Discovery Platform</div>
             <p>
@@ -101,7 +133,11 @@ export default function ResumePage() {
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
               <h4>PrepOS AI</h4>
-              <span className={styles.date}>Live Platform</span>
+              <span className={styles.date}>
+                <a href="https://placement-prep-ai-tau.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
             </div>
             <div className={styles.role}>Enterprise-Style AI Career Preparation Operating System</div>
             <p>
@@ -117,7 +153,11 @@ export default function ResumePage() {
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
               <h4>Telegram Document Downloader</h4>
-              <span className={styles.date}>Live Platform</span>
+              <span className={styles.date}>
+                <a href="https://telegram-file-downloader.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
             </div>
             <div className={styles.role}>Secure Web-Based Telegram File Extractor</div>
             <p>
