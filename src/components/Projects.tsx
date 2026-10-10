@@ -6,6 +6,21 @@ import styles from './Projects.module.css';
 
 const projects = [
   {
+    name: "CareerHub AI",
+    role: "AI-Powered Real-Time Career & Job Discovery Engine",
+    problem: "Job seekers and engineering graduates struggle with fragmented job portals, gated sign-in barriers, and outdated mock listings that fail to provide genuine real-time opportunities across tech and core engineering domains.",
+    solution: "A unified real-time job discovery engine aggregating live opportunities from LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, and Arbeitnow with 0% mock data, instant direct-apply links, and multi-source indexing across 40+ engineering degrees.",
+    positioning: "Every Opportunity. One Search. AI-powered real-time career discovery across 9+ trusted sources.",
+    metrics: [
+      { label: "Opportunities Indexed", value: "50K+" },
+      { label: "Live Sources", value: "9+" },
+      { label: "Degrees & Branches", value: "40+" }
+    ],
+    liveLink: "https://careerhub-ai-ruby.vercel.app/",
+    githubLink: "https://github.com/prakharmishra00000-cell/careerhub-ai",
+    image: "/careerhub.png"
+  },
+  {
     name: "ExamIntel",
     role: "AI-Powered Competitive Exam Intelligence & Preparation Platform",
     problem: "Aspirants preparing for competitive exams lack unified analytical intelligence—navigating fragmented sources for syllabus breakdowns, prerequisite relationships, and cross-exam overlaps.",

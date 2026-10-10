@@ -68,6 +68,27 @@ export default function ResumePage() {
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
+              <h4>CareerHub AI</h4>
+              <span className={styles.date}>
+                <a href="https://careerhub-ai-ruby.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
+                  Live Demo ↗
+                </a>
+              </span>
+            </div>
+            <div className={styles.role}>AI-Powered Real-Time Career & Job Discovery Engine (9+ Live Sources)</div>
+            <p>
+              A unified real-time job aggregation and career discovery engine connecting directly to live public job ecosystems and indexers (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, Arbeitnow, Jobicy) with 0% mock data and direct application access.
+            </p>
+            <ul>
+              <li>Architected a live multi-source aggregation engine integrating RapidAPI JSearch (/search-v2), Remotive, Arbeitnow, and Jobicy APIs for instant opportunity extraction across 40+ engineering degrees and tech roles.</li>
+              <li>Engineered direct frictionless application pathways with zero authentication barriers or gated modals, enabling job seekers to access authentic recruiter listings instantly.</li>
+              <li>Designed an ultra-responsive dark-mode interface featuring faceted filters for freshers, internships, remote positions, and government recruitment.</li>
+              <li>Deployed high-performance serverless endpoints on Vercel backed by automated sync scheduling and resilient multi-provider fallback.</li>
+            </ul>
+          </div>
+
+          <div className={styles.experienceItem}>
+            <div className={styles.experienceHeader}>
               <h4>ExamIntel</h4>
               <span className={styles.date}>
                 <a href="https://my-project-teal-two-91.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
