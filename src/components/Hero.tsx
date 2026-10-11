@@ -19,6 +19,30 @@ export default function Hero() {
           <img src="/profile.jpg" alt="Prakhar Mishra" className={styles.profileImage} />
         </motion.div>
         
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '6px 14px',
+            background: 'rgba(0, 240, 255, 0.1)',
+            border: '1px solid rgba(0, 240, 255, 0.35)',
+            borderRadius: 999,
+            color: '#00f0ff',
+            fontSize: '12px',
+            fontWeight: 700,
+            fontFamily: 'monospace',
+            marginTop: 16,
+            marginBottom: 8
+          }}
+        >
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#00f0ff', boxShadow: '0 0 8px #00f0ff' }} />
+          <span>FUTURISTIC 3D EXPLORABLE CYBER WORLD ACTIVE</span>
+        </motion.div>
+        
         <motion.h1 
           className={`${styles.title} text-gradient`}
           initial={{ opacity: 0, y: 20 }}

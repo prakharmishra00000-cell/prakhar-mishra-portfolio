@@ -226,10 +226,8 @@
 }
 
 @media print {
-  body {
-    background: #fff;
-  }
   .resumePage {
+    background: #fff;
     padding: 0;
     display: block;
     min-height: auto;
