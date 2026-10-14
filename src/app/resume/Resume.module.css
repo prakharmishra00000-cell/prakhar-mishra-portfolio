@@ -1,259 +1,318 @@
 .resumePage {
   min-height: 100vh;
-  padding: 8rem 2rem 4rem;
-  background: var(--bg-main);
+  padding: 5rem 1.5rem 4rem;
+  background: #0f1115;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.document {
-  background: #ffffff; /* White background for resume */
-  color: #111111; /* Dark text for readability */
-  width: 100%;
-  max-width: 850px; /* A4-ish proportions */
-  padding: 4rem 5rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-}
-
-.header {
-  border-bottom: 2px solid #333;
-  padding-bottom: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.name {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
-  color: #000;
-  letter-spacing: -0.02em;
-}
-
-.title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-}
-
-.contact {
+.topActions {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 0.85rem;
-  color: #555;
-}
-
-.contact a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-.section {
-  margin-bottom: 2rem;
-}
-
-.sectionTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.summary {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.skillGroup {
-  margin-bottom: 1rem;
-}
-
-.skillGroup h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  display: inline-block;
-  margin-right: 0.5rem;
-  color: #000;
-}
-
-.skillGroup p {
-  display: inline;
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.5;
-}
-
-.experienceItem {
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
+  z-index: 20;
 }
 
-.experienceHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.25rem;
-}
-
-.experienceHeader h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #000;
-}
-
-.date {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 500;
-}
-
-.role {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2563eb;
-  margin-bottom: 0.5rem;
-}
-
-.experienceItem p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.experienceItem ul {
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #444;
-}
-
-.experienceItem li {
-  margin-bottom: 0.25rem;
-}
-
-.projectImageContainer {
-  margin: 0.75rem 0 1rem;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.projectPreviewImg {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 280px;
-}
-
-.educationItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.educationItem h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #000;
-}
-
-.educationItem p {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.printBtn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--text-primary);
-  color: var(--bg-main);
-  border: none;
-  padding: 1rem 2rem;
+.actionBtn,
+.actionBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
   border-radius: 9999px;
+  font-size: 0.875rem;
   font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
-  transition: transform 0.2s;
-  z-index: 100;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.printBtn:hover {
-  transform: translateY(-2px);
+.actionBtn {
+  background: #1e222b;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.actionBtn:hover {
+  background: #2a303c;
+  transform: translateY(-1px);
+}
+
+.actionBtnPrimary {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.actionBtnPrimary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
 .closeBtn {
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  background: #111111;
+  background: #1e222b;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
   z-index: 9999;
 }
 
 .closeBtn:hover {
   transform: translateY(-2px) scale(1.05);
-  background: #222222;
+  background: #2b3240;
 }
 
+/* ==========================================================================
+   LATEX RESUME PAPER SHEET (Matches Screenshot Exactly)
+   ========================================================================== */
+
+.sheet {
+  background: #ffffff;
+  color: #000000;
+  width: 100%;
+  max-width: 850px;
+  min-height: 1100px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  font-family: "Latin Modern Roman", "Computer Modern Serif", "CMU Serif", Georgia, "Times New Roman", Times, serif;
+  font-size: 10pt;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 0.85rem;
+}
+
+.name {
+  font-size: 2.2rem;
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.35rem 0;
+  color: #000000;
+}
+
+.contactRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 8.8pt;
+  color: #111111;
+  margin-top: 0.15rem;
+}
+
+.contactRow a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contactRow a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+  color: #000000;
+}
+
+.sep {
+  color: #333333;
+  margin: 0 0.15rem;
+  font-weight: 300;
+}
+
+/* Section */
+.section {
+  margin-top: 0.65rem;
+}
+
+.sectionTitle {
+  font-size: 11.5pt;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin: 0 0 0.25rem 0;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid #000000;
+}
+
+.paragraph {
+  font-size: 9.3pt;
+  line-height: 1.35;
+  margin: 0.25rem 0 0.45rem 0;
+  color: #111111;
+  text-align: justify;
+}
+
+/* Skills */
+.skillsBlock {
+  margin: 0.25rem 0 0.45rem 0;
+}
+
+.skillLine {
+  font-size: 9pt;
+  line-height: 1.35;
+  margin-bottom: 0.12rem;
+  color: #111111;
+}
+
+.skillLabel {
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Subheadings / Entries */
+.entry {
+  margin-top: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.entryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 9.3pt;
+  line-height: 1.3;
+}
+
+.boldLeft {
+  font-weight: 700;
+  color: #000000;
+}
+
+.rightText {
+  font-weight: 400;
+  color: #000000;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.italicLeft {
+  font-style: italic;
+  font-size: 8.8pt;
+  color: #111111;
+}
+
+.italicRight {
+  font-style: italic;
+  font-size: 8.8pt;
+  color: #111111;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sepPipe {
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 0.25rem;
+}
+
+.projectTech {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Bullets */
+.bulletList {
+  list-style-type: none;
+  margin: 0.15rem 0 0.35rem 0;
+  padding-left: 0.85rem;
+}
+
+.bulletList li {
+  position: relative;
+  font-size: 8.8pt;
+  line-height: 1.32;
+  color: #111111;
+  margin-bottom: 0.12rem;
+  padding-left: 0.85rem;
+  text-align: justify;
+}
+
+.bulletList li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000000;
+}
+
+/* ==========================================================================
+   PRINT MEDIA QUERY (Exact 1-Page Layout)
+   ========================================================================== */
 @media print {
+  @page {
+    size: letter portrait;
+    margin: 0.3in 0.4in;
+  }
+
+
   .resumePage {
-    background: #fff;
-    padding: 0;
-    display: block;
-    min-height: auto;
+    background: #ffffff !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    display: block !important;
   }
-  .document {
-    padding: 0;
-    max-width: 100%;
-    box-shadow: none;
+
+  .topActions,
+  .closeBtn {
+    display: none !important;
   }
-  .printBtn, .closeBtn {
-    display: none;
+
+  .sheet {
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
   }
-  .projectImageContainer {
-    display: none;
-  }
-  /* Hide navigation and footer in print if needed, though they aren't on this layout unless included */
 }
 
 @media (max-width: 768px) {
-  .document {
-    padding: 2rem;
+  .sheet {
+    padding: 1.75rem 1.25rem;
   }
-  .experienceHeader {
+
+  .contactRow {
     flex-direction: column;
+    gap: 0.25rem;
   }
-  .educationItem {
+
+  .sep {
+    display: none;
+  }
+
+  .entryRow {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rightText,
+  .italicRight {
+    text-align: left;
+    margin-top: 0.1rem;
   }
 }

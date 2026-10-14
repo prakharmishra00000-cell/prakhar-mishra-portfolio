@@ -2,8 +2,22 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { X } from 'lucide-react';
+import { X, Printer, Download, MapPin, Globe, Cake, Phone, Mail } from 'lucide-react';
 import styles from './Resume.module.css';
+
+const LinkedinIcon = ({ size = 13 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const GithubIcon = ({ size = 13 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+  </svg>
+);
 
 export default function ResumePage() {
   const handlePrint = () => {
@@ -13,209 +27,247 @@ export default function ResumePage() {
   return (
     <div className={styles.resumePage}>
       <Link href="/" className={styles.closeBtn} aria-label="Close Resume">
-        <X size={24} />
+        <X size={22} />
       </Link>
       
-      <button onClick={handlePrint} className={styles.printBtn}>
-        Print / Save PDF
-      </button>
+      <div className={styles.topActions}>
+        <button onClick={handlePrint} className={styles.actionBtn}>
+          <Printer size={16} /> Print Resume
+        </button>
+        <a href="/resume.pdf" download="Prakhar_Mishra_Resume.pdf" className={styles.actionBtnPrimary}>
+          <Download size={16} /> Download PDF
+        </a>
+      </div>
 
-      <div className={styles.document}>
+      <div className={styles.sheet}>
+        {/*----------HEADING----------*/}
         <header className={styles.header}>
           <h1 className={styles.name}>Prakhar Mishra</h1>
-          <h2 className={styles.title}>AI Full-Stack Web Developer</h2>
-          <div className={styles.contact}>
-            <span>MMMUT, Gorakhpur, UP, India</span>
-            <span><a href="mailto:prakharmishraflp@gmail.com">prakharmishraflp@gmail.com</a></span>
-            <span><a href="tel:+916372843175">+91 6372843175</a></span>
-            <span><a href="https://github.com/prakharmishra00000-cell" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-            <span><a href="https://www.linkedin.com/in/prakhar-mishra-8aa426423" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+          
+          <div className={styles.contactRow}>
+            <span><MapPin size={13} className={styles.icon} /> Gorakhpur, UP</span>
+            <span className={styles.sep}>|</span>
+            <span>
+              <Globe size={13} className={styles.icon} />
+              <a href="https://prakhar-mishra-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
+                prakhar-mishra-portfolio.vercel.app
+              </a>
+            </span>
+            <span className={styles.sep}>|</span>
+            <span><Cake size={13} className={styles.icon} /> DOB: 28 April 2006</span>
+          </div>
+
+          <div className={styles.contactRow}>
+            <span>
+              <Phone size={13} className={styles.icon} />
+              <a href="tel:+916372843175">+91-6372843175</a>
+            </span>
+            <span className={styles.sep}>|</span>
+            <span>
+              <Mail size={13} className={styles.icon} />
+              <a href="mailto:prakharmishra00000@gmail.com">prakharmishra00000@gmail.com</a>
+            </span>
+            <span className={styles.sep}>|</span>
+            <span>
+              <LinkedinIcon size={13} />
+              <a href="https://www.linkedin.com/in/prakhar-mishra-8aa426423" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/prakhar-mishra-8aa426423
+              </a>
+            </span>
+            <span className={styles.sep}>|</span>
+            <span>
+              <GithubIcon size={13} />
+              <a href="https://github.com/prakharmishra00000-cell" target="_blank" rel="noopener noreferrer">
+                github.com/prakharmishra00000-cell
+              </a>
+            </span>
           </div>
         </header>
 
+        {/*-----------PROFESSIONAL SUMMARY-----------*/}
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Professional Summary</h3>
-          <p className={styles.summary}>
-            Final-year Mechanical Engineering student who successfully expanded into AI-first software development. 
-            Passionate about building intelligent digital products where AI meets modern web development. 
-            I combine a structured engineering mindset with advanced web architectures, specializing in AI integration, 
-            prompt engineering, and rapid product prototyping to solve complex user problems.
+          <h2 className={styles.sectionTitle}>Professional Summary</h2>
+          <p className={styles.paragraph}>
+            AI Full-Stack Web Developer and final-year B.Tech student at MMMUT Gorakhpur, combining systems engineering principles with modern web technologies to architect intelligent digital products. Leverages state-of-the-art AI developer platforms (Claude, Antigravity, Codex, ChatGPT, Gemini) to build production-ready applications, live API aggregation engines, and responsive UI/UX. Deployed multiple live platforms on Vercel with a focus on product thinking and rapid iteration.
           </p>
         </section>
 
+        {/*-----------TECHNICAL SKILLS-----------*/}
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Technical Skills</h3>
-          <div className={styles.skillGroup}>
-            <h4>Artificial Intelligence:</h4>
-            <p>AI-powered applications, AI APIs, Prompt Engineering, AI Agent Development, AI product integration</p>
-          </div>
-          <div className={styles.skillGroup}>
-            <h4>Web & Application Dev:</h4>
-            <p>Frontend Development, Backend Development, APIs, Database Integration, Authentication, Next.js, React</p>
-          </div>
-          <div className={styles.skillGroup}>
-            <h4>Development Tools:</h4>
-            <p>Antigravity, GitHub, Vercel, Render, zen.ai, ChatGPT, Gemini</p>
-          </div>
-          <div className={styles.skillGroup}>
-            <h4>Product Development:</h4>
-            <p>SaaS Concepts, UI/UX Design, Career & Education Technology, Automation</p>
+          <h2 className={styles.sectionTitle}>Technical Skills</h2>
+          <div className={styles.skillsBlock}>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>AI Developer Tools:</strong>
+              <span> Claude (Anthropic), Antigravity, OpenAI Codex, ChatGPT, Google Gemini, Prompt Engineering, Agentic Workflows</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Web &amp; Application Dev:</strong>
+              <span> Next.js, React, JavaScript (ES6+), Python, HTML5, CSS3, FastAPI, REST APIs, Database Integration</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Deployment &amp; Platforms:</strong>
+              <span> Git, GitHub, Vercel, Render, RapidAPI, Linux/Bash, Serverless Endpoints</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Product &amp; Creative:</strong>
+              <span> SaaS Concepts, Responsive UI/UX Design, Figma AI, Digital Poster Design, Technical Writing</span>
+            </div>
           </div>
         </section>
 
+        {/*-----------EDUCATION-----------*/}
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Featured Projects</h3>
+          <h2 className={styles.sectionTitle}>Education</h2>
           
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>CareerHub AI</h4>
-              <span className={styles.date}>
-                <a href="https://careerhub-ai-ruby.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>Madan Mohan Malaviya University of Technology (MMMUT)</span>
+              <span className={styles.rightText}>Gorakhpur, UP</span>
             </div>
-            <div className={styles.role}>AI-Powered Real-Time Career & Job Discovery Engine (9+ Live Sources)</div>
-            <p>
-              A unified real-time job aggregation and career discovery engine connecting directly to live public job ecosystems and indexers (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, Arbeitnow, Jobicy) with 0% mock data and direct application access.
-            </p>
-            <ul>
-              <li>Architected a live multi-source aggregation engine integrating RapidAPI JSearch (/search-v2), Remotive, Arbeitnow, and Jobicy APIs for instant opportunity extraction across 40+ engineering degrees and tech roles.</li>
-              <li>Engineered direct frictionless application pathways with zero authentication barriers or gated modals, enabling job seekers to access authentic recruiter listings instantly.</li>
-              <li>Designed an ultra-responsive dark-mode interface featuring faceted filters for freshers, internships, remote positions, and government recruitment.</li>
-              <li>Deployed high-performance serverless endpoints on Vercel backed by automated sync scheduling and resilient multi-provider fallback.</li>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>Bachelor of Technology (B.Tech) – <strong>CGPA: 4.18</strong> (Final Year)</span>
+              <span className={styles.italicRight}>2023 – 2027</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li><strong>Focus:</strong> Artificial Intelligence Applications, Web Development, Systems Architecture, Engineering Design.</li>
             </ul>
           </div>
 
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>ExamIntel</h4>
-              <span className={styles.date}>
-                <a href="https://my-project-teal-two-91.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>Gayatri Shiksha Niketan</span>
+              <span className={styles.rightText}>Jamshedpur, Jharkhand</span>
             </div>
-            <div className={styles.role}>AI-Powered Competitive Exam Intelligence Platform (17 Core Features)</div>
-            <p>
-              An enterprise-grade competitive exam intelligence and preparation platform integrating 17 AI-powered features for real-time exam comparison, prerequisite dependency mapping, and dynamic practice generation.
-            </p>
-            <ul>
-              <li>Integrated Google Gemini AI via direct API streaming for real-time, authentic exam analysis, interactive question explanations, and instant study mentoring.</li>
-              <li>Engineered Core AI Tools including Exam Comparison Engine, Prerequisite Dependency Mapper, Question AI, and Question Evolution Lab.</li>
-              <li>Implemented comprehensive Practice & Generation suites featuring Personalized Question Paper Generator, PDF Lab, Grounded MCQ Generator, and Formula Sheet Quizzes.</li>
-              <li>Designed an intuitive, responsive dark-mode dashboard with client-side state management, interactive graph visualizations, and instant test simulation.</li>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>Senior Secondary School Certificate (Class XII) – <strong>78%</strong></span>
+              <span className={styles.italicRight}>2023</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Physics, Chemistry, Mathematics, Computer Science, English.</li>
             </ul>
           </div>
 
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>Nexron AI</h4>
-              <span className={styles.date}>
-                <a href="https://studyflow-ai-tau-drab.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>O.P. Jindal School</span>
+              <span className={styles.rightText}>Odisha</span>
             </div>
-            <div className={styles.role}>Living AI Learning Roadmap & Personal Career Mentor</div>
-            <p>
-              An adaptive, AI-driven learning platform that dynamically builds, calibrates, and optimizes personalized study roadmaps tailored to individual schedules and career goals.
-            </p>
-            <ul>
-              <li>Architected an AI roadmap generation engine that crafts customized curriculums across technical disciplines and competitive goals.</li>
-              <li>Engineered real-time dynamic replanning to automatically rebalance study schedules based on time dedication changes, missed days, and fast-track goals.</li>
-              <li>Built an interactive, responsive dark-mode dashboard featuring milestone tracking, demo roadmaps, and continuous progress calibration.</li>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>Secondary School Examination (Class X) – <strong>93.2%</strong></span>
+              <span className={styles.italicRight}>2021</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Academic Distinction with strong aptitude in Mathematics, Science, and Information Technology.</li>
             </ul>
-          </div>
-
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>ExamArena</h4>
-              <span className={styles.date}>
-                <a href="https://exam-arena-two.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
-            </div>
-            <div className={styles.role}>AI-Powered Engineering Career & Exam Discovery Platform</div>
-            <p>
-              A unified career intelligence platform designed to help engineering students navigate over 500+ exams across various sectors and domains.
-            </p>
-            <ul>
-              <li>Architected a multi-dimensional filtering system allowing search by branch, qualification, sector, and salary.</li>
-              <li>Integrated AI career guidance capabilities for personalized career roadmaps and exam insights.</li>
-              <li>Engineered a highly responsive and performant UI to handle large datasets of career information smoothly.</li>
-            </ul>
-          </div>
-
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>PrepOS AI</h4>
-              <span className={styles.date}>
-                <a href="https://placement-prep-ai-tau.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
-            </div>
-            <div className={styles.role}>Enterprise-Style AI Career Preparation Operating System</div>
-            <p>
-              A unified AI operating system bringing together disparate career prep workflows into a single ecosystem with 50+ career capabilities.
-            </p>
-            <ul>
-              <li>Developed an AI Placement Digital Twin and Mock Simulator for technical and behavioral interview preparation.</li>
-              <li>Integrated advanced career intelligence tools like Resume & JD Matcher, Skill Gap Radar, and Hiring Pattern Analyzer.</li>
-              <li>Implemented comprehensive developer tools including an AI coding environment and technical doubt solver.</li>
-            </ul>
-          </div>
-
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>Telegram Document Downloader</h4>
-              <span className={styles.date}>
-                <a href="https://telegram-file-downloader.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>
-                  Live Demo ↗
-                </a>
-              </span>
-            </div>
-            <div className={styles.role}>Secure Web-Based Telegram File Extractor</div>
-            <p>
-              A web utility featuring secure user authentication to directly access and download Telegram documents through a clean browser interface.
-            </p>
-            <ul>
-              <li>Engineered a secure, encrypted authentication system for user sign-ins and session management.</li>
-              <li>Integrated seamless API connections to bypass native app restrictions for document retrieval.</li>
-              <li>Built a responsive, dark-mode focused UI for an optimal user extraction experience.</li>
-            </ul>
-          </div>
-
-
-        </section>
-
-        <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Experience</h3>
-          <div className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h4>Independent Product Developer</h4>
-              <span className={styles.date}>Present</span>
-            </div>
-            <div className={styles.role}>Building Experience Through Products</div>
-            <p>
-              Rather than traditional internships, I have focused on building end-to-end, real-world technology products. I take ideas from concept to UI, wire up backend logic, integrate state-of-the-art AI capabilities, and deploy production-ready applications. My primary domains of interest include Career Technology, Education Technology, and AI-powered automation workflows.
-            </p>
           </div>
         </section>
 
+        {/*-----------EXPERIENCE-----------*/}
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Education</h3>
-          <div className={styles.educationItem}>
-            <div>
-              <h4>Madan Mohan Malaviya University of Technology (MMMUT)</h4>
-              <p>Bachelor of Technology in Mechanical Engineering</p>
+          <h2 className={styles.sectionTitle}>Experience</h2>
+          
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>Independent AI Product Developer</span>
+              <span className={styles.rightText}>Remote / Gorakhpur, UP</span>
             </div>
-            <div>
-              <span className={styles.date}>Expected Graduation: Final Year</span>
-              <p style={{textAlign: 'right', fontSize: '0.85rem', color: '#666'}}>Gorakhpur, UP</p>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>AI-Powered Web Applications &amp; Full-Stack Development</span>
+              <span className={styles.italicRight}>2024 – Present</span>
             </div>
+            <ul className={styles.bulletList}>
+              <li>Architected and deployed 5+ production web applications on Vercel, integrating multimodal AI models, APIs, and responsive frontends.</li>
+              <li>Engineered live API aggregation pipelines, automated scraping fallbacks, and real-time LLM streaming for end-user tools.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/*-----------KEY PROJECTS & ENGINEERING PORTFOLIO-----------*/}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Key Projects &amp; Engineering Portfolio</h2>
+          
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>
+                CareerHub AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Next.js, RapidAPI JSearch, Vercel, AI Search</em>
+              </span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Architected a real-time job discovery engine aggregating live opportunities from 9+ sources (LinkedIn, Indeed, Glassdoor, ZipRecruiter) with 0% mock data and direct application access across 40+ engineering degrees.</li>
+              <li>Indexed 50,000+ live opportunities with multi-source filtering, zero-auth access, and high-performance serverless endpoints.</li>
+            </ul>
+          </div>
+
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>
+                ExamIntel <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Google Gemini AI, React, Next.js, Vercel</em>
+              </span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Built an enterprise-grade 17-feature exam intelligence platform featuring real-time Exam Comparison, Prerequisite Dependency Mapping, Personalized Question Paper Generation, and interactive AI mentoring via Google Gemini streaming.</li>
+            </ul>
+          </div>
+
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>
+                Nexron AI &amp; PrepOS AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Full-Stack, Adaptive Learning Engine, SaaS Architecture</em>
+              </span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Created an adaptive AI roadmap engine with dynamic schedule replanning based on availability, milestone tracking, and mentoring.</li>
+              <li>Developed an enterprise career prep OS with 50+ capabilities including AI Placement Digital Twin, Mock Simulator, and Coding IDE.</li>
+            </ul>
+          </div>
+
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>
+                Telegram Document Downloader AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Google Gemini AI, Python, FastAPI, Telethon, React, Vercel</em>
+              </span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Architected an AI-powered document intelligence and extractor utility integrating official Telegram MTProto APIs with persistent encrypted session state and multi-user authentication.</li>
+              <li>Integrated Google Gemini for automated document summarization, topic extraction, and semantic search across channel files.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/*-----------EXTRACURRICULAR ACTIVITIES & LEADERSHIP-----------*/}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Extracurricular Activities &amp; Leadership</h2>
+          
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>Society of Automotive Engineers (SAE)</span>
+              <span className={styles.rightText}>Collegiate Chapter</span>
+            </div>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>Active Member – DISCO Subdivision</span>
+              <span className={styles.italicRight}>2024 – Present</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Designed promotional posters, banners, and digital graphics; authored technical content and publicity notices for student events.</li>
+            </ul>
+          </div>
+
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>Techsrijan (Annual Techno-Management Fest)</span>
+              <span className={styles.rightText}>MMMUT Gorakhpur</span>
+            </div>
+            <div className={styles.entryRow}>
+              <span className={styles.italicLeft}>Event Organizing Committee Member (Techsrijan 2025 &amp; Techsrijan 2026)</span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Coordinated event publicity, creative media, stage management, and operations across technical tracks for 2,000+ attendees.</li>
+            </ul>
           </div>
         </section>
       </div>

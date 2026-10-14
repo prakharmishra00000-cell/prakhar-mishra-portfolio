@@ -77,17 +77,17 @@ const projects = [
     image: "/prepos.png"
   },
   {
-    name: "Telegram Document Downloader",
-    role: "Secure Web-Based Telegram File Extractor",
-    problem: "Extracting specific documents from Telegram channels natively can be cumbersome and restricted to the app ecosystem.",
-    solution: "A web-based utility featuring secure user authentication to directly access and download Telegram documents through a clean browser interface.",
-    positioning: "A secure web utility for Telegram file extraction.",
+    name: "Telegram Document Downloader AI",
+    role: "AI-Powered Telegram Document Intelligence & Cloud Downloader",
+    problem: "Extracting, organizing, and analyzing specific documents from large Telegram channels natively is cumbersome and lacks content understanding.",
+    solution: "A modern web utility featuring secure MTProto authentication, automated channel file extraction, and Gemini-powered AI document summarization, smart tagging, and content categorization.",
+    positioning: "AI-augmented document intelligence and extraction for Telegram.",
     metrics: [
-      { label: "Auth", value: "Encrypted" },
-      { label: "Type", value: "Web Utility" }
+      { label: "AI Engine", value: "Gemini" },
+      { label: "Auth", value: "Encrypted MTProto" }
     ],
     liveLink: "https://telegram-file-downloader.vercel.app/",
-    githubLink: "#", // Placeholder
+    githubLink: "https://github.com/prakharmishra00000-cell/Telegram-file-downloader",
     image: "/telegram.png"
   }
 ];
