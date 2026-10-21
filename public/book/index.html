@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack Web Development | Interactive Masterbook Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 lg:px-8 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="bg-gradient-to-tr from-brand-600 to-indigo-600 p-2.5 rounded-xl shadow-lg shadow-brand-500/20 text-white">
+        <i class="fa-solid fa-layer-group text-lg"></i>
+      </div>
+      <div>
+        <h1 class="text-base font-bold tracking-tight text-white flex items-center gap-2">
+          Full Stack Web Development
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-400 border border-brand-500/30">153 Pages &bull; 81 Modules</span>
+        </h1>
+        <p class="text-xs text-slate-400 hidden sm:block">Zero-to-Professional Masterbook &bull; Complete Theory + Code + Real-World SaaS</p>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex items-center gap-3">
+      <!-- Search Input -->
+      <div class="relative w-48 sm:w-72">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+        <input 
+          type="text" 
+          id="global-search" 
+          placeholder="Search 81 modules, SQL, React..." 
+          class="w-full bg-slate-800/80 border border-slate-700/80 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+        />
+      </div>
+
+      <!-- PDF Download Button -->
+      <a 
+        href="./read.html" 
+        target="_blank"
+        class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+        title="Read full 153-page masterbook in browser"
+      >
+        <i class="fa-solid fa-book-open"></i>
+        <span class="hidden md:inline">Read Full 153 Pages Online</span>
+      </a>
+
+      <a 
+        href="./masterbook.pdf" 
+        download="Full_Stack_Web_Development_Complete_Masterbook.pdf"
+        class="flex items-center gap-2 bg-gradient-to-r from-brand-600 to-blue-600 hover:from-brand-500 hover:to-blue-500 text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-md shadow-brand-600/20 transition-all cursor-pointer"
+        title="Download the full 153-page printable masterbook PDF"
+      >
+        <i class="fa-solid fa-file-pdf"></i>
+        <span class="hidden md:inline">Download PDF (153 Pages)</span>
+      </a>
+
+      <!-- Progress Meter -->
+      <div class="hidden lg:flex items-center gap-2 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-xs">
+        <span class="text-slate-400">Progress:</span>
+        <span id="progress-percent" class="font-bold text-brand-400">0%</span>
+        <div class="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="h-full bg-brand-500 w-0 transition-all duration-300"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN BODY LAYOUT -->
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- SIDEBAR: 20 VOLUMES NAVIGATION -->
+    <aside class="w-64 lg:w-72 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0">
+      <div class="p-3 border-b border-slate-800">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">20 Volumes Directory</h2>
+      </div>
+
+      <nav id="volume-nav-list" class="flex-1 overflow-y-auto p-2 space-y-1 text-xs">
+        <!-- Rendered by JS -->
+      </nav>
+
+      <div class="p-3 border-t border-slate-800 bg-slate-900/60 text-[11px] text-slate-400 flex items-center justify-between">
+        <span>Roman Hinglish + English Tech</span>
+        <span class="text-brand-400 font-semibold">2026 Edition</span>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY AREA -->
+    <main class="flex-1 flex flex-col overflow-hidden bg-slate-950">
+
+      <!-- Category Filter Pills -->
+      <div class="px-6 py-3 border-b border-slate-800/80 bg-slate-900/30 flex items-center gap-2 overflow-x-auto">
+        <button class="filter-pill active px-3 py-1 rounded-full text-xs font-medium bg-brand-600 text-white transition-colors" data-filter="all">All Modules</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="frontend">Frontend &amp; React</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="backend">Backend &amp; Node</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="database">Databases &amp; SQL</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="security">Security &amp; OWASP</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="ai">AI &amp; RAG Systems</button>
+        <button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" data-filter="projects">Milestone Projects</button>
+      </div>
+
+      <!-- Active Content Viewer -->
+      <div id="content-viewport" class="flex-1 overflow-y-auto p-6 lg:p-8 space-y-6">
+        <!-- Rendered dynamically -->
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Master Curriculum Metadata
+    const volumesData = [
+      { id: "vol-1", num: 1, title: "Computer, Internet & Web Fundamentals", modules: "01 - 04", category: "fundamentals", desc: "Operating systems, terminal CLI, TCP/IP, DNS, TLS 1.3, and browser rendering engines." },
+      { id: "vol-2", num: 2, title: "HTML Foundational Training", modules: "05 - 08", category: "frontend", desc: "Semantic markup, accessible forms, W3C standards, tables, and 6 practical projects." },
+      { id: "vol-3", num: 3, title: "CSS Design & Layout Mastery", modules: "09 - 15", category: "frontend", desc: "The Cascade, Box Model, 2D Grid, Flexbox, Mobile-first media queries, and Tailwind CSS." },
+      { id: "vol-4", num: 4, title: "JavaScript Programming from Zero", modules: "16 - 25", category: "frontend", desc: "Programming logic, types, functions, closures, V8 Event Loop, async/await, and 10 applications." },
+      { id: "vol-5", num: 5, title: "Developer Workflow & Git", modules: "26 - 27", category: "devops", desc: "Git internals, commits, branching, merge conflicts, pull requests, and package managers." },
+      { id: "vol-6", num: 6, title: "TypeScript & React Modern Frontend", modules: "28 - 34", category: "frontend", desc: "Interfaces, generics, React 19 hooks, state architectures, React Router, and 10 React SPAs." },
+      { id: "vol-7", num: 7, title: "Next.js & Modern Web Architecture", modules: "35 - 38", category: "frontend", desc: "App Router, Server Components (RSC), Streaming Suspense, and Server Actions." },
+      { id: "vol-8", num: 8, title: "Backend Development with Node.js", modules: "39 - 42", category: "backend", desc: "Event loop, libuv, production Express REST APIs, middleware pipelines, and webhooks." },
+      { id: "vol-9", num: 9, title: "Databases & Data Architecture", modules: "43 - 47", category: "database", desc: "PostgreSQL relational schemas, ACID transactions, Prisma ORM, and Redis caching." },
+      { id: "vol-10", num: 10, title: "Authentication & Application Security", modules: "48 - 51", category: "security", desc: "Argon2 password hashing, JWT token rotation, RBAC permissions, and OWASP Top 10." },
+      { id: "vol-11", num: 11, title: "Testing & Quality Engineering", modules: "52 - 55", category: "devops", desc: "Testing Pyramid, Vitest unit tests, Supertest API tests, and Playwright E2E flows." },
+      { id: "vol-12", num: 12, title: "Deployment, DevOps & Production Ops", modules: "56 - 61", category: "devops", desc: "Multi-stage Dockerfiles, Docker Compose, GitHub Actions CI/CD, and Sentry monitoring." },
+      { id: "vol-13", num: 13, title: "Web Performance, a11y & SEO", modules: "62 - 65", category: "frontend", desc: "Google Core Web Vitals (LCP, INP, CLS), WCAG 2.2 AA accessibility, and dynamic OpenGraph." },
+      { id: "vol-14", num: 14, title: "Software Engineering & System Design", modules: "66 - 70", category: "backend", desc: "Clean Code, SOLID principles, Web DSA, and 15 distributed system design blueprints." },
+      { id: "vol-15", num: 15, title: "AI-Assisted Development & AI Apps", modules: "71 - 75", category: "ai", desc: "Streaming LLM tokens via SSE, pgvector vector embeddings, RAG, and 7 AI applications." },
+      { id: "vol-16", num: 16, title: "Specialized Full Stack Pathways", modules: "Tracks A-G", category: "projects", desc: "Advanced Frontend, Backend, SaaS Multi-Tenancy, E-Commerce, Headless CMS, and PWAs." },
+      { id: "vol-17", num: 17, title: "Real-World Project Laboratory", modules: "Capstones 1-4", category: "projects", desc: "Complete production blueprints for Business Website, Multi-Tenant SaaS, and AI Assistant." },
+      { id: "vol-18", num: 18, title: "Portfolio, Freelancing & Career Readiness", modules: "76 - 81", category: "projects", desc: "Job market strategy, technical resumes, 100 interview questions, and freelance contracts." },
+      { id: "vol-19", num: 19, title: "The 34-Scenario Troubleshooting Handbook", modules: "Scenarios 1-34", category: "devops", desc: "Comprehensive diagnostic guides for 34 critical production system failure modes." },
+      { id: "vol-20", num: 20, title: "Reference Material, Glossary & Matrix", modules: "Sections A-M", category: "fundamentals", desc: "150-term bilingual glossary, command cheat sheets, security checklist, and competency matrix." }
+    ];
+
+    let completedModules = JSON.parse(localStorage.getItem("fullstack_completed_modules") || "{}");
+    let activeVolumeIndex = 0;
+
+    function renderNav() {
+      const navList = document.getElementById("volume-nav-list");
+      navList.innerHTML = volumesData.map((vol, idx) => {
+        const isCompleted = completedModules[vol.id];
+        const isActive = idx === activeVolumeIndex;
+        return `
+          <button 
+            onclick="selectVolume(${idx})"
+            class="w-full text-left px-3 py-2 rounded-lg transition-all flex items-center justify-between group ${isActive ? 'bg-brand-600/20 text-brand-300 font-semibold border border-brand-500/30' : 'text-slate-300 hover:bg-slate-800/60'}"
+          >
+            <div class="flex items-center gap-2 truncate">
+              <span class="text-[10px] px-1.5 py-0.5 rounded ${isActive ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400'} font-mono">V${vol.num}</span>
+              <span class="truncate">${vol.title}</span>
+            </div>
+            <input 
+              type="checkbox" 
+              ${isCompleted ? 'checked' : ''} 
+              onclick="event.stopPropagation(); toggleModule('${vol.id}')"
+              class="w-3.5 h-3.5 rounded bg-slate-800 border-slate-700 text-brand-500 focus:ring-0 cursor-pointer"
+              title="Mark as completed"
+            />
+          </button>
+        `;
+      }).join("");
+
+      updateProgress();
+    }
+
+    function selectVolume(index) {
+      activeVolumeIndex = index;
+      renderNav();
+      renderContent();
+    }
+
+    function toggleModule(id) {
+      if (completedModules[id]) {
+        delete completedModules[id];
+      } else {
+        completedModules[id] = true;
+      }
+      localStorage.setItem("fullstack_completed_modules", JSON.stringify(completedModules));
+      renderNav();
+    }
+
+    function updateProgress() {
+      const completedCount = Object.keys(completedModules).length;
+      const totalCount = volumesData.length;
+      const pct = Math.round((completedCount / totalCount) * 100);
+      document.getElementById("progress-percent").innerText = `${pct}%`;
+      document.getElementById("progress-bar-fill").style.width = `${pct}%`;
+    }
+
+    function renderContent() {
+      const vol = volumesData[activeVolumeIndex];
+      const viewport = document.getElementById("content-viewport");
+
+      viewport.innerHTML = `
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-6">
+            <div>
+              <span class="inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 mb-2">
+                VOLUME ${vol.num} &bull; MODULES ${vol.modules}
+              </span>
+              <h2 class="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">${vol.title}</h2>
+              <p class="text-sm text-slate-400 mt-1">${vol.desc}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button 
+                onclick="toggleModule('${vol.id}')"
+                class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 border transition-all ${completedModules[vol.id] ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'}"
+              >
+                <i class="fa-solid ${completedModules[vol.id] ? 'fa-check' : 'fa-circle'}"></i>
+                <span>${completedModules[vol.id] ? 'Completed' : 'Mark as Complete'}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Feature Highlights Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <h4 class="text-xs font-bold text-brand-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-code"></i> Core Code Architecture
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Production-grade verified implementations in TypeScript, React 19, Next.js 15, PostgreSQL 16, and Docker. Zero simplified toy code.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-language"></i> Pedagogical Methodology
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Crystal clear Roman Hinglish explanations for intuitions, mental models, and real-life analogies, backed by standard English technical vocabulary.
+              </p>
+            </div>
+          </div>
+
+          <!-- Printable Notice -->
+          <div class="bg-gradient-to-r from-brand-950/60 to-slate-900 border border-brand-800/50 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-book-open text-2xl text-brand-400"></i>
+              <div>
+                <h5 class="text-sm font-bold text-white">Full 153-Page Masterbook Document Available</h5>
+                <p class="text-xs text-slate-400">Complete with running headers, vector diagrams, and all 81 modules.</p>
+              </div>
+            </div>
+            <a 
+              href="./masterbook.pdf" 
+              target="_blank" 
+              class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-lg shadow transition-colors shrink-0"
+            >
+              Open PDF Document
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    // Initialize on load
+    document.addEventListener("DOMContentLoaded", () => {
+      renderNav();
+      renderContent();
+
+      // Search functionality
+      document.getElementById("global-search").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (!query) {
+          renderNav();
+          return;
+        }
+
+        const filtered = volumesData.filter(v => 
+          v.title.toLowerCase().includes(query) || 
+          v.desc.toLowerCase().includes(query) ||
+          v.modules.toLowerCase().includes(query)
+        );
+
+        const navList = document.getElementById("volume-nav-list");
+        if (filtered.length === 0) {
+          navList.innerHTML = `<div class="p-4 text-center text-xs text-slate-500">No matching volumes found.</div>`;
+          return;
+        }
+
+        navList.innerHTML = filtered.map(vol => `
+          <button 
+            onclick="selectVolume(${volumesData.indexOf(vol)})"
+            class="w-full text-left px-3 py-2 rounded-lg text-xs text-slate-300 hover:bg-slate-800 transition-all flex items-center justify-between"
+          >
+            <span class="truncate">V${vol.num}: ${vol.title}</span>
+            <span class="text-[10px] text-brand-400">${vol.modules}</span>
+          </button>
+        `).join("");
+      });
+
+      // Filter pills
+      document.querySelectorAll(".filter-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+          document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active", "bg-brand-600", "text-white"));
+          document.querySelectorAll(".filter-pill").forEach(p => p.classList.add("bg-slate-800", "text-slate-300"));
+          pill.classList.remove("bg-slate-800", "text-slate-300");
+          pill.classList.add("active", "bg-brand-600", "text-white");
+
+          const filter = pill.dataset.filter;
+          if (filter === "all") {
+            renderNav();
+          } else {
+            const filtered = volumesData.filter(v => v.category === filter);
+            const navList = document.getElementById("volume-nav-list");
+            navList.innerHTML = filtered.map(vol => `
+              <button 
+                onclick="selectVolume(${volumesData.indexOf(vol)})"
+                class="w-full text-left px-3 py-2 rounded-lg text-xs text-slate-300 hover:bg-slate-800 transition-all flex items-center justify-between"
+              >
+                <span class="truncate">V${vol.num}: ${vol.title}</span>
+                <span class="text-[10px] text-brand-400">${vol.modules}</span>
+              </button>
+            `).join("");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
