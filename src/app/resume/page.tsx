@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { X, Printer, Download, MapPin, Globe, Cake, Phone, Mail } from 'lucide-react';
+import { X, Printer, Download, MapPin, Calendar, Phone, Mail } from 'lucide-react';
 import styles from './Resume.module.css';
 
 const LinkedinIcon = ({ size = 13 }: { size?: number }) => (
@@ -45,16 +45,9 @@ export default function ResumePage() {
           <h1 className={styles.name}>Prakhar Mishra</h1>
           
           <div className={styles.contactRow}>
-            <span><MapPin size={13} className={styles.icon} /> Gorakhpur, UP</span>
+            <span><MapPin size={13} className={styles.icon} /> C-7, Deojhar Colony, Barbil, Keonjhar, Odisha</span>
             <span className={styles.sep}>|</span>
-            <span>
-              <Globe size={13} className={styles.icon} />
-              <a href="https://prakhar-mishra-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
-                prakhar-mishra-portfolio.vercel.app
-              </a>
-            </span>
-            <span className={styles.sep}>|</span>
-            <span><Cake size={13} className={styles.icon} /> DOB: 28 April 2006</span>
+            <span><Calendar size={13} className={styles.icon} /> DOB: 28 April 2006</span>
           </div>
 
           <div className={styles.contactRow}>
@@ -70,7 +63,7 @@ export default function ResumePage() {
             <span className={styles.sep}>|</span>
             <span>
               <LinkedinIcon size={13} />
-              <a href="https://www.linkedin.com/in/prakhar-mishra-8aa426423" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/prakhar-mishra-8aa426423" target="_blank" rel="noopener noreferrer">
                 linkedin.com/in/prakhar-mishra-8aa426423
               </a>
             </span>
@@ -88,7 +81,7 @@ export default function ResumePage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Professional Summary</h2>
           <p className={styles.paragraph}>
-            AI Full-Stack Web Developer and final-year B.Tech student at MMMUT Gorakhpur, combining systems engineering principles with modern web technologies to architect intelligent digital products. Leverages state-of-the-art AI developer platforms (Claude, Antigravity, Codex, ChatGPT, Gemini) to build production-ready applications, live API aggregation engines, and responsive UI/UX. Deployed multiple live platforms on Vercel with a focus on product thinking and rapid iteration.
+            AI-driven B.Tech Mechanical Engineering final year student at MMMUT Gorakhpur, leveraging advanced AI developer platforms including Claude, Antigravity, OpenAI Codex, and ChatGPT for AI-powered web development, UI/UX design, and rapid prototyping. Experienced in community outreach, creative event poster design, technical content writing, and electro-mechanical fabrication. Active in SAE (DISCO) and organizing committee for Techsrijan 2025 &amp; 2026.
           </p>
         </section>
 
@@ -98,19 +91,15 @@ export default function ResumePage() {
           <div className={styles.skillsBlock}>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>AI Developer Tools:</strong>
-              <span> Claude (Anthropic), Antigravity, OpenAI Codex, ChatGPT, Google Gemini, Prompt Engineering, Agentic Workflows</span>
+              <span> Claude (Anthropic), Antigravity, OpenAI Codex, ChatGPT, Prompt Engineering, Agentic Workflows</span>
             </div>
             <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>Web &amp; Application Dev:</strong>
-              <span> Next.js, React, JavaScript (ES6+), Python, HTML5, CSS3, FastAPI, REST APIs, Database Integration</span>
+              <strong className={styles.skillLabel}>AI-Powered Web &amp; UI/UX:</strong>
+              <span> AI-Powered Full-Stack Web Development, AI-Assisted UI/UX Design, Rapid Wireframing, Figma AI</span>
             </div>
             <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>Deployment &amp; Platforms:</strong>
-              <span> Git, GitHub, Vercel, Render, RapidAPI, Linux/Bash, Serverless Endpoints</span>
-            </div>
-            <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>Product &amp; Creative:</strong>
-              <span> SaaS Concepts, Responsive UI/UX Design, Figma AI, Digital Poster Design, Technical Writing</span>
+              <strong className={styles.skillLabel}>Design &amp; Creative Content:</strong>
+              <span> Digital Poster Design, AI Image Generation, Technical Content Writing, Event Copywriting</span>
             </div>
           </div>
         </section>
@@ -125,11 +114,11 @@ export default function ResumePage() {
               <span className={styles.rightText}>Gorakhpur, UP</span>
             </div>
             <div className={styles.entryRow}>
-              <span className={styles.italicLeft}>Bachelor of Technology (B.Tech) – <strong>CGPA: 4.18</strong> (Final Year)</span>
+              <span className={styles.italicLeft}>Bachelor of Technology (B.Tech) in Mechanical Engineering – <strong>CGPA: 4.18 (Final Year)</strong></span>
               <span className={styles.italicRight}>2023 – 2027</span>
             </div>
             <ul className={styles.bulletList}>
-              <li><strong>Focus:</strong> Artificial Intelligence Applications, Web Development, Systems Architecture, Engineering Design.</li>
+              <li>Focus: Artificial Intelligence Applications, Web Development, Systems Design, Engineering Fabrication.</li>
             </ul>
           </div>
 
@@ -162,22 +151,23 @@ export default function ResumePage() {
           </div>
         </section>
 
-        {/*-----------EXPERIENCE-----------*/}
+        {/*-----------INTERNSHIP EXPERIENCE-----------*/}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Experience</h2>
+          <h2 className={styles.sectionTitle}>Internship Experience</h2>
           
           <div className={styles.entry}>
             <div className={styles.entryRow}>
-              <span className={styles.boldLeft}>Independent AI Product Developer</span>
-              <span className={styles.rightText}>Remote / Gorakhpur, UP</span>
+              <span className={styles.boldLeft}>Sahara Welfare Foundation (SWF)</span>
+              <span className={styles.rightText}>Lucknow / Gorakhpur</span>
             </div>
             <div className={styles.entryRow}>
-              <span className={styles.italicLeft}>AI-Powered Web Applications &amp; Full-Stack Development</span>
-              <span className={styles.italicRight}>2024 – Present</span>
+              <span className={styles.italicLeft}>Social Work Intern (CSR Division) – Cert. No: SWF/2025/1986</span>
+              <span className={styles.italicRight}>June 6, 2025 – June 20, 2025</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Architected and deployed 5+ production web applications on Vercel, integrating multimodal AI models, APIs, and responsive frontends.</li>
-              <li>Engineered live API aggregation pipelines, automated scraping fallbacks, and real-time LLM streaming for end-user tools.</li>
+              <li>Promoted the “Stop Single-Use Plastic” campaign and advocated eco-friendly alternatives in community outreach drives.</li>
+              <li>Organized cleanliness programs, waste segregation campaigns, and interactive conservation sessions in schools.</li>
+              <li>Spearheaded tree plantation initiatives and supported green campus operations, earning CSR leadership recognition.</li>
             </ul>
           </div>
         </section>
@@ -189,51 +179,38 @@ export default function ResumePage() {
           <div className={styles.entry}>
             <div className={styles.entryRow}>
               <span className={styles.boldLeft}>
-                CareerHub AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Next.js, RapidAPI JSearch, Vercel, AI Search</em>
+                AI-Powered Career Discovery &amp; Web Platforms <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Claude, Antigravity, Codex, Figma, Web</em>
               </span>
               <span className={styles.italicRight}>2025 – 2026</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Architected a real-time job discovery engine aggregating live opportunities from 9+ sources (LinkedIn, Indeed, Glassdoor, ZipRecruiter) with 0% mock data and direct application access across 40+ engineering degrees.</li>
-              <li>Indexed 50,000+ live opportunities with multi-source filtering, zero-auth access, and high-performance serverless endpoints.</li>
+              <li>Built modern, responsive web applications leveraging state-of-the-art AI developer tools (Claude, Antigravity, Codex, ChatGPT) to accelerate end-to-end code generation, component architecture, and automated debugging.</li>
+              <li>Created high-fidelity UI/UX layouts utilizing AI design tools, cutting wireframe-to-prototype delivery cycles by 60%.</li>
             </ul>
           </div>
 
           <div className={styles.entry}>
             <div className={styles.entryRow}>
               <span className={styles.boldLeft}>
-                ExamIntel <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Google Gemini AI, React, Next.js, Vercel</em>
+                Human-Powered Energy Harvesting Rowing Machine <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Mechanical Fabrication, Power Circuits</em>
               </span>
-              <span className={styles.italicRight}>2025 – 2026</span>
+              <span className={styles.italicRight}>6th &amp; 7th Sem (Ongoing)</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Built an enterprise-grade 17-feature exam intelligence platform featuring real-time Exam Comparison, Prerequisite Dependency Mapping, Personalized Question Paper Generation, and interactive AI mentoring via Google Gemini streaming.</li>
+              <li>Fabricating a human-powered energy harvesting rowing mechanism converting cyclic mechanical strokes into electrical power.</li>
+              <li>Engineered step-up transmission via high-ratio sprockets, chain drives, one-way clutch, and permanent magnet DC generator.</li>
             </ul>
           </div>
 
           <div className={styles.entry}>
             <div className={styles.entryRow}>
               <span className={styles.boldLeft}>
-                Nexron AI &amp; PrepOS AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Full-Stack, Adaptive Learning Engine, SaaS Architecture</em>
+                AI-Assisted Media, Poster &amp; Content Automation System <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Generative AI, Prompt Engineering</em>
               </span>
-              <span className={styles.italicRight}>2025 – 2026</span>
+              <span className={styles.italicRight}>2024 – 2025</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Created an adaptive AI roadmap engine with dynamic schedule replanning based on availability, milestone tracking, and mentoring.</li>
-              <li>Developed an enterprise career prep OS with 50+ capabilities including AI Placement Digital Twin, Mock Simulator, and Coding IDE.</li>
-            </ul>
-          </div>
-
-          <div className={styles.entry}>
-            <div className={styles.entryRow}>
-              <span className={styles.boldLeft}>
-                Telegram Document Downloader AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Google Gemini AI, Python, FastAPI, Telethon, React, Vercel</em>
-              </span>
-              <span className={styles.italicRight}>2025 – 2026</span>
-            </div>
-            <ul className={styles.bulletList}>
-              <li>Architected an AI-powered document intelligence and extractor utility integrating official Telegram MTProto APIs with persistent encrypted session state and multi-user authentication.</li>
-              <li>Integrated Google Gemini for automated document summarization, topic extraction, and semantic search across channel files.</li>
+              <li>Architected an automated content pipeline generating thematic event posters, visual banners, and promotional copy.</li>
             </ul>
           </div>
         </section>
@@ -252,7 +229,8 @@ export default function ResumePage() {
               <span className={styles.italicRight}>2024 – Present</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Designed promotional posters, banners, and digital graphics; authored technical content and publicity notices for student events.</li>
+              <li>Designed creative promotional posters, banners, and digital graphics for diverse events and workshops organized by SAE.</li>
+              <li>Authored engaging technical content, notices, event descriptions, and publicity write-ups for the student community.</li>
             </ul>
           </div>
 
@@ -266,9 +244,26 @@ export default function ResumePage() {
               <span className={styles.italicRight}>2025 – 2026</span>
             </div>
             <ul className={styles.bulletList}>
-              <li>Coordinated event publicity, creative media, stage management, and operations across technical tracks for 2,000+ attendees.</li>
+              <li>Active organizing committee member for two consecutive editions (2025 and 2026) of MMMUT’s flagship tech festival.</li>
+              <li>Assisted in event publicity, creative media coordination, stage management, and operations across technical tracks for 2,000+ attendees.</li>
             </ul>
           </div>
+        </section>
+
+        {/*-----------HOBBIES & PERSONAL INTERESTS-----------*/}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Hobbies &amp; Personal Interests</h2>
+          <ul style={{ listStyle: 'disc', paddingLeft: '1.2rem', marginTop: '0.2rem' }}>
+            <li style={{ fontSize: '0.78rem', lineHeight: '1.35', marginBottom: '0.2rem' }}>
+              <strong>Cricket:</strong> Active cricket player participating in collegiate and local matches; team strategy and match tactics.
+            </li>
+            <li style={{ fontSize: '0.78rem', lineHeight: '1.35', marginBottom: '0.2rem' }}>
+              <strong>PC Gaming:</strong> Passionate about competitive tactical and strategy games, exercising quick decision-making and spatial focus.
+            </li>
+            <li style={{ fontSize: '0.78rem', lineHeight: '1.35', marginBottom: '0.2rem' }}>
+              <strong>Creative Design &amp; AI:</strong> Experimenting with cutting-edge multimodal generative AI, poster aesthetics, and digital media design.
+            </li>
+          </ul>
         </section>
       </div>
     </div>
