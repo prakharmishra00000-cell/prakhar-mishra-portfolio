@@ -9,7 +9,7 @@ export default function Hero() {
   const stats = [
     { value: "6+", label: "Production Web Applications" },
     { value: "7", label: "Authored Masterbooks & Handbooks" },
-    { value: "MMMUT", label: "Final-Year B.Tech (2026)" },
+    { value: "MMMUT", label: "B.Tech (Graduating 2027)" },
     { value: "100%", label: "Live Deployed on Vercel" },
   ];
 

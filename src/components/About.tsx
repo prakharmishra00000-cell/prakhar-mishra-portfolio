@@ -1,30 +1,30 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Cpu, Lightbulb, Rocket, Workflow, Compass, CheckCircle2, Award } from 'lucide-react';
+import { Cpu, Lightbulb, Rocket, Bot, Sparkles } from 'lucide-react';
 import styles from './About.module.css';
 
 export default function About() {
   const pillars = [
     {
-      icon: <Cpu size={24} />,
-      title: "AI-Native Engineering",
-      description: "Harnessing LLM APIs, autonomous prompt chains, and AI development systems to achieve 10x engineering throughput without sacrificing reliability."
+      icon: <Bot size={24} />,
+      title: "AI-First Web Architecture",
+      description: "Leveraging state-of-the-art AI APIs (Gemini, Claude, OpenAI) to build intelligent web apps that process live data and automate complex tasks."
     },
     {
-      icon: <Workflow size={24} />,
-      title: "Mechanical Systems Mindset",
-      description: "Transferring thermodynamics, tolerance design, and rigorous system decomposition from MMMUT into scalable distributed web architecture."
+      icon: <Cpu size={24} />,
+      title: "Full-Stack Engineering",
+      description: "Crafting fast, responsive web applications using Next.js, React 19, TypeScript, and modern backend integrations with clean state management."
     },
     {
       icon: <Lightbulb size={24} />,
       title: "Zero-Mock Product Instinct",
-      description: "Building production software that delivers actual value—real-time scraping, live indexing, and direct value for end users rather than hollow vanity demos."
+      description: "Focusing on solving actual user problems with real-time indexing, direct actions, and usable tools rather than static or mock prototypes."
     },
     {
       icon: <Rocket size={24} />,
-      title: "Rapid Full-Stack Delivery",
-      description: "From concept and wireframe to high-converting UI, responsive logic, database bindings, and production deployment on Vercel in days, not months."
+      title: "Rapid Shipping Velocity",
+      description: "Moving swiftly from product idea to interactive UI, API integration, and production deployment on Vercel with high craft and attention to detail."
     }
   ];
 
@@ -39,11 +39,11 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.eyebrow}>
-            <Compass size={14} /> Systems Philosophy
+            <Sparkles size={14} /> Product Philosophy
           </div>
-          <h2 className={`${styles.title} text-gradient`}>The Engineering Background</h2>
+          <h2 className={`${styles.title} text-gradient`}>About Me</h2>
           <p className={styles.subtitle}>
-            Where core mechanical engineering rigor converges with state-of-the-art AI software architecture.
+            Building intelligent, usable digital products at the intersection of generative AI and modern web technologies.
           </p>
         </motion.div>
 
@@ -57,10 +57,10 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p>
-              I am a final-year Mechanical Engineering student at <strong>Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur</strong>, who expanded beyond traditional mechanical CAD/thermodynamics into the frontier of <strong>AI-native full-stack software development</strong>.
+              I am a final-year student at <strong>Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur</strong>, specializing in <strong>AI-native full-stack web development</strong> and modern software products.
             </p>
             <p>
-              My mechanical background taught me that complex machines succeed through <strong>fault tolerance, modularity, and stress analysis</strong>. When applied to software engineering, this produces clean architecture, hardened error boundaries, and performant data pipelines.
+              My approach focuses on harnessing modern AI capabilities—including <strong>multimodal APIs, prompt architecture, and intelligent agent workflows</strong>—to build responsive, production-ready web applications that solve real-world problems.
             </p>
             <div className={styles.highlightQuote}>
               &ldquo;I don&apos;t just study tools; I deploy production software. Every system I build addresses real user friction with live data, zero mockups, and modern AI intelligence.&rdquo;
@@ -71,7 +71,7 @@ export default function About() {
             <div className={styles.authorSignature}>
               <div className={styles.authorMeta}>
                 <h4>Prakhar Mishra</h4>
-                <p>B.Tech Mechanical Engineering (Final Year) &bull; MMMUT Gorakhpur</p>
+                <p>AI Full-Stack Web Developer &bull; MMMUT Gorakhpur (Graduating 2027)</p>
               </div>
             </div>
           </motion.div>
