@@ -127,6 +127,44 @@ a {
   background-clip: text;
 }
 
+/* ==========================================================================
+   GLOBAL FLOATING TEXT ANIMATIONS (Subtle, Organic & Cinematic)
+   ========================================================================== */
+
+h1, h2, h3, h4, .float-text {
+  animation: gentleFloatTitle 5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+p, .float-desc {
+  animation: gentleFloatBody 6.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes gentleFloatTitle {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes gentleFloatBody {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+  100% {
+    transform: translateY(1.5px);
+  }
+}
+
 /* Pulse Indicator */
 .pulse-dot {
   width: 7px;
