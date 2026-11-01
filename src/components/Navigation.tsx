@@ -27,6 +27,7 @@ export default function Navigation() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Premium Logos', href: '#brand-identity' },
     { name: 'Books & Guides', href: '#books' },
     { name: 'Skills & Radar', href: '#skills' },
     { name: 'Workflow', href: '#services' },

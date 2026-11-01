@@ -1,0 +1,618 @@
+.brandSection {
+  padding: 6.5rem 1.5rem 5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #0c111b;
+}
+
+.container {
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #c5b6a2;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #8292ab;
+  max-width: 780px;
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   TAB NAVIGATION
+   ========================================================================== */
+
+.tabNav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c3cad9;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tabBtn:hover {
+  background: rgba(22, 34, 62, 0.95);
+  color: #ffffff;
+  border-color: #c5b6a2;
+}
+
+.tabActive {
+  background: linear-gradient(135deg, #282825, #1e1e1b);
+  color: #ede8df;
+  border-color: #c5b6a2;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 20px rgba(197, 182, 162, 0.25);
+}
+
+/* ==========================================================================
+   TAB 1: PRIMARY SHOWCASE CANVAS (WARM IVORY LUXURY BOARD)
+   ========================================================================== */
+
+.showcaseCanvas {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(197, 182, 162, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.canvasBackgroundWarmIvory {
+  background-color: #EDE8DF;
+  padding: 5.5rem 3rem;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 80%),
+    linear-gradient(to right, rgba(40, 40, 37, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(40, 40, 37, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+.canvasMetaTop,
+.canvasMetaBottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #282825;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.primaryWordmarkCore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3.5rem 0;
+}
+
+.monogramSealEmblem {
+  margin-bottom: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.monogramSealEmblem:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.brandWordmarkText {
+  font-family: "Didot", "Bodoni MT", "Cinzel", "Playfair Display", "Times New Roman", serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: #282825;
+  margin-right: -0.28em; /* Offset trailing letter-spacing for true visual centering */
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(40, 40, 37, 0.05);
+}
+
+.subDescriptorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subDescriptor {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: #282825;
+  opacity: 0.85;
+}
+
+.subDescriptorDot {
+  color: #A5AA96;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   TAB 2: MONOGRAM GRID
+   ========================================================================== */
+
+.monogramGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.monogramCardIvory,
+.monogramCardCharcoal,
+.monogramCardSage {
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 380px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.monogramCardIvory:hover,
+.monogramCardCharcoal:hover,
+.monogramCardSage:hover {
+  transform: translateY(-6px);
+}
+
+.monogramCardIvory {
+  background-color: #EDE8DF;
+  border: 1px solid rgba(40, 40, 37, 0.1);
+}
+
+.monogramCardCharcoal {
+  background-color: #282825;
+  border: 1px solid rgba(197, 182, 162, 0.3);
+}
+
+.monogramCardSage {
+  background-color: #A5AA96;
+  border: 1px solid rgba(40, 40, 37, 0.15);
+}
+
+.cardHeaderSmall {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.monogramCardCharcoal .cardHeaderSmall {
+  color: #EDE8DF;
+}
+
+.monogramCardIvory .cardHeaderSmall,
+.monogramCardSage .cardHeaderSmall {
+  color: #282825;
+}
+
+.monogramCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.monogramCaption {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #282825;
+  letter-spacing: 0.05em;
+}
+
+.monogramCaptionLight {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #EDE8DF;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   TAB 3: PACKAGING LOCKUPS
+   ========================================================================== */
+
+.packagingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.packagingCard {
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.packagingCardVisual {
+  height: 290px;
+  background: #EDE8DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dropper Bottle CSS Mockup */
+.dropperBottle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottleCap {
+  width: 28px;
+  height: 24px;
+  background: #282825;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bottleNeck {
+  width: 18px;
+  height: 10px;
+  background: #c5b6a2;
+}
+
+.bottleGlass {
+  width: 100px;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(225, 220, 210, 0.85));
+  border-radius: 8px;
+  border: 1px solid rgba(40, 40, 37, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.bottleLabel {
+  width: 80px;
+  height: 120px;
+  background: #EDE8DF;
+  border: 1px solid rgba(40, 40, 37, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+}
+
+.labelBrand {
+  font-family: serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #282825;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.labelProduct {
+  font-size: 0.45rem;
+  letter-spacing: 0.12em;
+  color: #282825;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.labelSub {
+  font-size: 0.4rem;
+  color: #555550;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.labelVolume {
+  font-size: 0.36rem;
+  letter-spacing: 0.08em;
+  color: #888880;
+  text-transform: uppercase;
+}
+
+/* Cream Jar CSS Mockup */
+.creamJar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jarLid {
+  width: 120px;
+  height: 36px;
+  background: linear-gradient(180deg, #c5b6a2, #ab9b85);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lidEmboss {
+  font-family: serif;
+  font-size: 1.2rem;
+  color: #EDE8DF;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+.jarBase {
+  width: 130px;
+  height: 70px;
+  background: #282825;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jarLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.labelBrandSmall {
+  font-family: serif;
+  font-size: 0.85rem;
+  color: #EDE8DF;
+  letter-spacing: 0.22em;
+}
+
+.labelProductSmall {
+  font-size: 0.48rem;
+  color: #c5b6a2;
+  letter-spacing: 0.18em;
+}
+
+/* Horizontal Lockup Visual */
+.horizontalLockupBox {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(40, 40, 37, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.horizDivider {
+  width: 1px;
+  height: 48px;
+  background-color: #c5b6a2;
+}
+
+.horizText {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizTitle {
+  font-family: serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  color: #282825;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.horizTag {
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  color: #666660;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.packagingMeta {
+  padding: 1.5rem;
+}
+
+.packagingMeta h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.packagingMeta p {
+  font-size: 0.88rem;
+  color: #8292ab;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   TAB 4: BRAND GUIDELINES & PALETTE
+   ========================================================================== */
+
+.guidelinesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.paletteGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.colorSwatchCard {
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.colorSwatchCard:hover {
+  transform: translateY(-4px);
+  border-color: #c5b6a2;
+}
+
+.swatchBlock {
+  width: 100%;
+  height: 110px;
+}
+
+.swatchInfo {
+  padding: 1.25rem;
+}
+
+.swatchNameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.swatchName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.copyBadge {
+  font-family: monospace;
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: #c5b6a2;
+}
+
+.swatchRole {
+  font-size: 0.8rem;
+  color: #8292ab;
+  line-height: 1.5;
+}
+
+.specMatrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.specBox {
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.specBox h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.specBox ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.specBox li {
+  font-size: 0.92rem;
+  color: #c3cad9;
+  line-height: 1.6;
+}
+
+.specBox strong {
+  color: #c5b6a2;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .monogramGrid,
+  .packagingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .paletteGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .specMatrix {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandSection {
+    padding: 5rem 1.25rem 3.5rem;
+  }
+
+  .canvasBackgroundWarmIvory {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .paletteGrid {
+    grid-template-columns: 1fr;
+  }
+}
