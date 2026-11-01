@@ -2,18 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Lightbulb, 
+  Compass, 
   PenTool, 
   Code, 
-  Cpu, 
-  CheckCircle2, 
   Rocket, 
   Workflow, 
-  Layers, 
+  Cpu, 
   Database, 
+  Layers, 
   ShieldCheck, 
-  Compass, 
-  Sparkles 
+  Layout, 
+  BookOpen 
 } from 'lucide-react';
 import styles from './Services.module.css';
 
@@ -21,65 +20,59 @@ const workflowSteps = [
   { 
     step: "01",
     icon: <Compass size={22} />, 
-    title: "System Deconstruction", 
-    desc: "Break down the core problem into inputs, state transformations, API requirements, and failure modes." 
+    title: "Problem Discovery & Planning", 
+    desc: "Analyze the core user problem, identify functional requirements, and plan the system structure." 
   },
   { 
     step: "02",
     icon: <PenTool size={22} />, 
-    title: "AI & Schema Architecture", 
-    desc: "Design structured prompts, JSON schemas, rate-limiting guards, and high-conversion UX wireframes." 
+    title: "Architecture & Interface Design", 
+    desc: "Design responsive user interfaces, structured workflows, and clean application layouts." 
   },
   { 
     step: "03",
     icon: <Code size={22} />, 
-    title: "AI-Augmented Build", 
-    desc: "Utilize elite AI harnesses (Antigravity, Claude Code, Turbopack) to assemble production code at 10x velocity." 
+    title: "Application Development", 
+    desc: "Build modern web applications with responsive design, dynamic data handling, and AI functionality." 
   },
   { 
     step: "04",
     icon: <Rocket size={22} />, 
-    title: "Edge Deploy & Hardening", 
-    desc: "Deploy instantly to Vercel/Edge with automated CI/CD, analytics, error tracking, and performance verification." 
+    title: "Testing & Production Deployment", 
+    desc: "Test usability, responsiveness across devices, and deploy live to production hosting environments." 
   }
 ];
 
 const capabilities = [
   {
     icon: <Cpu size={26} />,
-    title: "AI-Native Web Applications",
-    desc: "Production web applications leveraging LLM chains, live scraping, streaming inference, and prompt engineering.",
-    tags: ["Gemini 1.5", "Claude API", "Streaming UX", "Vector RAG"]
+    title: "AI-Powered Web Applications",
+    desc: "Building interactive web applications that integrate artificial intelligence to solve complex search, career, and learning challenges."
   },
   {
     icon: <Database size={26} />,
-    title: "Real-Time Data Aggregators",
-    desc: "High-throughput engines that crawl, aggregate, deduplicate, and index disparate live web APIs with zero mock data.",
-    tags: ["Data Pipelines", "MTProto", "Fast Ingestion", "Normalization"]
+    title: "Real-Time Data Aggregation",
+    desc: "Creating web discovery engines that collect, organize, and present live opportunities from multiple sources with zero mock data."
   },
   {
     icon: <Layers size={26} />,
-    title: "Next.js Full-Stack SaaS",
-    desc: "End-to-end applications with responsive design, secure authentication, database integrations, and clean state management.",
-    tags: ["App Router", "TypeScript", "Tailwind CSS", "Server Actions"]
+    title: "Full-Stack Web Development",
+    desc: "Designing and developing complete, responsive web applications from user interface to database integration and user authentication."
   },
   {
     icon: <ShieldCheck size={26} />,
-    title: "Systems Automation & Bot Engines",
-    desc: "Headless scripts, Telegram bots, and automated workflows that streamline repetitive processes and file conversions.",
-    tags: ["Automation", "Webhooks", "Cloud Functions", "Node.js"]
+    title: "Web Utilities & Automation",
+    desc: "Building smart tools and utilities that automate repetitive workflows, file downloads, and data organization."
   },
   {
-    icon: <Workflow size={26} />,
-    title: "Interactive UI/UX Prototypes",
-    desc: "Dark-mode, glassmorphic digital interfaces designed for developer tools, SaaS dashboards, and consumer software.",
-    tags: ["Framer Motion", "Micro-Interactions", "Responsive", "Glassmorphism"]
+    icon: <Layout size={26} />,
+    title: "Responsive UI/UX Design",
+    desc: "Crafting modern, aesthetic, dark-themed user interfaces that provide intuitive navigation and seamless experiences across desktop and mobile."
   },
   {
-    icon: <Lightbulb size={26} />,
-    title: "Technical Writing & Curriculum",
-    desc: "Deep technical documentation, curriculum authoring, and engineering masterbooks bridging foundational theory to real software.",
-    tags: ["Masterbook", "System Specs", "Open Source", "Documentation"]
+    icon: <BookOpen size={26} />,
+    title: "Technical Writing & Guides",
+    desc: "Authoring comprehensive engineering handbooks and career encyclopedias that break down complex technical topics into actionable guides."
   }
 ];
 
@@ -101,7 +94,7 @@ export default function Services() {
           </div>
           <h2 className={`${styles.title} text-gradient`}>How I Build &amp; What I Deliver</h2>
           <p className={styles.subtitle}>
-            A rigorous engineering process designed to take ambitious concepts to production-grade web systems.
+            A structured development process taking ideas from initial concepts to live, deployed web applications.
           </p>
         </motion.div>
 
@@ -124,7 +117,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Core Offerings Grid */}
+        {/* Core Offerings Grid - Clean descriptions only */}
         <div className={styles.servicesGrid}>
           {capabilities.map((item, idx) => (
             <motion.div 
@@ -138,11 +131,6 @@ export default function Services() {
               <div className={styles.serviceIcon}>{item.icon}</div>
               <h3 className={styles.serviceTitle}>{item.title}</h3>
               <p className={styles.serviceDesc}>{item.desc}</p>
-              <div className={styles.servicePills}>
-                {item.tags.map((t) => (
-                  <span key={t} className={styles.servicePill}>{t}</span>
-                ))}
-              </div>
             </motion.div>
           ))}
         </div>

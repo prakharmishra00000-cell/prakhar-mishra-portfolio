@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { BookOpen, Download, ArrowUpRight, FileText, Code2, Layers, Cpu, Sparkles } from 'lucide-react';
+import { BookOpen, Download, ArrowUpRight, FileText, Code2, Layers, Cpu, Sparkles, Eye } from 'lucide-react';
+import Link from 'next/link';
 import styles from './Books.module.css';
 
 interface BookItem {
@@ -12,7 +13,7 @@ interface BookItem {
   pages: string;
   format: string;
   icon: React.ReactNode;
-  directLink: string;
+  filePath: string;
 }
 
 const booksList: BookItem[] = [
@@ -24,7 +25,7 @@ const booksList: BookItem[] = [
     pages: "Handbook Edition",
     format: "PDF Document",
     icon: <Cpu size={24} />,
-    directLink: "/books/mechanical-engineering-handbook.pdf"
+    filePath: "/books/mechanical-engineering-handbook.pdf"
   },
   {
     id: "cse-career-guide",
@@ -34,7 +35,7 @@ const booksList: BookItem[] = [
     pages: "500+ Pages",
     format: "PDF Document (24MB)",
     icon: <Code2 size={24} />,
-    directLink: "/books/cse-career-guide.pdf"
+    filePath: "/books/cse-career-guide.pdf"
   },
   {
     id: "mechanical-career-guide",
@@ -44,7 +45,7 @@ const booksList: BookItem[] = [
     pages: "Career Guide",
     format: "PDF Document",
     icon: <Layers size={24} />,
-    directLink: "/books/mechanical-career-guide.pdf"
+    filePath: "/books/mechanical-career-guide.pdf"
   },
   {
     id: "ssc-cgl-guide",
@@ -54,7 +55,7 @@ const booksList: BookItem[] = [
     pages: "Curated Guide",
     format: "PDF Document",
     icon: <FileText size={24} />,
-    directLink: "/books/ssc-cgl-2027-guide.pdf"
+    filePath: "/books/ssc-cgl-2027-guide.pdf"
   },
   {
     id: "supply-chain-management",
@@ -64,7 +65,7 @@ const booksList: BookItem[] = [
     pages: "Operations Guide",
     format: "PDF Document",
     icon: <Layers size={24} />,
-    directLink: "/books/supply-chain-management-guide.pdf"
+    filePath: "/books/supply-chain-management-guide.pdf"
   },
   {
     id: "fullstack-masterbook",
@@ -74,7 +75,7 @@ const booksList: BookItem[] = [
     pages: "400+ Pages (20 Vols)",
     format: "PDF Document",
     icon: <BookOpen size={24} />,
-    directLink: "/books/fullstack-web-development-masterbook.pdf"
+    filePath: "/books/fullstack-web-development-masterbook.pdf"
   },
   {
     id: "motion-graphics-book",
@@ -84,7 +85,7 @@ const booksList: BookItem[] = [
     pages: "Visual Systems Guide",
     format: "PDF Document",
     icon: <Sparkles size={24} />,
-    directLink: "/books/motion-graphics-masterbook.pdf"
+    filePath: "/books/motion-graphics-masterbook.pdf"
   }
 ];
 
@@ -132,13 +133,19 @@ export default function Books() {
               </div>
 
               <div className={styles.actions}>
-                <a 
-                  href={book.directLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  href={`/pdf-viewer?file=${encodeURIComponent(book.filePath)}&title=${encodeURIComponent(book.title)}`}
                   className={styles.readBtn}
                 >
-                  Open PDF <ArrowUpRight size={15} />
+                  <Eye size={15} /> Read PDF
+                </Link>
+                <a 
+                  href={book.filePath} 
+                  download 
+                  className={styles.downloadBtn}
+                  aria-label={`Download ${book.title} PDF directly`}
+                >
+                  <Download size={15} /> Download
                 </a>
               </div>
             </motion.div>
