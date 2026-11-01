@@ -108,7 +108,7 @@ export default function Hero() {
           >
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Starring:</span>
-              <span className={styles.metaValue}>Prakhar Mishra, Gemini 2.5 Pro, Next.js 16, TypeScript</span>
+              <span className={styles.metaValue}>Prakhar Mishra</span>
             </div>
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Genres:</span>
