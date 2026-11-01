@@ -128,40 +128,75 @@ a {
 }
 
 /* ==========================================================================
-   GLOBAL FLOATING TEXT ANIMATIONS (Subtle, Organic & Cinematic)
+   PERMANENT CONTINUOUS FLOATING TEXT ANIMATIONS (Distinct, Seamless & Wave-Synced)
    ========================================================================== */
 
-h1, h2, h3, h4, .float-text {
-  animation: gentleFloatTitle 5s ease-in-out infinite alternate;
+h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
+  animation: permanentFloatTitle 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   will-change: transform;
 }
 
-p, .float-desc {
-  animation: gentleFloatBody 6.5s ease-in-out infinite alternate;
+p, span:not(.pulse-dot), a, label, li, strong {
+  display: inline-block;
+  animation: permanentFloatBody 5.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   will-change: transform;
 }
 
-@keyframes gentleFloatTitle {
+/* Staggered alternating delays so words and lines float with organic ocean-like fluidity */
+h1 {
+  animation-duration: 4.2s;
+  animation-delay: 0s;
+}
+
+h2 {
+  animation-duration: 4.8s;
+  animation-delay: -1.2s;
+}
+
+h3 {
+  animation-duration: 4.4s;
+  animation-delay: -2.1s;
+}
+
+p {
+  animation-duration: 5.6s;
+  animation-delay: -0.8s;
+}
+
+@keyframes permanentFloatTitle {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-7px) rotate(-0.3deg);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(6px) rotate(0.3deg);
   }
   100% {
-    transform: translateY(2px);
+    transform: translateY(0px) rotate(0deg);
   }
 }
 
-@keyframes gentleFloatBody {
+@keyframes permanentFloatBody {
   0% {
     transform: translateY(0px);
   }
+  30% {
+    transform: translateY(-5px);
+  }
   50% {
-    transform: translateY(-2.5px);
+    transform: translateY(-1px);
+  }
+  80% {
+    transform: translateY(4.5px);
   }
   100% {
-    transform: translateY(1.5px);
+    transform: translateY(0px);
   }
 }
 
