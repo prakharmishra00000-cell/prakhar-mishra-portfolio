@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { X, Printer, Download, MapPin, Globe, Calendar, Phone, Mail } from 'lucide-react';
 import styles from './Resume.module.css';
@@ -20,15 +21,33 @@ const GithubIcon = ({ size = 13 }: { size?: number }) => (
 );
 
 export default function ResumePage() {
+  const router = useRouter();
+
   const handlePrint = () => {
     window.print();
   };
 
+  const handleClose = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      if (window.history.length > 1) {
+        router.back();
+      } else {
+        router.push('/');
+      }
+    }
+  };
+
   return (
     <div className={styles.resumePage}>
-      <Link href="/" className={styles.closeBtn} aria-label="Close Resume">
-        <X size={22} />
-      </Link>
+      <button 
+        onClick={handleClose} 
+        className={styles.closeBtn} 
+        aria-label="Close Resume and Return Home"
+        type="button"
+      >
+        <X size={24} />
+      </button>
       
       <div className={styles.topActions}>
         <button onClick={handlePrint} className={styles.actionBtn}>
