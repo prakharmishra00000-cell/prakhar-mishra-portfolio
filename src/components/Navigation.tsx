@@ -38,11 +38,11 @@ export default function Navigation() {
       <div className={styles.container}>
         <Link href="#home" className={styles.logoWrapper}>
           <div className={styles.logoBadge}>
-            <Sparkles size={18} />
+            N
           </div>
           <div className={styles.logoText}>
-            <span className={styles.logo}>Prakhar Mishra</span>
-            <span className={styles.logoSub}>AI Full-Stack Systems</span>
+            <span className={styles.logo}>PRAKHAR</span>
+            <span className={styles.logoSub}>ORIGINALS</span>
           </div>
         </Link>
         
