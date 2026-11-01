@@ -71,7 +71,7 @@ export default function Contact() {
           </div>
           <h2 className={`${styles.title} text-gradient`}>Let&apos;s Build Something Remarkable</h2>
           <p className={styles.subtitle}>
-            Messages sent here dispatch directly to my personal inbox (<strong>{email}</strong>). Open for engineering roles, AI architecture contracts, and technical collaborations.
+            Messages sent here dispatch directly to my personal inbox (<strong>{email}</strong>). Open for AI Web Developer roles, Generative AI application engineering, and intelligent product collaborations.
           </p>
         </motion.div>
 

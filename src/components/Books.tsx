@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { BookOpen, Download, ExternalLink, ArrowUpRight, Sparkles, FileText, Code2, Layers, Cpu } from 'lucide-react';
-import Link from 'next/link';
+import { BookOpen, Download, ArrowUpRight, FileText, Code2, Layers, Cpu, Sparkles } from 'lucide-react';
 import styles from './Books.module.css';
 
 interface BookItem {
@@ -14,7 +13,6 @@ interface BookItem {
   format: string;
   icon: React.ReactNode;
   directLink: string;
-  isExternal?: boolean;
 }
 
 const booksList: BookItem[] = [
@@ -34,21 +32,19 @@ const booksList: BookItem[] = [
     badge: "Tech Careers",
     description: "An exhaustive career encyclopedia mapping 13 technological divisions (Software Engineering, Cloud & DevOps, AI/ML, Data Engineering, Cyber Security, Web3, FinTech), compensation benchmarks, and structured career ladders from junior engineer to engineering director.",
     pages: "500+ Pages",
-    format: "Interactive Web Edition",
+    format: "PDF Document (24MB)",
     icon: <Code2 size={24} />,
-    directLink: "/books/cse-career-guide.html",
-    isExternal: true
+    directLink: "/books/cse-career-guide.pdf"
   },
   {
     id: "mechanical-career-guide",
     title: "Mechanical Engineering Career Intelligence Encyclopedia",
     badge: "Industry & Core Careers",
-    description: "The definitive guide for mechanical engineers detailing modern industry transitions: automotive, aerospace, robotics, HVAC, renewable energy, and PSU/corporate career trajectories with actionable skill matrices and salary analytics.",
-    pages: "Complete Encyclopedia",
-    format: "Interactive Web Edition",
+    description: "The definitive guide for mechanical engineers detailing modern industry transitions: automotive, aerospace, robotics, HVAC, renewable energy, and corporate engineering trajectories with actionable skill matrices and salary analytics.",
+    pages: "Career Guide",
+    format: "PDF Document",
     icon: <Layers size={24} />,
-    directLink: "/books/mechanical-career-guide.html",
-    isExternal: true
+    directLink: "/books/mechanical-career-guide.pdf"
   },
   {
     id: "ssc-cgl-guide",
@@ -76,7 +72,7 @@ const booksList: BookItem[] = [
     badge: "Full-Stack Web & AI",
     description: "Comprehensive 400+ page curriculum spanning 20 volumes and 81 modules: foundational computer architecture, modern JavaScript/TypeScript, React 19 internals, Next.js App Router, distributed database systems, and AI developer tooling.",
     pages: "400+ Pages (20 Vols)",
-    format: "PDF & Web Platform",
+    format: "PDF Document",
     icon: <BookOpen size={24} />,
     directLink: "/books/fullstack-web-development-masterbook.pdf"
   },
@@ -85,11 +81,10 @@ const booksList: BookItem[] = [
     title: "Motion Graphics & Visual Systems Masterbook",
     badge: "UI/UX & Creative Engineering",
     description: "An interactive master guide covering visual rhythm, keyframe interpolation, kinetic typography, 3D composition, and UI motion design principles for high-engagement modern software interfaces.",
-    pages: "Complete Visual Curriculum",
-    format: "Interactive Web Edition",
+    pages: "Visual Systems Guide",
+    format: "PDF Document",
     icon: <Sparkles size={24} />,
-    directLink: "/books/motion-graphics-masterbook.html",
-    isExternal: true
+    directLink: "/books/motion-graphics-masterbook.pdf"
   }
 ];
 
@@ -109,7 +104,7 @@ export default function Books() {
           </div>
           <h2 className={`${styles.title} text-gradient`}>Authored Engineering &amp; Career Masterbooks</h2>
           <p className={styles.subtitle}>
-            Seven comprehensive technical handbooks and career encyclopedias authored to bridge engineering rigor, modern software development, and industry intelligence.
+            Seven technical handbooks and career encyclopedias authored to bridge engineering principles, modern software development, and industry intelligence. All available in direct PDF format.
           </p>
         </motion.div>
 
@@ -143,7 +138,7 @@ export default function Books() {
                   rel="noopener noreferrer" 
                   className={styles.readBtn}
                 >
-                  Access Book Now <ArrowUpRight size={15} />
+                  Open PDF <ArrowUpRight size={15} />
                 </a>
               </div>
             </motion.div>

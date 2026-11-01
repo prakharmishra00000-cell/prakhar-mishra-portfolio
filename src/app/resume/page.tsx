@@ -97,20 +97,20 @@ export default function ResumePage() {
           <h2 className={styles.sectionTitle}>Technical Skills</h2>
           <div className={styles.skillsBlock}>
             <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>AI Developer Tools:</strong>
-              <span> Claude (Anthropic), Antigravity, OpenAI Codex, ChatGPT, Google Gemini, Prompt Engineering, Agentic Workflows</span>
+              <strong className={styles.skillLabel}>Artificial Intelligence:</strong>
+              <span> AI-powered applications, AI APIs, Prompt Engineering, AI Agent Development, AI-assisted development, AI product integration</span>
             </div>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Web &amp; Application Dev:</strong>
-              <span> Next.js, React, JavaScript (ES6+), Python, HTML5, CSS3, FastAPI, REST APIs, Database Integration</span>
+              <span> Frontend Development, Backend Development, Next.js, React, APIs, Database Integration, Authentication, Deployment, Responsive Web Design</span>
             </div>
             <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>Deployment &amp; Platforms:</strong>
-              <span> Git, GitHub, Vercel, Render, RapidAPI, Linux/Bash, Serverless Endpoints</span>
+              <strong className={styles.skillLabel}>Development Tools:</strong>
+              <span> Antigravity, GitHub, Vercel, Render, zen.ai, ChatGPT, Gemini</span>
             </div>
             <div className={styles.skillLine}>
-              <strong className={styles.skillLabel}>Product &amp; Creative:</strong>
-              <span> SaaS Concepts, Responsive UI/UX Design, Figma AI, Digital Poster Design, Technical Writing</span>
+              <strong className={styles.skillLabel}>Product Development:</strong>
+              <span> SaaS Concepts, AI Product Development, Web Applications, Career Technology, Education Technology, Automation, AI Integration</span>
             </div>
           </div>
         </section>

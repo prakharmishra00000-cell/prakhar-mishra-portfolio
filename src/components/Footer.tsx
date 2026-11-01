@@ -15,7 +15,7 @@ const LinkedinSvg = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
+    <circle cx="4" r="2" />
   </svg>
 );
 
@@ -29,7 +29,7 @@ export default function Footer() {
           <div className={styles.brandCol}>
             <h3 className={styles.brandTitle}>Prakhar Mishra</h3>
             <p className={styles.brandDesc}>
-              AI Full-Stack Systems Developer &bull; MMMUT Gorakhpur. Building high-performance, intelligent digital products where modern AI APIs meet production web systems.
+              AI Full-Stack Systems Developer &bull; Final-Year Student at MMMUT Gorakhpur. Building production web applications where modern AI meets practical user needs.
             </p>
           </div>
 
@@ -39,23 +39,40 @@ export default function Footer() {
               <div className={styles.linkList}>
                 <Link href="#about" className={styles.footerLink}>About</Link>
                 <Link href="#projects" className={styles.footerLink}>Projects</Link>
-                <Link href="#skills" className={styles.footerLink}>Skills &amp; Radar</Link>
-                <Link href="#agent-terminal" className={styles.footerLink}>AI Console</Link>
-                <Link href="#services" className={styles.footerLink}>Workflow</Link>
+                <Link href="#books" className={styles.footerLink}>Books &amp; Guides</Link>
+                <Link href="#skills" className={styles.footerLink}>Technical Skills</Link>
+                <Link href="#agent-terminal" className={styles.footerLink}>Live AI Twin</Link>
+                <Link href="#contact" className={styles.footerLink}>Contact</Link>
               </div>
             </div>
 
             <div>
-              <h4 className={styles.colTitle}>Artifacts</h4>
+              <h4 className={styles.colTitle}>Artifacts &amp; Systems</h4>
               <div className={styles.linkList}>
-                <Link href="/resume" className={styles.footerLink}>Resume / CV</Link>
-                <Link href="/book" className={styles.footerLink}>Full-Stack Masterbook</Link>
                 <a href="https://careerhub-ai-ruby.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
                   CareerHub AI <ArrowUpRight size={12} style={{ display: 'inline' }} />
                 </a>
                 <a href="https://my-project-teal-two-91.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
                   ExamIntel AI <ArrowUpRight size={12} style={{ display: 'inline' }} />
                 </a>
+                <a href="https://studyflow-ai-tau-drab.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                  Nexron AI <ArrowUpRight size={12} style={{ display: 'inline' }} />
+                </a>
+                <a href="https://exam-arena-two.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                  ExamArena <ArrowUpRight size={12} style={{ display: 'inline' }} />
+                </a>
+                <a href="https://placement-prep-ai-tau.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                  PrepOS AI <ArrowUpRight size={12} style={{ display: 'inline' }} />
+                </a>
+                <a href="https://telegram-file-downloader.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                  Telegram AI Downloader <ArrowUpRight size={12} style={{ display: 'inline' }} />
+                </a>
+                <Link href="#books" className={styles.footerLink}>
+                  7 Authored Masterbooks (PDF)
+                </Link>
+                <Link href="/resume" className={styles.footerLink}>
+                  Technical Resume (PDF/Print)
+                </Link>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Code2, Sparkles, Layers, Cpu, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Code2, Sparkles, ArrowUpRight } from 'lucide-react';
 import styles from './Projects.module.css';
 
 interface Project {
@@ -49,7 +49,7 @@ const projectsData: Project[] = [
       { label: "Intelligence", value: "Gemini AI" },
       { label: "User Flow", value: "Real-Time" }
     ],
-    technologies: ["Gemini 1.5 Pro API", "Next.js", "React", "Vector Reasoning", "Vercel"],
+    technologies: ["Gemini AI API", "Next.js", "React", "Vercel"],
     liveLink: "https://my-project-teal-two-91.vercel.app/",
     githubLink: "https://github.com/prakharmishra00000-cell/examintel",
     image: "/examintel.png"
@@ -68,7 +68,7 @@ const projectsData: Project[] = [
     ],
     technologies: ["Generative AI", "Next.js", "TypeScript", "Prompt Orchestration"],
     liveLink: "https://studyflow-ai-tau-drab.vercel.app/",
-    githubLink: "https://github.com/prakharmishra00000-cell",
+    githubLink: "https://github.com/prakharmishra00000-cell/studyflow-ai",
     image: "/nexron.png"
   },
   {
@@ -85,7 +85,7 @@ const projectsData: Project[] = [
     ],
     technologies: ["React", "Next.js", "Search Algorithms", "Vercel"],
     liveLink: "https://exam-arena-two.vercel.app/",
-    githubLink: "https://github.com/prakharmishra00000-cell",
+    githubLink: "https://github.com/prakharmishra00000-cell/exam-arena",
     image: "/examarena.png"
   },
   {
@@ -102,7 +102,7 @@ const projectsData: Project[] = [
     ],
     technologies: ["Next.js", "AI Agent Runtime", "In-Browser Code Exec", "Tailwind CSS"],
     liveLink: "https://placement-prep-ai-tau.vercel.app/",
-    githubLink: "https://github.com/prakharmishra00000-cell",
+    githubLink: "https://github.com/prakharmishra00000-cell/placement-prep-ai",
     image: "/prepos.png"
   },
   {
@@ -115,9 +115,9 @@ const projectsData: Project[] = [
     metrics: [
       { label: "Auth Protocol", value: "MTProto" },
       { label: "AI Extraction", value: "Gemini AI" },
-      { label: "Throughput", value: "Batch Cloud" }
+      { label: "Throughput", value: "Cloud Batch" }
     ],
-    technologies: ["Node.js", "MTProto API", "Gemini 1.5", "Next.js", "Vercel"],
+    technologies: ["MTProto API", "Gemini AI", "Next.js", "Vercel"],
     liveLink: "https://telegram-file-downloader.vercel.app/",
     githubLink: "https://github.com/prakharmishra00000-cell/Telegram-file-downloader",
     image: "/telegram.png"
@@ -148,7 +148,7 @@ export default function Projects() {
           </div>
           <h2 className={`${styles.title} text-gradient`}>Featured AI &amp; Web Systems</h2>
           <p className={styles.subtitle}>
-            Deployed live applications built from the ground up to solve complex discovery, career, and data challenges.
+            Deployed live applications built to solve complex discovery, career, and data challenges.
           </p>
         </motion.div>
 
@@ -224,17 +224,15 @@ export default function Projects() {
                     >
                       Launch Live App <ArrowUpRight size={15} />
                     </a>
-                    {project.githubLink !== "#" && (
-                      <a 
-                        href={project.githubLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className={styles.githubBtn}
-                        aria-label="View Source Code"
-                      >
-                        <Code2 size={16} /> Code
-                      </a>
-                    )}
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={styles.githubBtn}
+                      aria-label={`View ${project.name} Source Code on GitHub`}
+                    >
+                      <Code2 size={16} /> Code
+                    </a>
                   </div>
                 </div>
               </motion.div>

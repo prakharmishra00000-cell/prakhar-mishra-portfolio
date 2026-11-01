@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Mail, Terminal, Sparkles, BookOpen, ExternalLink } from 'lucide-react';
+import { ArrowRight, Download, Terminal, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   const stats = [
-    { value: "6+", label: "Production AI Platforms" },
+    { value: "6+", label: "Deployed AI Platforms" },
     { value: "50K+", label: "Opportunities Indexed" },
-    { value: "500+", label: "Exams & Systems Mapped" },
-    { value: "100%", label: "Full-Stack Deployment Rate" },
+    { value: "7", label: "Authored Masterbooks" },
+    { value: "100%", label: "Live Web Applications" },
   ];
 
   return (
@@ -27,8 +27,7 @@ export default function Hero() {
           className={styles.badgeRow}
         >
           <span className="pulse-dot" />
-          <span>Final-Year Systems Engineer &bull;</span>
-          <span className={styles.badgeAccent}>Architecting AI-Native Web Products</span>
+          <span>Final-Year Student &bull; MMMUT Gorakhpur</span>
         </motion.div>
 
         {/* Profile Avatar with Radial Glow Ring */}
@@ -44,17 +43,17 @@ export default function Hero() {
             alt="Prakhar Mishra" 
             className={styles.profileImage} 
           />
-          <div className={styles.avatarRoleTag}>AI &bull; Full-Stack</div>
+          <div className={styles.avatarRoleTag}>AI Web Dev</div>
         </motion.div>
         
-        {/* Main Headings */}
+        {/* Simplified Headings */}
         <motion.h1 
           className={`${styles.title} text-gradient`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Engineering Intelligent Digital Products With Generative AI
+          Building Intelligent Web Products with AI
         </motion.h1>
         
         <motion.h2 
@@ -63,7 +62,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          Prakhar Mishra &mdash; AI Full-Stack Developer &amp; Systems Builder
+          Prakhar Mishra &mdash; AI Full-Stack Web Developer
         </motion.h2>
         
         <motion.p 
@@ -72,8 +71,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Translating structured engineering discipline from MMMUT Gorakhpur into production-grade AI platforms. 
-          Specialized in Next.js, real-time data pipelines, intelligent agents, and high-velocity product execution.
+          Final-year Mechanical Engineering student at MMMUT Gorakhpur building AI-powered web applications and usable digital products.
         </motion.p>
         
         {/* CTA Buttons */}
@@ -84,16 +82,16 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.35 }}
         >
           <a href="#projects" className={`${styles.btn} ${styles.primary}`}>
-            Explore Featured Systems <ArrowRight size={18} />
+            View My Work <ArrowRight size={17} />
+          </a>
+          <a href="#books" className={`${styles.btn} ${styles.secondary}`}>
+            <BookOpen size={16} /> View Books
           </a>
           <a href="#agent-terminal" className={`${styles.btn} ${styles.secondary}`}>
-            <Terminal size={17} /> Test AI Assistant
+            <Terminal size={16} /> Live AI Twin
           </a>
           <Link href="/resume" className={`${styles.btn} ${styles.tertiary}`}>
-            <Download size={17} /> View Technical Resume
-          </Link>
-          <Link href="/book" className={`${styles.btn} ${styles.tertiary}`}>
-            <BookOpen size={17} /> Full-Stack Book
+            <Download size={16} /> Resume
           </Link>
         </motion.div>
 

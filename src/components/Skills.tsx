@@ -1,73 +1,59 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Bot, Code2, Wrench, Layers, Terminal, Sparkles, Database, Cloud } from 'lucide-react';
+import { Bot, Code2, Wrench, Layers } from 'lucide-react';
 import styles from './Skills.module.css';
 
-interface SkillCategory {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  skills: { name: string; highlight?: boolean }[];
-}
-
-const skillCategories: SkillCategory[] = [
+const skillCategories = [
   {
-    title: "AI & Autonomous Agents",
-    description: "LLM integration, autonomous chains, and agent workflows",
+    title: "Artificial Intelligence",
     icon: <Bot size={24} />,
     skills: [
-      { name: "Gemini 1.5 Pro & Flash", highlight: true },
-      { name: "Claude 3.5 Sonnet", highlight: true },
-      { name: "OpenAI GPT-4o" },
-      { name: "AI Agent Architectures", highlight: true },
-      { name: "Structured JSON Output" },
-      { name: "Context Window Optimization" },
-      { name: "Prompt Chaining & Multi-step Reasoning" },
-      { name: "Retrieval Augmentation (RAG)" }
+      "AI-powered applications",
+      "AI APIs",
+      "Prompt Engineering",
+      "AI Agent Development",
+      "AI-assisted development",
+      "AI product integration"
     ]
   },
   {
-    title: "Modern Full-Stack Core",
-    description: "Production web applications, reactive state, and server logic",
+    title: "Web & Application Dev",
     icon: <Code2 size={24} />,
     skills: [
-      { name: "Next.js 15 & 16 (App Router)", highlight: true },
-      { name: "React 19", highlight: true },
-      { name: "TypeScript", highlight: true },
-      { name: "Node.js & Express" },
-      { name: "REST & Streaming APIs" },
-      { name: "Tailwind CSS & CSS Modules" },
-      { name: "Framer Motion Animations" },
-      { name: "State Management & Server Actions" }
+      "Frontend Development",
+      "Backend Development",
+      "APIs",
+      "Database Integration",
+      "Authentication",
+      "Deployment",
+      "Responsive Web Design"
     ]
   },
   {
-    title: "AI Development Systems & Tooling",
-    description: "Elite developer environments and code generation harnesses",
+    title: "Development Tools",
     icon: <Wrench size={24} />,
     skills: [
-      { name: "Antigravity IDE & CLI", highlight: true },
-      { name: "Claude Code / CLAUDE.md", highlight: true },
-      { name: "GitHub Copilot / Codex" },
-      { name: "Git & Version Control" },
-      { name: "Vercel Edge & Cloud Deployment", highlight: true },
-      { name: "Render & Supabase" },
-      { name: "Postman & API Prototyping" }
+      "Antigravity",
+      "GitHub",
+      "Vercel",
+      "Render",
+      "zen.ai",
+      "ChatGPT",
+      "Gemini"
     ]
   },
   {
-    title: "Systems Engineering & Architecture",
-    description: "Mechanical systems discipline applied to software scale",
+    title: "Product Development",
     icon: <Layers size={24} />,
     skills: [
-      { name: "Fault-Tolerant System Design", highlight: true },
-      { name: "Live Data Scraping & Ingestion", highlight: true },
-      { name: "MTProto Protocol Extraction" },
-      { name: "Zero-Mock Architecture" },
-      { name: "Thermodynamics & Systems Dynamics" },
-      { name: "SaaS Product Economics" },
-      { name: "Modular Component Hierarchies" }
+      "SaaS Concepts",
+      "AI Product Development",
+      "Web Applications",
+      "Career Technology",
+      "Education Technology",
+      "Automation",
+      "AI Integration"
     ]
   }
 ];
@@ -84,11 +70,11 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.eyebrow}>
-            <Terminal size={14} /> Technical Arsenal
+            <Wrench size={14} /> Technical Arsenal
           </div>
-          <h2 className={`${styles.title} text-gradient`}>Full-Stack &amp; AI Capabilities</h2>
+          <h2 className={`${styles.title} text-gradient`}>Technical Skills</h2>
           <p className={styles.subtitle}>
-            A curated inventory of the languages, frameworks, AI developer platforms, and systems methodologies I deploy daily.
+            The tools, frameworks, and technologies I use to build intelligent web applications.
           </p>
         </motion.div>
 
@@ -97,26 +83,22 @@ export default function Skills() {
             <motion.div 
               key={category.title}
               className={styles.card}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrap}>{category.icon}</div>
                 <div>
                   <h3 className={styles.cardTitle}>{category.title}</h3>
-                  <p className={styles.cardDesc}>{category.description}</p>
                 </div>
               </div>
 
               <div className={styles.pillContainer}>
                 {category.skills.map((skill) => (
-                  <span 
-                    key={skill.name} 
-                    className={`${styles.skillPill} ${skill.highlight ? styles.highlightPill : ''}`}
-                  >
-                    {skill.name}
+                  <span key={skill} className={styles.skillPill}>
+                    {skill}
                   </span>
                 ))}
               </div>
