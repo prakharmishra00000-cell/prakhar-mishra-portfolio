@@ -31,6 +31,14 @@ Curated Luxury Brand Identity Systems (8K Vector Systems with 4-View Architectur
 5. NOIRÉ: Scandinavian Specialty Coffee Roastery (Nordic architectural minimalism, 60° roasting plane seam, espresso brown #382820, warm cream #F1E9DC, muted copper #A77959).
 6. AURELLE: European High Skincare House (Quiet luxury, 51.8° golden-ratio pyramid apex monogram, warm ivory #EDE8DF, deep charcoal #282825, champagne beige #C5B6A2).
 
+Cyberpunk Metropolis // 8K Aesthetic Poster Series (Moving Marquee & Master Collector Exhibition):
+1. NEO-SHINJUKU 2099 // The Vertical Megalopolis (+3,200m vertical axis, brutalist megatowers, volumetric neon rain).
+2. SHIBUYA SUB-LEVEL 04 // The Neon Labyrinth (-180m subterranean bazaar, paper lanterns, synthetic ramen, cybernetic crowds).
+3. ORBITAL ELEVATOR // Apex of the Megalopolis (+36,000km carbon-nanotube tether, cyan plasma propulsion rings, dusk exosphere).
+4. AERODYNE HIGHWAY // Cloud Runners (+1,800m high-speed transit corridor, flying aerodynes, light trails through rain).
+5. CYBERNETIC SHRINE // Digital Shinto (+450m vermilion Torii gate reinforced with fiber optics in misty bamboo glade).
+6. NEO-DOCKS SECTOR 12 // The Industrial Basin & Dark Waters (Automated robotic cargo cranes, oil-slicked harbor reflections).
+
 Authored Books & Publications (PDF):
 1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
 2. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)

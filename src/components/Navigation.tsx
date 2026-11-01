@@ -28,6 +28,7 @@ export default function Navigation() {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Premium Logos', href: '#brand-identity' },
+    { name: 'Cyberpunk Posters', href: '#cyberpunk-poster' },
     { name: 'Books & Guides', href: '#books' },
     { name: 'Skills & Radar', href: '#skills' },
     { name: 'Workflow', href: '#services' },

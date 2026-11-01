@@ -46,6 +46,7 @@ export default function Footer() {
                 <Link href="#about" className={styles.footerLink}>About</Link>
                 <Link href="#projects" className={styles.footerLink}>Projects</Link>
                 <Link href="#brand-identity" className={styles.footerLink}>Premium Logos</Link>
+                <Link href="#cyberpunk-poster" className={styles.footerLink}>Cyberpunk Posters</Link>
                 <Link href="#books" className={styles.footerLink}>Books &amp; Guides</Link>
                 <Link href="#skills" className={styles.footerLink}>Technical Skills</Link>
                 <Link href="#services" className={styles.footerLink}>Workflow &amp; Services</Link>
@@ -75,6 +76,9 @@ export default function Footer() {
                 <a href="https://telegram-file-downloader.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
                   Telegram AI Downloader <ArrowUpRight size={12} style={{ display: 'inline' }} />
                 </a>
+                <Link href="#cyberpunk-poster" className={styles.footerLink}>
+                  6 Cyberpunk 8K Posters (Moving Marquee)
+                </Link>
                 <Link href="#brand-identity" className={styles.footerLink}>
                   6 Luxury Brand Identity Systems (8K)
                 </Link>

@@ -257,13 +257,17 @@ export default function ResumePage() {
           </div>
         </section>
 
-        {/*-----------LUXURY BRAND IDENTITY SYSTEMS-----------*/}
+        {/*-----------LUXURY BRAND IDENTITY SYSTEMS & 8K VISUAL POSTERS-----------*/}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Curated Luxury Brand Identities &amp; Vector Systems</h2>
+          <h2 className={styles.sectionTitle}>Curated Luxury Brand Identities &amp; 8K Visual Concept Art</h2>
           <div className={styles.skillsBlock}>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Vector Brand Systems (8K / 4-View Architecture):</strong>
               <span> FORMA (Swiss Architectural Modernism) &bull; &Eacute;LORA (Parisian Haute Parfumerie) &bull; NEXORA (Frontier Deep-Tech Nexus) &bull; SOLV&Eacute; (Kyoto Botanical Living) &bull; NOIR&Eacute; (Scandinavian Specialty Coffee) &bull; AURELLE (Haute European Skincare)</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Cyberpunk Metropolis 8K Poster Masterworks:</strong>
+              <span> 6 Collector Keyframe Posters (Neo-Shinjuku 2099, Shibuya Sub-Level 04, Orbital Elevator, Aerodyne Highway, Cybernetic Shrine, Neo-Docks) &bull; Volumetric raytracing, path-traced lighting, and cinematic Japanese editorial typography</span>
             </div>
           </div>
         </section>
