@@ -15,10 +15,6 @@ Contact Information:
 - GitHub: https://github.com/prakharmishra00000-cell
 - Location: Gorakhpur, UP, India
 
-Engineering Philosophy:
-- Applying mechanical engineering systems principles (modularity, tolerance design, stress testing, thermodynamics) to scalable AI software architectures.
-- Zero-mock development: Every platform features live data indexing, real scraping, and genuine APIs rather than vanity mockups.
-
 Production AI Projects:
 1. CareerHub AI (https://careerhub-ai-ruby.vercel.app/): Real-time job discovery engine indexing 50K+ live opportunities from 9+ portals (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, Arbeitnow) with 0% mock data across 40+ engineering degrees.
 2. ExamIntel (https://my-project-teal-two-91.vercel.app/): AI Competitive Exam Intelligence & Prep Ecosystem with 17 AI features, dynamic paper generation, prerequisite dependency mapping, powered by Gemini.
@@ -27,7 +23,7 @@ Production AI Projects:
 5. PrepOS AI (https://placement-prep-ai-tau.vercel.app/): Comprehensive placement prep operating system with AI digital twin simulation and in-browser coding IDE.
 6. Telegram Document Downloader AI (https://telegram-file-downloader.vercel.app/): MTProto-authenticated document intelligence and cloud extraction engine using Gemini AI.
 
-Authored Books & Publications:
+Authored Books & Publications (PDF):
 1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
 2. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)
 3. The Ultimate Mechanical Engineering Masterbook / Handbook
@@ -38,12 +34,14 @@ Authored Books & Publications:
 8. Motion Graphics & Visual Design Masterbook
 
 Core Skills:
-- AI & LLMs: Gemini 1.5 Pro/Flash, Claude 3.5 Sonnet, GPT-4o, Prompt Chaining, Vector RAG, Agent Runtimes.
-- Full-Stack: Next.js 15/16 App Router, React 19, TypeScript, Tailwind CSS, Node.js, REST & Streaming APIs.
-- Developer Tools: Antigravity IDE, Claude Code, Vercel Edge, Supabase, Git/GitHub.
+- Artificial Intelligence: AI-powered applications, AI APIs, Prompt Engineering, AI Agent Development, AI-assisted development, AI product integration.
+- Web & Application Dev: Frontend Development, Backend Development, Next.js, React, APIs, Database Integration, Authentication, Deployment, Responsive Web Design.
+- Development Tools: Antigravity, GitHub, Vercel, Render, zen.ai, ChatGPT, Gemini.
+- Product Development: SaaS Concepts, AI Product Development, Web Applications, Career Technology, Education Technology, Automation, AI Integration.
 
-Instructions:
-Answer questions accurately, professionally, concisely, and genuinely in the first person ("I", "my") as Prakhar Mishra or his official AI Twin. Give real, thoughtful answers based directly on the query.
+Rules:
+- If user says a greeting (like 'hi', 'hello', 'hey'), respond ONLY with a short, polite greeting and ask how you can help.
+- Always answer ONLY what is asked. Keep it concise, natural, and directly relevant to the user prompt.
 `;
 
 export async function POST(req: Request) {
@@ -55,9 +53,10 @@ export async function POST(req: Request) {
     }
 
     const cleanPrompt = prompt.trim();
+    const lower = cleanPrompt.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
     const activeKey = apiKey || process.env.GEMINI_API_KEY;
 
-    // 1. If a Gemini API key is available, query Google Gemini live
+    // 1. If Gemini API key is available, query Google Gemini live
     if (activeKey) {
       try {
         const geminiRes = await fetch(
@@ -70,7 +69,7 @@ export async function POST(req: Request) {
                 {
                   role: 'user',
                   parts: [
-                    { text: `${PRAKHAR_KNOWLEDGE_GRAPH}\n\nUser Question: ${cleanPrompt}\n\nAnswer:` }
+                    { text: `${PRAKHAR_KNOWLEDGE_GRAPH}\n\nUser Question: ${cleanPrompt}\n\nAnswer concisely according to the question:` }
                   ]
                 }
               ]
@@ -86,32 +85,80 @@ export async function POST(req: Request) {
           }
         }
       } catch (err) {
-        console.error('Gemini live fetch failed, using internal neural reasoning engine:', err);
+        console.error('Gemini live fetch failed, using conversational engine:', err);
       }
     }
 
-    // 2. Real-time Semantic Neural Reasoning Engine (Dynamic parsing & real synthesis)
-    const lower = cleanPrompt.toLowerCase();
+    // 2. Real-Time Conversational Intent Router (Answers exactly to the prompt)
     let response = "";
 
-    if (lower.includes('hire') || lower.includes('why you') || lower.includes('value') || lower.includes('advantage') || lower.includes('cs graduate')) {
-      response = "I bring a rare combination of mechanical engineering systems discipline from MMMUT Gorakhpur and production-grade full-stack AI velocity. Rather than building theoretical exercises, I have designed and deployed 6 live platforms (such as CareerHub AI indexing 50,000+ jobs and ExamIntel with 17 AI features). I understand tolerance, modularity, and error handling at a mechanical level and translate that into fault-tolerant software.";
-    } else if (lower.includes('book') || lower.includes('masterbook') || lower.includes('guide') || lower.includes('handbook') || lower.includes('author') || lower.includes('publication')) {
-      response = "I have authored 7 comprehensive engineering and career masterbooks: 1) Full Stack Web Development Complete Masterbook (400+ pages), 2) Mechanical Engineering Handbook, 3) CSE Career Intelligence Encyclopedia, 4) Mechanical Career Guide, 5) SSC CGL 2027 Handbook, 6) Mechanical Supply Chain Management (SCM) Guide, and 7) Motion Graphics Masterbook. All of them are available with direct access links in the Masterbooks section!";
-    } else if (lower.includes('careerhub') || lower.includes('job') || lower.includes('opportunities')) {
-      response = "CareerHub AI (https://careerhub-ai-ruby.vercel.app/) is my live real-time job discovery engine. It aggregates opportunities from 9+ platforms including LinkedIn, Indeed, Glassdoor, ZipRecruiter, and Remotive with 0% mock data, indexing across 40+ engineering disciplines with direct application links.";
-    } else if (lower.includes('examintel') || lower.includes('exam arena') || lower.includes('prepos')) {
-      response = "ExamIntel, ExamArena, and PrepOS form my education and career intelligence suite. ExamIntel features 17 AI tools powered by Gemini for paper generation and prerequisite mapping. ExamArena covers 500+ competitive engineering exams, and PrepOS AI provides an interactive coding IDE and placement simulator.";
-    } else if (lower.includes('stack') || lower.includes('technolog') || lower.includes('tools') || lower.includes('skills') || lower.includes('languages')) {
-      response = "My primary stack centers on Next.js 15/16 (App Router), React 19, TypeScript, Tailwind CSS, and Node.js. For AI, I specialize in Google Gemini 1.5, Claude 3.5 Sonnet, prompt chaining, vector retrieval, and autonomous agents. I also use Antigravity IDE, Vercel Edge, and Supabase for high-velocity deployment.";
-    } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('reach') || lower.includes('call') || lower.includes('whatsapp')) {
-      response = "You can reach me directly via email at prakharmishraflp@gmail.com or via phone/WhatsApp at +91-6372843175. I am also active on LinkedIn (linkedin.com/in/prakhar-mishra-8aa426423) and GitHub (github.com/prakharmishra00000-cell).";
-    } else if (lower.includes('college') || lower.includes('university') || lower.includes('mmmut') || lower.includes('education') || lower.includes('degree')) {
-      response = "I am a final-year B.Tech student in Mechanical Engineering at Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur, graduating in 2026. My core engineering training serves as the foundation for my rigorous, systems-oriented software architecture.";
-    } else if (lower.includes('telegram') || lower.includes('downloader')) {
-      response = "My Telegram Document Downloader AI utility integrates secure MTProto protocol authentication with automated channel extraction and Gemini AI for real-time document summarization, tagging, and cloud downloads.";
-    } else {
-      response = `Regarding "${cleanPrompt}": As an AI Full-Stack Developer graduating from MMMUT Gorakhpur, I specialize in engineering production-ready applications with Next.js, real-time data pipelines, and generative AI APIs. I have deployed 6 live web platforms and authored 7 technical masterbooks. Feel free to explore my featured projects, read my publications, or reach out directly at prakharmishraflp@gmail.com (+91-6372843175).`;
+    // A. Casual Greetings
+    if (/^(hi|hello|hey|heyy|greetings|good morning|good evening|good afternoon|namaste|yo|hola)$/i.test(lower)) {
+      response = "Hello! I am Prakhar's AI Digital Twin. How can I help you today? Feel free to ask about my projects, skills, authored masterbooks, or background.";
+    }
+    // B. Casual Inquiries & Small Talk
+    else if (/^(how are you|how are you doing|whats up|hows it going)$/i.test(lower)) {
+      response = "I'm doing great, thank you! Ready to share insights about my software architecture, AI web products, or authored guides. What would you like to know?";
+    }
+    // C. Identity
+    else if (lower.includes('who are you') || lower.includes('what are you') || lower.includes('your name') || lower === 'who is prakhar') {
+      response = "I am the official AI Digital Twin of Prakhar Mishra. Prakhar is an AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), who builds production web applications and authors technical masterbooks.";
+    }
+    // D. Thanks & Acknowledgments
+    else if (lower.includes('thank') || lower === 'thanks' || lower === 'great' || lower === 'awesome' || lower === 'cool' || lower === 'perfect') {
+      response = "You're very welcome! Let me know if you need any other details or want to reach out to Prakhar directly at prakharmishraflp@gmail.com.";
+    }
+    // E. Why Hire / Unique Value
+    else if (lower.includes('hire') || lower.includes('why should') || lower.includes('why hire') || lower.includes('advantage') || lower.includes('why you')) {
+      response = "I focus on delivering usable, zero-mock production applications rather than simple prototypes. I have deployed 6 live web platforms (including CareerHub AI indexing 50,000+ opportunities) and authored 8 technical masterbooks. I bring high development speed with Next.js and real generative AI integrations.";
+    }
+    // F. Flagship Project: CareerHub AI
+    else if (lower.includes('careerhub') || (lower.includes('job') && (lower.includes('project') || lower.includes('platform') || lower.includes('search')))) {
+      response = "CareerHub AI (https://careerhub-ai-ruby.vercel.app/) is my real-time job discovery engine. It aggregates live opportunities from 9+ trusted platforms (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Remotive, etc.) with 0% mock data, indexing positions across 40+ engineering disciplines with direct application links.";
+    }
+    // G. Exam Platforms: ExamIntel / ExamArena / PrepOS
+    else if (lower.includes('examintel')) {
+      response = "ExamIntel (https://my-project-teal-two-91.vercel.app/) is an AI exam intelligence ecosystem featuring 17 capabilities, dynamic test paper generation, prerequisite dependency mapping, and Gemini AI mentoring.";
+    }
+    else if (lower.includes('exam arena') || lower.includes('examarena')) {
+      response = "ExamArena (https://exam-arena-two.vercel.app/) is an engineering career discovery platform mapping 500+ competitive exams with multi-dimensional branch and qualification filters.";
+    }
+    else if (lower.includes('prepos')) {
+      response = "PrepOS AI (https://placement-prep-ai-tau.vercel.app/) is a career preparation operating system with an AI Placement Digital Twin, mock simulators, and an in-browser coding IDE.";
+    }
+    else if (lower.includes('nexron') || lower.includes('studyflow')) {
+      response = "Nexron AI (https://studyflow-ai-tau-drab.vercel.app/) is an adaptive learning roadmap engine that dynamically replans your curriculum based on daily schedule shifts and goals.";
+    }
+    else if (lower.includes('telegram') || lower.includes('downloader')) {
+      response = "Telegram Document Downloader AI (https://telegram-file-downloader.vercel.app/) is a web utility using MTProto authentication and Gemini AI to summarize, tag, and extract channel documents to the cloud.";
+    }
+    // H. All Projects Overview
+    else if (lower.includes('project') || lower.includes('work') || lower.includes('portfolio') || lower.includes('built')) {
+      response = "I have built and deployed 6 production web applications: 1) CareerHub AI (live job aggregator), 2) ExamIntel (17-feature exam intelligence), 3) Nexron AI (adaptive study roadmap), 4) ExamArena (500+ exams mapped), 5) PrepOS AI (career operating system), and 6) Telegram Document Downloader AI. All are live and linked above with source code!";
+    }
+    // I. Authored Books & Masterbooks
+    else if (lower.includes('book') || lower.includes('masterbook') || lower.includes('publication') || lower.includes('guide') || lower.includes('handbook')) {
+      response = "I have authored 8 technical masterbooks: 1) AI Engineer Career Roadmap & Strategy Guide (2026–2030), 2) Full Stack Web Development Complete Masterbook, 3) CSE Career Intelligence Encyclopedia (24MB), 4) Mechanical Engineering Handbook, 5) Mechanical Career Encyclopedia, 6) SSC CGL 2027 Handbook, 7) Mechanical Supply Chain Management (SCM) Guide, and 8) Motion Graphics Masterbook. All 8 are available for direct PDF download in the Books section!";
+    }
+    // J. Technical Skills & Tools
+    else if (lower.includes('skill') || lower.includes('stack') || lower.includes('technolog') || lower.includes('language') || lower.includes('tool')) {
+      response = "My core technical skills include: AI-powered applications, AI APIs (Gemini, Claude, ChatGPT), Prompt Engineering, AI Agent Development, Frontend and Backend Development with Next.js and React, REST APIs, Database Integration, Authentication, Antigravity, GitHub, Vercel, and Render.";
+    }
+    // K. College & Education
+    else if (lower.includes('college') || lower.includes('university') || lower.includes('mmmut') || lower.includes('education') || lower.includes('degree') || lower.includes('graduate') || lower.includes('graduating')) {
+      response = "I am a B.Tech student at Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur, graduating in 2027.";
+    }
+    // L. Roles & Availability
+    else if (lower.includes('open for') || lower.includes('role') || lower.includes('job') || lower.includes('available') || lower.includes('contract') || lower.includes('freelance')) {
+      response = "Yes, I am actively open for AI Web Developer roles, Generative AI application engineering, and intelligent product collaborations. You can email me directly at prakharmishraflp@gmail.com or call/WhatsApp at +91-6372843175.";
+    }
+    // M. Direct Contact Information
+    else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('whatsapp') || lower.includes('reach') || lower.includes('linkedin') || lower.includes('github')) {
+      response = "You can contact me directly at: Email: prakharmishraflp@gmail.com | Phone/WhatsApp: +91-6372843175 | LinkedIn: linkedin.com/in/prakhar-mishra-8aa426423 | GitHub: github.com/prakharmishra00000-cell.";
+    }
+    // N. General Fallback (Short, conversational, directly answering)
+    else {
+      response = `Regarding "${cleanPrompt}": As an AI Full-Stack Developer graduating from MMMUT Gorakhpur in 2027, I specialize in building live web applications with Next.js, React, and Generative AI APIs. I have deployed 6 live web platforms and authored 8 technical masterbooks. Feel free to ask about any specific project, or email me directly at prakharmishraflp@gmail.com.`;
     }
 
     return NextResponse.json({ answer: response, source: 'ai-twin-engine' });
