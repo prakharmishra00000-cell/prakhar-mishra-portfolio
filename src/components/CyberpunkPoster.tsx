@@ -83,53 +83,53 @@ const postersList: PosterItem[] = [
   {
     id: "poster-4",
     number: "04/06",
-    title: "AERODYNE HIGHWAY",
-    tagline: "CLOUD RUNNERS // AIRSPACE SECTOR",
+    title: "KOWLOON GRID 09",
+    tagline: "THE NEON DATA CANYON",
     imageSrc: "/posters/poster-4.jpg",
-    location: "Skyway Corridor 88 // High-Speed Transit",
-    elevation: "+1,800m Aerial Concourse",
-    story: "Multi-lane aerial highways suspended thousands of meters above city streets. Flying aerodynes and heavy cargo skimmers weave through torrential volumetric rain, carving luminous magenta and cyan light trails across towering corporate architecture.",
+    location: "Sector 09 // Terminal Hazard Zone",
+    elevation: "+850m Dense High-Rise Canyon",
+    story: "Hyper-dense vertical cybernetic canyons with rain-slicked asphalt reflecting vivid multi-tiered neon signage. Augmented lone pedestrians navigate atmospheric alleyways beneath towering commercial facades, tangled fiber-optic conduits, and volumetric neon rain.",
     palette: [
-      { name: "Turbo Cyan", hex: "#00E5FF" },
-      { name: "Laser Magenta", hex: "#FF006E" },
-      { name: "Atmospheric Indigo", hex: "#1C1438" },
-      { name: "Carbon Grey", hex: "#1A1D28" }
+      { name: "Cyan Terminal", hex: "#00F0FF" },
+      { name: "Hazard Magenta", hex: "#FF0055" },
+      { name: "Wet Asphalt Dark", hex: "#0E111A" },
+      { name: "Amber Glare", hex: "#FFAA00" }
     ],
-    credits: "VEHICULAR CONCEPT ART &bull; MOTION BLUR DYNAMICS &bull; 8K ULTRA-HD &bull; PRAKHAR MISHRA"
+    credits: "URBAN CYBER-STREET CONCEPT &bull; VOLUMETRIC REFLECTIONS &bull; 8K ULTRA-HD MASTER"
   },
   {
     id: "poster-5",
     number: "05/06",
-    title: "CYBERNETIC SHRINE",
-    tagline: "DIGITAL SHINTO // NEON TORII",
+    title: "SYNTHETIC SKYLINE",
+    tagline: "APEX MEGALOPOLIS 2099",
     imageSrc: "/posters/poster-5.jpg",
-    location: "Kanda Forest Preserve // Data District",
-    elevation: "+450m Elevated Sanctuary",
-    story: "An ancient traditional vermilion Torii gate seamlessly reinforced with fiber-optic micro-cables and glowing holographic sacred glyphs, standing serene in misty bamboo glades beneath the humming monoliths of quantum server vaults.",
+    location: "Upper Stratum // Central Spire Grid",
+    elevation: "+2,400m Stratospheric Core",
+    story: "Panoramic megalopolis night skyline glowing with thousands of illuminated spire windows and high-speed transit light trails. Giant holographic monoliths pulse against violet dusk clouds, capturing the sublime magnitude of 22nd-century urban engineering.",
     palette: [
-      { name: "Vermilion Torii", hex: "#FF3300" },
-      { name: "Bioluminescent Mint", hex: "#00FFB2" },
-      { name: "Deep Bamboo Mist", hex: "#0B1D19" },
-      { name: "Temple Gold", hex: "#D4AF37" }
+      { name: "Spire Violet", hex: "#A855F7" },
+      { name: "Skyline Cyan", hex: "#38BDF8" },
+      { name: "Deep Stratosphere", hex: "#0B0E1B" },
+      { name: "Window Gold", hex: "#FACC15" }
     ],
-    credits: "ENVIRONMENTAL DESIGN &bull; SACRED ARCHITECTURE &bull; 8K MASTER KEYFRAME &bull; UNREAL 5"
+    credits: "METROPOLITAN PANORAMA &bull; STRATOSPHERIC LIGHT TRAILS &bull; 8K CONCEPT ART"
   },
   {
     id: "poster-6",
     number: "06/06",
-    title: "NEO-DOCKS SECTOR 12",
-    tagline: "THE INDUSTRIAL BASIN & DARK WATERS",
+    title: "MIDNIGHT DRIFT",
+    tagline: "HIGHWAY INTERCEPTOR 01",
     imageSrc: "/posters/poster-6.jpg",
-    location: "Tokyo Bay Super-Basin // Freight District",
-    elevation: "+0m Sea Level",
-    story: "Automated robotic container cranes towering 400 meters above oil-slicked dark harbor waters. Massive autonomous cargo leviathans navigate the bay under a heavy industrial night sky illuminated by amber sodium floodlights and cobalt warning signals.",
+    location: "Corridor Express 01 // Shibuya Apex",
+    elevation: "+600m High-Speed Artery",
+    story: "Dense metropolitan expressway at the apex of midnight. Brilliant laser light streaks from autonomous pursuit interceptors slash through the wet city atmosphere, framed by towering neon skyscrapers and glowing holographic advertisements.",
     palette: [
-      { name: "Industrial Amber", hex: "#FF7700" },
-      { name: "Harbor Cobalt", hex: "#0044FF" },
-      { name: "Dark Water Slate", hex: "#0A101D" },
-      { name: "Oxidized Rust", hex: "#8B3A1C" }
+      { name: "Amber Thruster", hex: "#F59E0B" },
+      { name: "Laser Crimson", hex: "#EF4444" },
+      { name: "Midnight Obsidian", hex: "#07090E" },
+      { name: "Electric Aqua", hex: "#06B6D4" }
     ],
-    credits: "INDUSTRIAL CONCEPT ART &bull; WATER REFLECTION VOLUMETRICS &bull; 8K RENDER &bull; 2099"
+    credits: "KINETIC PURSUIT KEYFRAME &bull; ANAMORPHIC FLARE VOLUMETRICS &bull; 8K MASTER"
   }
 ];
 

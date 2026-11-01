@@ -65,7 +65,7 @@ const brandSystems: BrandSystem[] = [
     name: "FORMA",
     category: "Architectural Studio",
     tagline: "Swiss Modernism & Spatial Geometry",
-    artDirection: "Architectural minimalism, structural lines, grid-based balance, intelligent negative space.",
+    artDirection: "3D Axonometric Brutalism, structural cantilevered slabs, coordinate drafting balance, intelligent spatial voids.",
     origin: "ZÜRICH &bull; BASEL &bull; EST. 2026",
     subDescriptor: "ARCHITECTURE &bull; SPATIAL DESIGN &bull; ZÜRICH &bull; BASEL",
     bgCanvas: "#F8F8F6",
@@ -73,22 +73,44 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#B9B6AE",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <rect x="20" y="20" width="60" height="60" stroke="#292929" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
-        <path d="M30 24V76M30 24H72M30 48H60" stroke="#292929" strokeWidth="5.5" strokeLinecap="square" />
-        <rect x="52" y="40" width="8" height="8" fill="#B9B6AE" />
+        {/* Isometric 3D Axonometric Structural Cantilever */}
+        <path d="M50 14L84 32V68L50 86L16 68V32L50 14Z" stroke="#292929" strokeWidth="2" strokeDasharray="3 3" opacity="0.3" />
+        {/* Top Slab */}
+        <polygon points="50,18 80,34 50,50 20,34" fill="#B9B6AE" fillOpacity="0.35" stroke="#292929" strokeWidth="2.5" />
+        {/* Cantilever Left Face */}
+        <polygon points="20,34 50,50 50,78 20,62" fill="#292929" stroke="#292929" strokeWidth="2.5" />
+        {/* Cantilever Right Open Core */}
+        <polygon points="50,50 80,34 80,62 50,78" fill="#F8F8F6" stroke="#292929" strokeWidth="2.5" />
+        {/* Architectonic Void Core */}
+        <path d="M35 48L50 56V74" stroke="#F8F8F6" strokeWidth="2" strokeLinecap="square" />
+        <circle cx="50" cy="50" r="3" fill="#292929" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <rect width="80" height="80" rx="8" fill="#292929" />
-        <path d="M26 22V58M26 22H56M26 38H48" stroke="#F8F8F6" strokeWidth="4.5" strokeLinecap="square" />
+        <rect width="80" height="80" rx="4" fill="#292929" />
+        <polygon points="40,16 64,28 40,40 16,28" fill="#B9B6AE" stroke="#F8F8F6" strokeWidth="2" />
+        <polygon points="16,28 40,40 40,64 16,52" fill="#F8F8F6" />
+        <polygon points="40,40 64,28 64,52 40,64" fill="#292929" stroke="#F8F8F6" strokeWidth="2" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <rect x="15" y="15" width="90" height="90" stroke="#292929" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.35" />
-        <path d="M32 26V94M32 26H88M32 58H74" stroke="#292929" strokeWidth="8" strokeLinecap="square" />
-        <rect x="64" y="48" width="10" height="10" fill="#B9B6AE" />
+        {/* Outer drafting isometric grid lines */}
+        <path d="M60 10L106 34V86L60 110L14 86V34L60 10Z" stroke="#292929" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.3" />
+        <line x1="60" y1="10" x2="60" y2="110" stroke="#B9B6AE" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+        <line x1="14" y1="34" x2="106" y2="86" stroke="#B9B6AE" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+        <line x1="14" y1="86" x2="106" y2="34" stroke="#B9B6AE" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+        
+        {/* Monumental Isometric Cantilever Block */}
+        <polygon points="60,18 100,38 60,58 20,38" fill="#B9B6AE" fillOpacity="0.4" stroke="#292929" strokeWidth="3.5" />
+        <polygon points="20,38 60,58 60,98 20,78" fill="#292929" stroke="#292929" strokeWidth="3.5" />
+        <polygon points="60,58 100,38 100,78 60,98" fill="#F8F8F6" stroke="#292929" strokeWidth="3.5" />
+        
+        {/* Negative-space structural floor slot */}
+        <polygon points="42,52 60,61 60,82 42,73" fill="#F8F8F6" opacity="0.95" />
+        <circle cx="60" cy="58" r="4.5" fill="#292929" />
+        <rect x="75" y="65" width="10" height="2" fill="#B9B6AE" />
       </svg>
     ),
     palette: [
@@ -138,8 +160,8 @@ const brandSystems: BrandSystem[] = [
     id: "elora",
     name: "ÉLORA",
     category: "Haute Parfumerie",
-    tagline: "Parisian Understated Glamour",
-    artDirection: "High-contrast editorial serif, perfume bottle silhouette lines, modern femininity, timeless grace.",
+    tagline: "Parisian Understated Glamour & Haute Joaillerie",
+    artDirection: "Emerald-Cut Diamond Facets, royal script crest, Parisian haute joaillerie precision, fine 24k gold leaf needles.",
     origin: "PARIS &bull; GRASSE &bull; ÉDITION PRIVÉE",
     subDescriptor: "PARFUMS DE LUXE &bull; PARIS &bull; GRASSE &bull; ÉDITION PRIVÉE",
     bgCanvas: "#EFE5D7",
@@ -147,24 +169,57 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#B9A17A",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <ellipse cx="50" cy="50" rx="46" ry="46" stroke="#302721" strokeWidth="1.2" />
-        <ellipse cx="50" cy="50" rx="40" ry="40" stroke="#B9A17A" strokeWidth="0.8" strokeDasharray="3 3" />
-        <path d="M36 28V72M36 28H64M36 49H56M36 72H64" stroke="#302721" strokeWidth="3.2" strokeLinecap="round" />
-        <line x1="48" y1="20" x2="56" y2="24" stroke="#B9A17A" strokeWidth="3" strokeLinecap="round" />
+        {/* Emerald-Cut Faceted Diamond Crest */}
+        <polygon points="32,15 68,15 85,32 85,68 68,85 32,85 15,68 15,32" stroke="#B9A17A" strokeWidth="1.2" strokeDasharray="2 2" />
+        <polygon points="35,20 65,20 80,35 80,65 65,80 35,80 20,65 20,35" stroke="#302721" strokeWidth="2" />
+        {/* Diamond Facet Lines */}
+        <line x1="35" y1="20" x2="42" y2="38" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="65" y1="20" x2="58" y2="38" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="80" y1="35" x2="62" y2="42" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="80" y1="65" x2="62" y2="58" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="65" y1="80" x2="58" y2="62" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="35" y1="80" x2="42" y2="62" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="20" y1="65" x2="38" y2="58" stroke="#B9A17A" strokeWidth="1.2" />
+        <line x1="20" y1="35" x2="38" y2="42" stroke="#B9A17A" strokeWidth="1.2" />
+        {/* Central Facet Table */}
+        <polygon points="42,38 58,38 62,42 62,58 58,62 42,62 38,58 38,42" fill="#B9A17A" fillOpacity="0.18" stroke="#302721" strokeWidth="1.5" />
+        {/* Royal Crest Monogram & Fleur Star */}
+        <path d="M44 44H56M44 44V56H56M44 50H53" stroke="#302721" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="50" cy="27" r="1.8" fill="#B9A17A" />
+        <circle cx="50" cy="73" r="1.8" fill="#B9A17A" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="38" fill="#302721" />
-        <path d="M28 24V56M28 24H52M28 39H46M28 56H52" stroke="#EFE5D7" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="26,8 54,8 72,26 72,54 54,72 26,72 8,54 8,26" fill="#302721" />
+        <polygon points="30,14 50,14 66,30 66,50 50,66 30,66 14,50 14,30" stroke="#B9A17A" strokeWidth="1.5" />
+        <path d="M34 32H48M34 32V48H48M34 40H45" stroke="#EFE5D7" strokeWidth="3" strokeLinecap="round" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <ellipse cx="60" cy="60" rx="54" ry="54" stroke="#302721" strokeWidth="1.5" />
-        <ellipse cx="60" cy="60" rx="47" ry="47" stroke="#B9A17A" strokeWidth="1" strokeDasharray="4 4" />
-        <path d="M42 32V88M42 32H78M42 59H68M42 88H78" stroke="#302721" strokeWidth="4.5" strokeLinecap="round" />
-        <line x1="56" y1="22" x2="68" y2="27" stroke="#B9A17A" strokeWidth="3.5" strokeLinecap="round" />
+        {/* Luxury Radiant Starburst Rays */}
+        <line x1="60" y1="4" x2="60" y2="16" stroke="#B9A17A" strokeWidth="1.5" />
+        <line x1="60" y1="104" x2="60" y2="116" stroke="#B9A17A" strokeWidth="1.5" />
+        <line x1="4" y1="60" x2="16" y2="60" stroke="#B9A17A" strokeWidth="1.5" />
+        <line x1="104" y1="60" x2="116" y2="60" stroke="#B9A17A" strokeWidth="1.5" />
+        {/* Outer Emerald Octagon */}
+        <polygon points="38,18 82,18 102,38 102,82 82,102 38,102 18,82 18,38" stroke="#B9A17A" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="42,24 78,24 96,42 96,78 78,96 42,96 24,78 24,42" stroke="#302721" strokeWidth="3" />
+        {/* Facet Lines */}
+        <line x1="42" y1="24" x2="50" y2="46" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="78" y1="24" x2="70" y2="46" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="96" y1="42" x2="74" y2="50" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="96" y1="78" x2="74" y2="70" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="78" y1="96" x2="70" y2="74" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="42" y1="96" x2="50" y2="74" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="24" y1="78" x2="46" y2="70" stroke="#B9A17A" strokeWidth="1.8" />
+        <line x1="24" y1="42" x2="46" y2="50" stroke="#B9A17A" strokeWidth="1.8" />
+        {/* Internal Gem Table */}
+        <polygon points="50,46 70,46 74,50 74,70 70,74 50,74 46,70 46,50" fill="#B9A17A" fillOpacity="0.2" stroke="#302721" strokeWidth="2" />
+        <path d="M52 52H68M52 52V68H68M52 60H64" stroke="#302721" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="60" cy="33" r="2.5" fill="#B9A17A" />
+        <circle cx="60" cy="87" r="2.5" fill="#B9A17A" />
       </svg>
     ),
     palette: [
@@ -215,8 +270,8 @@ const brandSystems: BrandSystem[] = [
     id: "nexora",
     name: "NEXORA",
     category: "Next-Gen Technology",
-    tagline: "Futuristic Intelligence & Precision",
-    artDirection: "Geometric Swiss grid precision, custom X nexus representing connection and future technology.",
+    tagline: "Quantum Architecture & Deep Tech Optics",
+    artDirection: "Stealth Delta-Wing Prism, concentric circular qubit diffraction rings, 45° kinetic waveguides, electric cobalt pulse.",
     origin: "SILICON VALLEY &bull; TOKYO &bull; ZÜRICH",
     subDescriptor: "AUTONOMOUS COMPUTING &bull; QUANTUM NETWORKS &bull; AI INFRASTRUCTURE",
     bgCanvas: "#111827",
@@ -224,23 +279,44 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#476CFF",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <rect x="15" y="15" width="70" height="70" rx="16" stroke="#476CFF" strokeWidth="1.5" opacity="0.4" />
-        <path d="M30 30L70 70M70 30L30 70" stroke="#FFFFFF" strokeWidth="5.5" strokeLinecap="round" />
-        <circle cx="50" cy="50" r="5" fill="#476CFF" />
+        {/* Stealth Delta Prism & Concentric Qubit Waveguides */}
+        <circle cx="50" cy="54" r="38" stroke="#476CFF" strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
+        <circle cx="50" cy="54" r="26" stroke="#476CFF" strokeWidth="1" opacity="0.2" />
+        {/* Outer Delta Stealth Polygon */}
+        <polygon points="50,14 88,78 12,78" stroke="#476CFF" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.5" />
+        {/* Inner Kinetic Delta Chevrons */}
+        <polygon points="50,22 82,74 18,74" stroke="#FFFFFF" strokeWidth="3" strokeLinejoin="round" />
+        <polygon points="50,38 70,70 30,70" fill="#476CFF" fillOpacity="0.25" stroke="#476CFF" strokeWidth="2" strokeLinejoin="round" />
+        {/* Central Luminous Qubit Core */}
+        <circle cx="50" cy="56" r="6" fill="#476CFF" />
+        <circle cx="50" cy="56" r="2.5" fill="#FFFFFF" />
+        <line x1="50" y1="22" x2="50" y2="46" stroke="#476CFF" strokeWidth="2" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <rect width="80" height="80" rx="14" fill="#111827" stroke="#476CFF" strokeWidth="2" />
-        <path d="M24 24L56 56M56 24L24 56" stroke="#FFFFFF" strokeWidth="4.5" strokeLinecap="round" />
-        <circle cx="40" cy="40" r="3.5" fill="#476CFF" />
+        <polygon points="40,8 74,68 6,68" fill="#111827" stroke="#476CFF" strokeWidth="2.5" strokeLinejoin="round" />
+        <polygon points="40,24 64,62 16,62" fill="#476CFF" fillOpacity="0.3" stroke="#FFFFFF" strokeWidth="2" strokeLinejoin="round" />
+        <circle cx="40" cy="48" r="4.5" fill="#476CFF" />
+        <circle cx="40" cy="48" r="2" fill="#FFFFFF" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <rect x="16" y="16" width="88" height="88" rx="22" stroke="#476CFF" strokeWidth="2" opacity="0.5" />
-        <path d="M34 34L86 86M86 34L34 86" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
-        <circle cx="60" cy="60" r="7.5" fill="#476CFF" />
+        {/* Concentric Quantum Orbital Matrix */}
+        <circle cx="60" cy="65" r="50" stroke="#476CFF" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.35" />
+        <circle cx="60" cy="65" r="36" stroke="#476CFF" strokeWidth="1" strokeDasharray="3 3" opacity="0.25" />
+        <circle cx="60" cy="65" r="20" stroke="#476CFF" strokeWidth="1" opacity="0.2" />
+        {/* Monumental Stealth Delta Prism */}
+        <polygon points="60,12 110,94 10,94" stroke="#476CFF" strokeWidth="2" strokeDasharray="5 5" opacity="0.6" />
+        <polygon points="60,20 102,88 18,88" stroke="#FFFFFF" strokeWidth="4.5" strokeLinejoin="round" />
+        <polygon points="60,42 86,82 34,82" fill="#476CFF" fillOpacity="0.22" stroke="#476CFF" strokeWidth="3" strokeLinejoin="round" />
+        {/* Optical Waveguides & Laser Emitters */}
+        <line x1="60" y1="20" x2="60" y2="52" stroke="#476CFF" strokeWidth="2.5" />
+        <line x1="18" y1="88" x2="44" y2="72" stroke="#476CFF" strokeWidth="2.5" />
+        <line x1="102" y1="88" x2="76" y2="72" stroke="#476CFF" strokeWidth="2.5" />
+        <circle cx="60" cy="66" r="8.5" fill="#476CFF" />
+        <circle cx="60" cy="66" r="3.5" fill="#FFFFFF" />
       </svg>
     ),
     palette: [
@@ -291,8 +367,8 @@ const brandSystems: BrandSystem[] = [
     id: "solve",
     name: "SOLVÉ",
     category: "Organic Wellness & Living",
-    tagline: "Japanese Simplicity & Calm Luxury",
-    artDirection: "Harmonious custom serif, abstract S renewal curves, botanical elegance, natural balance.",
+    tagline: "Wabi-Sabi Botanical Equilibrium & Zen Flora",
+    artDirection: "Asymmetric calligraphic Ensō brush stroke, interlocking Gingko leaf teardrop silhouette, raw ceramic pigment balance.",
     origin: "KYOTO &bull; TOKYO &bull; EST. 2026",
     subDescriptor: "ORGANIC EQUILIBRIUM &bull; BOTANICAL RESTORATION &bull; KYOTO &bull; TOKYO",
     bgCanvas: "#F5F1E9",
@@ -300,37 +376,66 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#A3AA92",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="46" stroke="#A3AA92" strokeWidth="1.5" />
+        {/* Asymmetrical Organic Teardrop Ensō Brush Mark */}
         <path 
-          d="M62 34C62 26 44 26 40 36C36 46 64 52 60 64C56 74 38 72 38 64" 
+          d="M50 14C32 28 20 48 20 66C20 82 33 90 50 90C68 90 80 78 80 62C80 44 64 26 50 14Z" 
+          stroke="#A3AA92" 
+          strokeWidth="1.5" 
+          strokeDasharray="4 3" 
+        />
+        {/* Calligraphic Fluid Fluid Leaf Swirl */}
+        <path 
+          d="M50 18C36 32 26 48 26 64C26 78 37 84 50 84C63 84 74 74 74 60C74 46 62 34 52 24" 
           stroke="#30382F" 
           strokeWidth="4" 
           strokeLinecap="round" 
         />
-        <circle cx="50" cy="50" r="2.5" fill="#A3AA92" />
+        {/* Inner Gingko Vein & Balance Stones */}
+        <path 
+          d="M50 84C48 70 54 54 62 44" 
+          stroke="#A3AA92" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+        />
+        <circle cx="50" cy="50" r="4.5" fill="#30382F" />
+        <circle cx="62" cy="38" r="2.5" fill="#A3AA92" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="38" fill="#30382F" />
-        <path 
-          d="M50 26C50 20 35 20 32 28C29 36 51 41 48 51C45 59 30 57 30 51" 
-          stroke="#F5F1E9" 
-          strokeWidth="3.2" 
-          strokeLinecap="round" 
-        />
+        <path d="M40 8C26 20 16 36 16 52C16 66 26 74 40 74C54 74 64 64 64 50C64 36 52 24 40 8Z" fill="#30382F" />
+        <path d="M40 18C30 28 24 40 24 52C24 62 31 66 40 66C49 66 56 58 56 48C56 38 48 28 40 18Z" fill="#F5F1E9" />
+        <circle cx="40" cy="48" r="4" fill="#30382F" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <circle cx="60" cy="60" r="54" stroke="#A3AA92" strokeWidth="2" />
+        {/* Sacred Geometry Harmony Circles */}
+        <ellipse cx="60" cy="68" rx="48" ry="44" stroke="#A3AA92" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.4" />
+        {/* Monumental Fluid Calligraphic Droplet Ensō */}
         <path 
-          d="M74 40C74 30 52 30 47 42C42 54 76 62 71 76C66 88 44 86 44 76" 
+          d="M60 12C38 30 22 54 22 76C22 98 38 108 60 108C82 108 98 94 98 72C98 50 78 30 60 12Z" 
+          stroke="#A3AA92" 
+          strokeWidth="2" 
+          strokeDasharray="6 4" 
+        />
+        <path 
+          d="M60 18C42 34 28 56 28 76C28 92 40 102 60 102C78 102 92 90 92 70C92 52 76 36 62 24" 
           stroke="#30382F" 
-          strokeWidth="5.5" 
+          strokeWidth="6" 
           strokeLinecap="round" 
         />
-        <circle cx="60" cy="60" r="3.5" fill="#A3AA92" />
+        {/* Wabi-Sabi Flowing S-Vein */}
+        <path 
+          d="M60 102C58 84 66 64 78 50C84 42 78 32 70 34" 
+          stroke="#A3AA92" 
+          strokeWidth="3.5" 
+          strokeLinecap="round" 
+        />
+        {/* Zen Stone Focal Points */}
+        <circle cx="60" cy="62" r="6.5" fill="#30382F" />
+        <circle cx="76" cy="44" r="3.5" fill="#A3AA92" />
+        <circle cx="48" cy="82" r="2.5" fill="#A3AA92" />
       </svg>
     ),
     palette: [
@@ -382,8 +487,8 @@ const brandSystems: BrandSystem[] = [
     id: "noire",
     name: "NOIRÉ",
     category: "Specialty Coffee Roasters",
-    tagline: "Scandinavian Architectural Café",
-    artDirection: "Espresso tones, minimal ceramic warmth, abstract N seam, direct-origin prestige.",
+    tagline: "Nordic Brutalist Roastery & Origin Extraction",
+    artDirection: "Heavy industrial diamond hallmark, beveled hexagonal stamp, negative-space extraction channels, raw brass roast coordinates.",
     origin: "COPENHAGEN &bull; OSLO &bull; EST. 2026",
     subDescriptor: "SPECIALTY COFFEE ROASTERY &bull; COPENHAGEN &bull; OSLO &bull; SINGLE ORIGIN",
     bgCanvas: "#F1E9DC",
@@ -391,24 +496,39 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#A77959",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="46" stroke="#382820" strokeWidth="1.5" />
-        <circle cx="50" cy="50" r="40" stroke="#A77959" strokeWidth="1" strokeDasharray="3 3" />
-        <path d="M36 28V72M64 28V72M36 28L64 72" stroke="#382820" strokeWidth="3.5" strokeLinecap="round" />
+        {/* Solid Nordic Diamond Hallmark */}
+        <polygon points="50,12 88,50 50,88 12,50" stroke="#A77959" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="50,18 82,50 50,82 18,50" fill="#382820" stroke="#382820" strokeWidth="2" />
+        {/* Negative-Space Extraction Channels & N Geometry */}
+        <path d="M36 34V66M64 34V66M36 34L64 66" stroke="#F1E9DC" strokeWidth="4.5" strokeLinecap="square" />
+        <line x1="50" y1="22" x2="50" y2="28" stroke="#A77959" strokeWidth="2" />
+        <line x1="50" y1="72" x2="50" y2="78" stroke="#A77959" strokeWidth="2" />
         <circle cx="50" cy="50" r="3" fill="#A77959" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <rect width="80" height="80" rx="10" fill="#382820" />
-        <path d="M28 24V56M52 24V56M28 24L52 56" stroke="#F1E9DC" strokeWidth="4" strokeLinecap="round" />
+        <polygon points="40,8 72,40 40,72 8,40" fill="#382820" stroke="#A77959" strokeWidth="2" />
+        <path d="M28 26V54M52 26V54M28 26L52 54" stroke="#F1E9DC" strokeWidth="4" strokeLinecap="square" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <circle cx="60" cy="60" r="54" stroke="#382820" strokeWidth="1.8" />
-        <circle cx="60" cy="60" r="47" stroke="#A77959" strokeWidth="1.2" strokeDasharray="4 4" />
-        <path d="M43 33V87M77 33V87M43 33L77 87" stroke="#382820" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="60" cy="60" r="4" fill="#A77959" />
+        {/* Compass Azimuth Dial */}
+        <circle cx="60" cy="60" r="56" stroke="#A77959" strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
+        <line x1="60" y1="4" x2="60" y2="12" stroke="#A77959" strokeWidth="2" />
+        <line x1="60" y1="108" x2="60" y2="116" stroke="#A77959" strokeWidth="2" />
+        <line x1="4" y1="60" x2="12" y2="60" stroke="#A77959" strokeWidth="2" />
+        <line x1="108" y1="60" x2="116" y2="60" stroke="#A77959" strokeWidth="2" />
+        {/* Monumental Solid Nordic Diamond Hallmark */}
+        <polygon points="60,10 110,60 60,110 10,60" stroke="#A77959" strokeWidth="2" strokeDasharray="5 3" />
+        <polygon points="60,18 102,60 60,102 18,60" fill="#382820" stroke="#382820" strokeWidth="4" />
+        {/* Stark Extraction Void Channels */}
+        <path d="M42 38V82M78 38V82M42 38L78 82" stroke="#F1E9DC" strokeWidth="7" strokeLinecap="square" />
+        <circle cx="60" cy="60" r="5" fill="#A77959" />
+        {/* Roast Axis Markers */}
+        <line x1="60" y1="22" x2="60" y2="30" stroke="#A77959" strokeWidth="2.5" />
+        <line x1="60" y1="90" x2="60" y2="98" stroke="#A77959" strokeWidth="2.5" />
       </svg>
     ),
     palette: [
@@ -457,8 +577,8 @@ const brandSystems: BrandSystem[] = [
     id: "aurelle",
     name: "AURELLE",
     category: "Luxury Skincare House",
-    tagline: "Timeless European High-End Beauty",
-    artDirection: "Didone editorial contrast, botanical purity, golden-ratio pyramid monogram, unhurried luxury.",
+    tagline: "Geneva Haute Botanique & Celestial Horlogerie",
+    artDirection: "Classical Roman Triumphal Arch, radiating celestial sunburst pediment, fluted Corinthian pillars, laurel balance.",
     origin: "GENÈVE &bull; PARIS &bull; ÉDITION PRIVÉE",
     subDescriptor: "SOINS DE LA PEAU &bull; HAUTE BOTANIQUE &bull; GENÈVE &bull; PARIS",
     bgCanvas: "#EDE8DF",
@@ -466,24 +586,58 @@ const brandSystems: BrandSystem[] = [
     accentColor: "#C5B6A2",
     symbolSvg: (
       <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="47.5" stroke="#282825" strokeWidth="1" strokeDasharray="3 3" opacity="0.45" />
-        <circle cx="50" cy="50" r="42" stroke="#282825" strokeWidth="1.2" />
-        <path d="M50 18L32 74H38.5L43.2 59.5H56.8L61.5 74H68L50 18ZM44.8 54.5L50 38.2L55.2 54.5H44.8Z" fill="#282825" />
-        <circle cx="50" cy="74" r="1.5" fill="#282825" />
+        {/* Classical Roman Triumphal Archway & Sunburst */}
+        {/* Radial Sunburst Rays */}
+        <line x1="50" y1="20" x2="50" y2="10" stroke="#C5B6A2" strokeWidth="1.5" />
+        <line x1="38" y1="23" x2="31" y2="15" stroke="#C5B6A2" strokeWidth="1.5" />
+        <line x1="62" y1="23" x2="69" y2="15" stroke="#C5B6A2" strokeWidth="1.5" />
+        <line x1="28" y1="31" x2="20" y2="26" stroke="#C5B6A2" strokeWidth="1.5" />
+        <line x1="72" y1="31" x2="80" y2="26" stroke="#C5B6A2" strokeWidth="1.5" />
+        {/* Arch Pediment Beam */}
+        <rect x="22" y="28" width="56" height="4" fill="#282825" />
+        {/* Rounded Semicircular Arch Vault */}
+        <path d="M30 84V52C30 40 40 32 50 32C60 32 70 40 70 52V84" stroke="#282825" strokeWidth="3" fill="none" />
+        <path d="M38 84V54C38 46 44 40 50 40C56 40 62 46 62 54V84" stroke="#C5B6A2" strokeWidth="1.5" strokeDasharray="2 2" fill="none" />
+        {/* Fluted Twin Columns */}
+        <line x1="26" y1="32" x2="26" y2="84" stroke="#282825" strokeWidth="3.5" strokeLinecap="square" />
+        <line x1="74" y1="32" x2="74" y2="84" stroke="#282825" strokeWidth="3.5" strokeLinecap="square" />
+        {/* Plinth Base */}
+        <rect x="18" y="84" width="64" height="4" fill="#282825" />
+        <circle cx="50" cy="52" r="3" fill="#C5B6A2" />
       </svg>
     ),
     monogramSvg: (
       <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="38" fill="#282825" />
-        <path d="M40 18L26 58H31L34.5 48H45.5L49 58H54L40 18ZM36 44L40 32L44 44H36Z" fill="#EDE8DF" />
+        <rect x="12" y="20" width="56" height="4" fill="#282825" />
+        <path d="M22 66V42C22 30 30 24 40 24C50 24 58 30 58 42V66" stroke="#282825" strokeWidth="3.5" fill="none" />
+        <line x1="18" y1="24" x2="18" y2="66" stroke="#282825" strokeWidth="4" />
+        <line x1="62" y1="24" x2="62" y2="66" stroke="#282825" strokeWidth="4" />
+        <rect x="14" y="66" width="52" height="4" fill="#282825" />
+        <circle cx="40" cy="42" r="3.5" fill="#C5B6A2" />
       </svg>
     ),
     monogramHeroSvg: (
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <circle cx="60" cy="60" r="56" stroke="#282825" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.5" />
-        <circle cx="60" cy="60" r="50" stroke="#282825" strokeWidth="1.5" />
-        <path d="M60 22L38 88H46L51.8 71H68.2L74 88H82L60 22ZM53.6 65L60 45L66.4 65H53.6Z" fill="#282825" />
-        <circle cx="60" cy="88" r="2" fill="#282825" />
+        {/* Radiant Celestial Sunburst Crown */}
+        <line x1="60" y1="20" x2="60" y2="6" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="44" y1="24" x2="34" y2="12" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="76" y1="24" x2="86" y2="12" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="30" y1="34" x2="18" y2="26" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="90" y1="34" x2="102" y2="26" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="20" y1="48" x2="8" y2="44" stroke="#C5B6A2" strokeWidth="2" />
+        <line x1="100" y1="48" x2="112" y2="44" stroke="#C5B6A2" strokeWidth="2" />
+        {/* Entablature & Pediment */}
+        <rect x="22" y="30" width="76" height="6" fill="#282825" />
+        <rect x="26" y="26" width="68" height="4" fill="#C5B6A2" />
+        {/* Monumental Semicircular Arch Portal */}
+        <path d="M34 104V64C34 48 46 36 60 36C74 36 86 48 86 64V104" stroke="#282825" strokeWidth="5.5" fill="none" />
+        <path d="M44 104V66C44 56 52 48 60 48C68 48 76 56 76 66V104" stroke="#C5B6A2" strokeWidth="2.5" strokeDasharray="3 3" fill="none" />
+        {/* Fluted Roman Corinthian Columns */}
+        <line x1="28" y1="36" x2="28" y2="104" stroke="#282825" strokeWidth="5.5" strokeLinecap="square" />
+        <line x1="92" y1="36" x2="92" y2="104" stroke="#282825" strokeWidth="5.5" strokeLinecap="square" />
+        {/* Monumental Plinth */}
+        <rect x="18" y="104" width="84" height="6" fill="#282825" />
+        <circle cx="60" cy="65" r="5" fill="#C5B6A2" />
       </svg>
     ),
     palette: [
