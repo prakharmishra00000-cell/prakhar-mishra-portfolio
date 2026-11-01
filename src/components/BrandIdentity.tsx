@@ -556,6 +556,18 @@ export default function BrandIdentity() {
     }
   };
 
+  const getBrandCanvasClass = (id: string) => {
+    switch(id) {
+      case 'forma': return styles.canvasForma;
+      case 'elora': return styles.canvasElora;
+      case 'nexora': return styles.canvasNexora;
+      case 'solve': return styles.canvasSolve;
+      case 'noire': return styles.canvasNoire;
+      case 'aurelle': return styles.canvasAurelle;
+      default: return '';
+    }
+  };
+
   return (
     <section id="brand-identity" className={styles.brandSection}>
       <div className={styles.container}>
@@ -627,7 +639,7 @@ export default function BrandIdentity() {
               >
                 {/* Visual Board */}
                 <div 
-                  className={styles.brandCanvasBlock}
+                  className={`${styles.brandCanvasBlock} ${getBrandCanvasClass(brand.id)}`}
                   style={{ backgroundColor: brand.bgCanvas }}
                 >
                   <div className={styles.canvasHeader}>
@@ -763,7 +775,7 @@ export default function BrandIdentity() {
               key={`primary-${activeBrand.id}`}
             >
               <div 
-                className={styles.primaryDisplayBoard}
+                className={`${styles.primaryDisplayBoard} ${getBrandCanvasClass(activeBrand.id)}`}
                 style={{ backgroundColor: activeBrand.bgCanvas }}
               >
                 <div className={styles.canvasMetaTop} style={{ color: activeBrand.textColor }}>

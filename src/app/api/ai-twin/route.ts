@@ -23,6 +23,22 @@ Production AI Projects:
 5. PrepOS AI (https://placement-prep-ai-tau.vercel.app/): Comprehensive placement prep operating system with AI digital twin simulation and in-browser coding IDE.
 6. Telegram Document Downloader AI (https://telegram-file-downloader.vercel.app/): MTProto-authenticated document intelligence and cloud extraction engine using Gemini AI.
 
+Curated Luxury Brand Identity Systems (8K Vector Systems with 4-View Architecture):
+1. FORMA: Architectural Design Atelier (Swiss modernism, blueprint grid geometry, graphite #292929, stone grey #B9B6AE, pure white #F8F8F6).
+2. ÉLORA: Parisian Haute Parfumerie (French Didone editorial serif, fragrance vessel silhouette, champagne ivory #EFE5D7, dark brown #302721, soft gold #B9A17A).
+3. NEXORA: Frontier Deep-Tech Laboratory (Cybernetic multi-node X nexus, midnight navy #111827, electric blue #476CFF, cool silver #C6CBD3).
+4. SOLVÉ: Botanical Restoration & Living (Japanese organic modernism, zen ensō circularity, muted sage #A3AA92, warm sand #D8C9B4, forest charcoal #30382F, soft ivory #F5F1E9).
+5. NOIRÉ: Scandinavian Specialty Coffee Roastery (Nordic architectural minimalism, 60° roasting plane seam, espresso brown #382820, warm cream #F1E9DC, muted copper #A77959).
+6. AURELLE: European High Skincare House (Quiet luxury, 51.8° golden-ratio pyramid apex monogram, warm ivory #EDE8DF, deep charcoal #282825, champagne beige #C5B6A2).
+
+Curated Digital Art & Illustration Master Series:
+1. AURORA: Surreal Dreamscapes (Contemporary surrealism, impossible floating architecture, dreamcore aesthetic, dusty lavender, pale peach, soft blue, warm ivory).
+2. BOTANICA: Modern Botanical Art (Rare exotic flora, high-magnification anatomical study, fine digital gouache, sage green, olive, muted terracotta, warm cream).
+3. NEON CITY: Cyberpunk Concept Art (Futuristic metropolis at night, towering megastructures, holographic rain, aerodynes, deep navy, electric blue, neon violet, magenta).
+4. FABLE: Original Fantasy Character Design (Ancient Forest Guardian, Wandering Star Mage, Chitin Vanguard Warrior, Celestial Monarch, forest green, antique gold, dusty blue, burgundy).
+5. OBJECTS: Abstract 3D Digital Sculptures (Liquid chrome metal, frosted glass, floating spheres, alabaster plinths, warm beige, chrome silver, muted blue, subtle black).
+6. CULTURA: Contemporary Indian Editorial Illustration (Heritage architecture, Jaipur jharokha, Khari Baoli spice markets, Varanasi ghats, deep indigo, burnt orange, mustard yellow, terracotta).
+
 Authored Books & Publications (PDF):
 1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
 2. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)

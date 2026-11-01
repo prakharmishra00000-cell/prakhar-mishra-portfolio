@@ -103,7 +103,7 @@ export default function ResumePage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Professional Summary</h2>
           <p className={styles.paragraph}>
-            AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), specializing in building intelligent web products with Next.js, React, and Generative AI APIs. Deployed 6+ production web applications on Vercel and authored 8 comprehensive technical masterbooks spanning AI engineering, full-stack web architecture, and career intelligence.
+            AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), specializing in building intelligent web products with Next.js, React, and Generative AI APIs. Deployed 6+ production web applications on Vercel, authored 8 comprehensive technical masterbooks, engineered 6 luxury vector brand identity systems with 4-view architectures, and created 6 curated museum-grade digital art &amp; concept illustration collections.
           </p>
         </section>
 
@@ -118,6 +118,10 @@ export default function ResumePage() {
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Web &amp; Application Dev:</strong>
               <span> Frontend Development, Backend Development, Next.js, React, APIs, Database Integration, Authentication, Deployment, Responsive Web Design</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Brand Identity &amp; Digital Art:</strong>
+              <span> Vector Identity Systems, Custom Typographic Wordmarks, Monogram Geometry, Editorial Illustration, 3D Art Direction, Concept Environments, Precision 8K Visuals</span>
             </div>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Development Tools:</strong>
@@ -250,6 +254,21 @@ export default function ResumePage() {
               <li>Architected an AI-powered document intelligence and extractor utility integrating official Telegram MTProto APIs with persistent encrypted session state and multi-user authentication.</li>
               <li>Integrated Google Gemini for automated document summarization, topic extraction, and semantic search across channel files.</li>
             </ul>
+          </div>
+        </section>
+
+        {/*-----------LUXURY BRAND IDENTITY & DIGITAL ART SYSTEMS-----------*/}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Curated Luxury Brand Identities &amp; Digital Art Masterworks</h2>
+          <div className={styles.skillsBlock}>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Vector Brand Systems (8K / 4-View Architecture):</strong>
+              <span> FORMA (Swiss Architectural Modernism) &bull; &Eacute;LORA (Parisian Haute Parfumerie) &bull; NEXORA (Frontier Deep-Tech Nexus) &bull; SOLV&Eacute; (Kyoto Botanical Living) &bull; NOIR&Eacute; (Scandinavian Specialty Coffee) &bull; AURELLE (Haute European Skincare)</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Digital Art &amp; Concept Collections:</strong>
+              <span> AURORA (Surreal Dreamscapes &amp; Impossible Architecture) &bull; BOTANICA (Exotic Botanical Studies) &bull; NEON CITY (Cinematic Cyberpunk Metropolis) &bull; FABLE (Original Fantasy Character Lore) &bull; OBJECTS (Abstract 3D Liquid Sculptures) &bull; CULTURA (Modern Indian Graphic Heritage)</span>
+            </div>
           </div>
         </section>
 

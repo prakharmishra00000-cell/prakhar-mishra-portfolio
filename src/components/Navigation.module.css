@@ -35,14 +35,14 @@
   width: 36px;
   height: 36px;
   border-radius: 6px;
-  background: linear-gradient(135deg, #1f80e0, #00d2ff);
+  background: linear-gradient(135deg, #E50914, #B81D24);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-weight: 900;
   font-size: 1.25rem;
-  box-shadow: 0 4px 15px rgba(31, 128, 224, 0.6);
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6);
 }
 
 .logoText {
@@ -60,7 +60,7 @@
 
 .logoSub {
   font-size: 0.65rem;
-  color: #00d2ff;
+  color: #E50914;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;

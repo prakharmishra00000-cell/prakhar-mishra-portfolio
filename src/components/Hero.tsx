@@ -29,8 +29,8 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className={styles.netflixBadgeRow}
           >
-            <span className={styles.nBadgeLetter}>★</span>
-            <span className={styles.nBadgeText}>HOTSTAR SPECIALS &bull; FULL-STACK AI PRODUCTION</span>
+            <span className={styles.nBadgeLetter}>N</span>
+            <span className={styles.nBadgeText}>A NETFLIX ORIGINAL PRODUCTION &bull; FULL-STACK AI</span>
           </motion.div>
 
           {/* Title & Headline */}

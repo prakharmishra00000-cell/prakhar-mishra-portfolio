@@ -28,6 +28,7 @@ export default function Navigation() {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Premium Logos', href: '#brand-identity' },
+    { name: 'Digital Art', href: '#digital-art' },
     { name: 'Books & Guides', href: '#books' },
     { name: 'Skills & Radar', href: '#skills' },
     { name: 'Workflow', href: '#services' },
@@ -39,11 +40,11 @@ export default function Navigation() {
       <div className={styles.container}>
         <Link href="#home" className={styles.logoWrapper}>
           <div className={styles.logoBadge}>
-            ★
+            N
           </div>
           <div className={styles.logoText}>
             <span className={styles.logo}>PRAKHAR</span>
-            <span className={styles.logoSub}>HOTSTAR</span>
+            <span className={styles.logoSub}>NETFLIX</span>
           </div>
         </Link>
         
