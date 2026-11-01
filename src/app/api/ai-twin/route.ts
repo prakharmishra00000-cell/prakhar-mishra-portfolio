@@ -31,14 +31,6 @@ Curated Luxury Brand Identity Systems (8K Vector Systems with 4-View Architectur
 5. NOIRÉ: Scandinavian Specialty Coffee Roastery (Nordic architectural minimalism, 60° roasting plane seam, espresso brown #382820, warm cream #F1E9DC, muted copper #A77959).
 6. AURELLE: European High Skincare House (Quiet luxury, 51.8° golden-ratio pyramid apex monogram, warm ivory #EDE8DF, deep charcoal #282825, champagne beige #C5B6A2).
 
-Curated Digital Art & Illustration Master Series:
-1. AURORA: Surreal Dreamscapes (Contemporary surrealism, impossible floating architecture, dreamcore aesthetic, dusty lavender, pale peach, soft blue, warm ivory).
-2. BOTANICA: Modern Botanical Art (Rare exotic flora, high-magnification anatomical study, fine digital gouache, sage green, olive, muted terracotta, warm cream).
-3. NEON CITY: Cyberpunk Concept Art (Futuristic metropolis at night, towering megastructures, holographic rain, aerodynes, deep navy, electric blue, neon violet, magenta).
-4. FABLE: Original Fantasy Character Design (Ancient Forest Guardian, Wandering Star Mage, Chitin Vanguard Warrior, Celestial Monarch, forest green, antique gold, dusty blue, burgundy).
-5. OBJECTS: Abstract 3D Digital Sculptures (Liquid chrome metal, frosted glass, floating spheres, alabaster plinths, warm beige, chrome silver, muted blue, subtle black).
-6. CULTURA: Contemporary Indian Editorial Illustration (Heritage architecture, Jaipur jharokha, Khari Baoli spice markets, Varanasi ghats, deep indigo, burnt orange, mustard yellow, terracotta).
-
 Authored Books & Publications (PDF):
 1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
 2. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)

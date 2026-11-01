@@ -46,7 +46,6 @@ export default function Footer() {
                 <Link href="#about" className={styles.footerLink}>About</Link>
                 <Link href="#projects" className={styles.footerLink}>Projects</Link>
                 <Link href="#brand-identity" className={styles.footerLink}>Premium Logos</Link>
-                <Link href="#digital-art" className={styles.footerLink}>Digital Art &amp; Illustration</Link>
                 <Link href="#books" className={styles.footerLink}>Books &amp; Guides</Link>
                 <Link href="#skills" className={styles.footerLink}>Technical Skills</Link>
                 <Link href="#services" className={styles.footerLink}>Workflow &amp; Services</Link>
@@ -78,9 +77,6 @@ export default function Footer() {
                 </a>
                 <Link href="#brand-identity" className={styles.footerLink}>
                   6 Luxury Brand Identity Systems (8K)
-                </Link>
-                <Link href="#digital-art" className={styles.footerLink}>
-                  6 Digital Art Collections (AURORA, BOTANICA, etc.)
                 </Link>
                 <Link href="#books" className={styles.footerLink}>
                   8 Authored Masterbooks (PDF)

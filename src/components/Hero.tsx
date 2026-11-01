@@ -87,9 +87,6 @@ export default function Hero() {
             <a href="#about" className={styles.moreInfoBtn}>
               <Info size={20} /> Details
             </a>
-            <a href="#books" className={styles.subActionBtn}>
-              <BookOpen size={18} /> Masterbooks
-            </a>
             <a href="#agent-terminal" className={styles.subActionBtn}>
               <Terminal size={18} /> AI Twin
             </a>
