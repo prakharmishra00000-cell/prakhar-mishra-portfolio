@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Mail, ArrowUpRight } from 'lucide-react';
 import styles from './Footer.module.css';
 
@@ -20,7 +21,12 @@ const LinkedinSvg = () => (
 );
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  if (pathname === '/resume' || pathname === '/pdf-viewer') {
+    return null;
+  }
 
   return (
     <footer className={styles.footer}>
@@ -68,7 +74,7 @@ export default function Footer() {
                   Telegram AI Downloader <ArrowUpRight size={12} style={{ display: 'inline' }} />
                 </a>
                 <Link href="#books" className={styles.footerLink}>
-                  7 Authored Masterbooks (PDF)
+                  8 Authored Masterbooks (PDF)
                 </Link>
                 <Link href="/resume" className={styles.footerLink}>
                   Technical Resume (PDF/Print)

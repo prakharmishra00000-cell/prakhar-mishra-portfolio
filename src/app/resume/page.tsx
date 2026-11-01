@@ -30,24 +30,20 @@ export default function ResumePage() {
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
     if (typeof window !== 'undefined') {
-      if (window.history.length > 1) {
-        router.back();
-      } else {
-        router.push('/');
-      }
+      window.location.href = '/';
     }
   };
 
   return (
     <div className={styles.resumePage}>
-      <button 
+      <Link 
+        href="/"
         onClick={handleClose} 
         className={styles.closeBtn} 
         aria-label="Close Resume and Return Home"
-        type="button"
       >
-        <X size={24} />
-      </button>
+        <X size={26} strokeWidth={2.5} />
+      </Link>
       
       <div className={styles.topActions}>
         <button onClick={handlePrint} className={styles.actionBtn}>

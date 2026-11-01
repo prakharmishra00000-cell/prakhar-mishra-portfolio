@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import styles from './Navigation.module.css';
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -16,6 +18,11 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Do not render global top navigation bar on standalone full-page views
+  if (pathname === '/resume' || pathname === '/pdf-viewer') {
+    return null;
+  }
 
   const navLinks = [
     { name: 'About', href: '#about' },
