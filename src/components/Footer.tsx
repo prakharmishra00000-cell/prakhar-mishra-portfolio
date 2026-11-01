@@ -45,8 +45,11 @@ export default function Footer() {
               <div className={styles.linkList}>
                 <Link href="#about" className={styles.footerLink}>About</Link>
                 <Link href="#projects" className={styles.footerLink}>Projects</Link>
+                <Link href="#brand-identity" className={styles.footerLink}>Premium Logos</Link>
+                <Link href="#digital-art" className={styles.footerLink}>Digital Art &amp; Illustration</Link>
                 <Link href="#books" className={styles.footerLink}>Books &amp; Guides</Link>
                 <Link href="#skills" className={styles.footerLink}>Technical Skills</Link>
+                <Link href="#services" className={styles.footerLink}>Workflow &amp; Services</Link>
                 <Link href="#agent-terminal" className={styles.footerLink}>Live AI Twin</Link>
                 <Link href="#contact" className={styles.footerLink}>Contact</Link>
               </div>
@@ -73,6 +76,12 @@ export default function Footer() {
                 <a href="https://telegram-file-downloader.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
                   Telegram AI Downloader <ArrowUpRight size={12} style={{ display: 'inline' }} />
                 </a>
+                <Link href="#brand-identity" className={styles.footerLink}>
+                  6 Luxury Brand Identity Systems (8K)
+                </Link>
+                <Link href="#digital-art" className={styles.footerLink}>
+                  6 Digital Art Collections (AURORA, BOTANICA, etc.)
+                </Link>
                 <Link href="#books" className={styles.footerLink}>
                   8 Authored Masterbooks (PDF)
                 </Link>
