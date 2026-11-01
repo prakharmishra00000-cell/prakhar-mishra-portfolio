@@ -20,10 +20,10 @@ export default function Navigation() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Books & Guides', href: '#books' },
+    { name: 'Skills & Radar', href: '#skills' },
     { name: 'Workflow', href: '#services' },
-    { name: 'AI Console', href: '#agent-terminal' },
-    { name: 'Masterbook', href: '/book' },
+    { name: 'Live AI Twin', href: '#agent-terminal' },
   ];
 
   return (
@@ -82,14 +82,14 @@ export default function Navigation() {
             className={styles.mobileLink}
             onClick={() => setMobileOpen(false)}
           >
-            View Full Resume
+            View Technical Resume
           </Link>
           <Link 
             href="#contact" 
             className={styles.mobileCta}
             onClick={() => setMobileOpen(false)}
           >
-            Get In Touch
+            Send Direct Message
           </Link>
         </div>
       )}

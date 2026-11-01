@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Copy, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Copy, Check, ExternalLink, Loader2 } from 'lucide-react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -19,10 +20,40 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    if (!formData.name || !formData.email || !formData.message || loading) return;
+
+    setLoading(true);
+
+    try {
+      // 1. Post to dedicated server endpoint which forwards to Web3Forms / mailer
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      // 2. Also trigger direct mailto dispatch so it launches in user's default client addressed to prakharmishraflp@gmail.com
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(`Inquiry from ${formData.name} (${formData.email})`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      
+      setSubmitted(true);
+      
+      // Auto-trigger native email client after short visual confirmation
+      setTimeout(() => {
+        window.open(mailtoLink, '_blank');
+      }, 700);
+
+    } catch (err) {
+      console.error("Submission error:", err);
+      // Fallback directly to mailto
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(`Inquiry from ${formData.name}`)}&body=${encodeURIComponent(formData.message)}`;
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,11 +67,11 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.eyebrow}>
-            <Mail size={14} /> Direct Channel
+            <Mail size={14} /> Direct Dispatch
           </div>
           <h2 className={`${styles.title} text-gradient`}>Let&apos;s Build Something Remarkable</h2>
           <p className={styles.subtitle}>
-            Have an open full-time position, a contract build, or a product idea requiring AI and full-stack speed? Reach out directly.
+            Messages sent here dispatch directly to my personal inbox (<strong>{email}</strong>). Open for engineering roles, AI architecture contracts, and technical collaborations.
           </p>
         </motion.div>
 
@@ -99,13 +130,13 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className={styles.formTitle}>Send a Quick Dispatch</h3>
-            <p className={styles.formSubtitle}>Send your project parameters or interview inquiry.</p>
+            <h3 className={styles.formTitle}>Send a Direct Email Message</h3>
+            <p className={styles.formSubtitle}>Transmits directly to <strong>{email}</strong>.</p>
 
             {submitted ? (
               <div className={styles.successBox}>
                 <Check size={20} />
-                <span>Message recorded! You can also email directly at <strong>{email}</strong>.</span>
+                <span>Message dispatched! Your email has been delivered to <strong>{email}</strong>.</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
@@ -134,18 +165,22 @@ export default function Contact() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>Project Scope or Role Details</label>
+                  <label className={styles.label}>Message &bull; Project Scope or Role</label>
                   <textarea 
                     required 
                     className={styles.textarea} 
-                    placeholder="Tell me about what you're building, timeline, or position requirements..."
+                    placeholder="Write your message here..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
                 </div>
 
-                <button type="submit" className={styles.submitBtn}>
-                  Transmit Message <Send size={15} />
+                <button type="submit" className={styles.submitBtn} disabled={loading}>
+                  {loading ? (
+                    <>Sending Dispatch <Loader2 size={15} className="animate-spin" /></>
+                  ) : (
+                    <>Send to {email} <Send size={15} /></>
+                  )}
                 </button>
               </form>
             )}

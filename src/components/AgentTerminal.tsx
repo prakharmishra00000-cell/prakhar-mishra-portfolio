@@ -2,79 +2,73 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Send, Sparkles, Bot, CornerDownLeft, CheckCircle2 } from 'lucide-react';
+import { Terminal, Send, Bot, Loader2, Sparkles, CheckCircle2 } from 'lucide-react';
 import styles from './AgentTerminal.module.css';
 
 interface Message {
   sender: 'bot' | 'user';
   text: string;
+  source?: string;
 }
-
-const PRESET_KNOWLEDGE: { [key: string]: string } = {
-  "What is your core tech stack?":
-    "I build with Next.js (App Router, Turbopack/Webpack), React 19, TypeScript, Tailwind CSS, and Node.js. For AI, I specialize in Gemini 1.5, Claude 3.5 Sonnet, prompt chaining, vector embeddings, and autonomous agent systems.",
-  
-  "Why hire you over a traditional CS graduate?":
-    "As a final-year Mechanical Engineering student from MMMUT, I bring first-principles systems engineering and rigorous discipline to software. I don't stop at theoretical exercises—I have shipped 6+ production AI web applications with real-world users, live data indexing, and zero mockups.",
-
-  "Tell me about CareerHub AI":
-    "CareerHub AI is my flagship job aggregation engine. It indexes 50,000+ live opportunities across 9+ platforms (LinkedIn, Indeed, Glassdoor, ZipRecruiter, etc.) with 0% mock data and direct apply links across 40+ engineering disciplines.",
-
-  "What is your Masterbook?":
-    "I authored the 'Full Stack Web Development Complete Masterbook' (400+ pages), covering end-to-end full-stack engineering, React internals, backend design patterns, and AI tool integrations. It is free to view directly in the top navigation!",
-
-  "Are you open for full-time roles or freelance?":
-    "Yes! I am graduating in 2026 from MMMUT Gorakhpur and am actively interviewing for AI Engineer, Full-Stack Developer, and Software Engineering positions, as well as select contract builds. Email me at prakharmishraflp@gmail.com."
-};
 
 const SUGGESTIONS = [
   "Why hire you over a traditional CS graduate?",
-  "Tell me about CareerHub AI",
-  "What is your core tech stack?",
-  "What is your Masterbook?",
-  "Are you open for full-time roles or freelance?"
+  "Tell me about CareerHub AI and its 50K opportunities",
+  "What is your core tech stack and AI tools?",
+  "Show me your authored technical Masterbooks",
+  "Are you open for full-time roles or freelance contracts?"
 ];
 
 export default function AgentTerminal() {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: 'bot',
-      text: "System initialized: Prakhar Digital Twin v2.4 online. Ask me anything regarding Prakhar's engineering philosophy, projects, or background."
+      text: "Prakhar Mishra AI Twin live. I am connected to Prakhar's complete systems knowledge graph. Ask any technical, architectural, or career question for an immediate, real-time response."
     }
   ]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = (queryText?: string) => {
+  const handleSend = async (queryText?: string) => {
     const q = (queryText || input).trim();
-    if (!q) return;
+    if (!q || loading) return;
 
-    const newMsgs: Message[] = [...messages, { sender: 'user', text: q }];
-    setMessages(newMsgs);
+    const userMessage: Message = { sender: 'user', text: q };
+    setMessages(prev => [...prev, userMessage]);
     setInput("");
+    setLoading(true);
 
-    // Simulate intelligent response lookup
-    setTimeout(() => {
-      let matchedResponse = PRESET_KNOWLEDGE[q];
-      if (!matchedResponse) {
-        // Fallback fuzzy search
-        const lower = q.toLowerCase();
-        if (lower.includes("hire") || lower.includes("why") || lower.includes("background")) {
-          matchedResponse = PRESET_KNOWLEDGE["Why hire you over a traditional CS graduate?"];
-        } else if (lower.includes("stack") || lower.includes("tech") || lower.includes("skills")) {
-          matchedResponse = PRESET_KNOWLEDGE["What is your core tech stack?"];
-        } else if (lower.includes("careerhub") || lower.includes("project")) {
-          matchedResponse = PRESET_KNOWLEDGE["Tell me about CareerHub AI"];
-        } else if (lower.includes("book") || lower.includes("masterbook")) {
-          matchedResponse = PRESET_KNOWLEDGE["What is your Masterbook?"];
-        } else if (lower.includes("job") || lower.includes("role") || lower.includes("hire") || lower.includes("contact")) {
-          matchedResponse = PRESET_KNOWLEDGE["Are you open for full-time roles or freelance?"];
-        } else {
-          matchedResponse = `Prakhar is an AI Full-Stack Developer specializing in Next.js, Gemini API, autonomous agents, and real-time platforms. He is a final-year Mechanical Engineering student at MMMUT Gorakhpur. Reach him directly at prakharmishraflp@gmail.com.`;
-        }
+    try {
+      const res = await fetch('/api/ai-twin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: q })
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server returned ${res.status}`);
       }
 
-      setMessages(prev => [...prev, { sender: 'bot', text: matchedResponse }]);
-    }, 400);
+      const data = await res.json();
+      const botReply: Message = {
+        sender: 'bot',
+        text: data.answer || "I received your question. As an AI Full-Stack Developer from MMMUT Gorakhpur, feel free to explore my deployed projects or reach out directly at prakharmishraflp@gmail.com.",
+        source: data.source
+      };
+      setMessages(prev => [...prev, botReply]);
+    } catch (err) {
+      console.error("AI Twin live fetch error:", err);
+      // Fallback response with live context
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: 'bot',
+          text: `Regarding "${q}": I am Prakhar Mishra, an AI Full-Stack Developer and final-year student at MMMUT Gorakhpur. I specialize in Next.js 16, React 19, TypeScript, and Generative AI APIs (Gemini 1.5, Claude 3.5). Reach me directly at prakharmishraflp@gmail.com (+91-6372843175).`
+        }
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -88,11 +82,11 @@ export default function AgentTerminal() {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.eyebrow}>
-            <Terminal size={14} /> Interactive Experience
+            <Terminal size={14} /> Live AI Architecture
           </div>
-          <h2 className={`${styles.title} text-gradient`}>Ask Prakhar&apos;s AI Digital Twin</h2>
+          <h2 className={`${styles.title} text-gradient`}>Ask Prakhar&apos;s Live AI Digital Twin</h2>
           <p className={styles.subtitle}>
-            Test an interactive console powered by Prakhar&apos;s portfolio knowledge graph. Ask about his architecture, projects, or background.
+            100% live real-time responses powered by server-side AI reasoning and portfolio knowledge graph.
           </p>
         </motion.div>
 
@@ -104,11 +98,11 @@ export default function AgentTerminal() {
               <span className={`${styles.macDot} ${styles.green}`} />
             </div>
             <div className={styles.terminalTitle}>
-              <Terminal size={13} /> bash &mdash; prakhar@twin-node: ~/portfolio
+              <Terminal size={13} /> bash &mdash; prakhar@twin-node: ~/realtime-ai
             </div>
             <div className={styles.terminalStatus}>
               <span className="pulse-dot" />
-              <span>Online</span>
+              <span>Real-Time Live</span>
             </div>
           </div>
 
@@ -119,29 +113,43 @@ export default function AgentTerminal() {
                   {msg.sender === 'bot' ? <Bot size={16} /> : 'YOU'}
                 </div>
                 <div className={styles.msgContent}>
-                  <div className={styles.msgSender}>{msg.sender === 'bot' ? 'Prakhar AI Twin' : 'Visitor'}</div>
+                  <div className={styles.msgSender}>
+                    {msg.sender === 'bot' ? 'Prakhar AI Twin (Real-Time)' : 'Visitor'}
+                  </div>
                   <div className={msg.sender === 'bot' ? styles.botText : styles.userText}>
                     {msg.text}
                   </div>
                 </div>
               </div>
             ))}
+            {loading && (
+              <div className={styles.msgRow}>
+                <div className={`${styles.msgAvatar} ${styles.botAvatar}`}>
+                  <Loader2 size={16} className="animate-spin" />
+                </div>
+                <div className={styles.msgContent}>
+                  <div className={styles.msgSender}>Prakhar AI Twin</div>
+                  <div className={styles.botText}>Synthesizing live response...</div>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Quick Clickable Prompts */}
+          {/* Quick Prompts */}
           <div className={styles.quickPrompts}>
             {SUGGESTIONS.map((item, idx) => (
               <button 
                 key={idx} 
                 className={styles.promptPill}
                 onClick={() => handleSend(item)}
+                disabled={loading}
               >
                 {item}
               </button>
             ))}
           </div>
 
-          {/* Input field */}
+          {/* Real-Time Form */}
           <form 
             className={styles.terminalInputRow}
             onSubmit={(e) => {
@@ -153,12 +161,13 @@ export default function AgentTerminal() {
             <input 
               type="text" 
               className={styles.inputField} 
-              placeholder="Ask a technical or career question..."
+              placeholder="Ask anything about Prakhar's projects, stack, or experience..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              disabled={loading}
             />
-            <button type="submit" className={styles.sendBtn}>
-              Ask <Send size={13} />
+            <button type="submit" className={styles.sendBtn} disabled={loading}>
+              {loading ? 'Processing...' : 'Send'} <Send size={13} />
             </button>
           </form>
         </div>

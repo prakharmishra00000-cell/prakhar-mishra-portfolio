@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Books from "@/components/Books";
 import Skills from "@/components/Skills";
 import AgentTerminal from "@/components/AgentTerminal";
 import Services from "@/components/Services";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <Books />
       <Skills />
       <AgentTerminal />
       <Services />
