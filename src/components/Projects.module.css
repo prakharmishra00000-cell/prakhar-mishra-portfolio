@@ -20,7 +20,7 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #e50914;
+  color: #00d2ff;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 0.5rem;
@@ -36,7 +36,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #a3a3a3;
+  color: #8292ab;
   max-width: 750px;
   margin: 0;
 }
@@ -52,26 +52,26 @@
 
 .filterBtn {
   padding: 0.5rem 1.25rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
-  background: rgba(36, 36, 36, 0.7);
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e5e5e5;
+  color: #c3cad9;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .filterBtn:hover {
-  background: rgba(50, 50, 50, 0.9);
+  background: rgba(22, 34, 62, 0.95);
   color: #ffffff;
 }
 
 .filterActive {
-  background: #e50914;
+  background: linear-gradient(135deg, #1f80e0, #0f5cb6);
   color: #ffffff;
-  border-color: #e50914;
-  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  border-color: #00d2ff;
+  box-shadow: 0 4px 15px rgba(31, 128, 224, 0.4);
 }
 
 .projectGrid {
@@ -82,7 +82,7 @@
 
 .projectCard {
   border-radius: 12px;
-  background: rgba(24, 24, 24, 0.9);
+  background: rgba(15, 23, 42, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   display: flex;
@@ -94,8 +94,8 @@
 
 .projectCard:hover {
   transform: translateY(-8px) scale(1.02);
-  border-color: #e50914;
-  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.9), 0 0 30px rgba(229, 9, 20, 0.4);
+  border-color: #00d2ff;
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.9), 0 0 30px rgba(31, 128, 224, 0.45);
 }
 
 .imageWrapper {
@@ -103,7 +103,7 @@
   width: 100%;
   height: 230px;
   overflow: hidden;
-  background: #000000;
+  background: #030b17;
 }
 
 .projectImage {
@@ -121,7 +121,7 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(20, 20, 20, 0.98) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(12, 17, 27, 0.98) 100%);
 }
 
 .categoryTag {
@@ -132,9 +132,9 @@
   font-size: 0.72rem;
   font-weight: 700;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid rgba(229, 9, 20, 0.6);
-  color: #ffffff;
+  background: rgba(12, 17, 27, 0.9);
+  border: 1px solid rgba(0, 210, 255, 0.5);
+  color: #00d2ff;
   backdrop-filter: blur(8px);
 }
 
@@ -192,7 +192,7 @@
 .metricVal {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #e50914;
+  color: #00d2ff;
 }
 
 .metricLabel {
@@ -213,7 +213,7 @@
   font-weight: 500;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.05);
-  color: #d1d5db;
+  color: #c3cad9;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -236,16 +236,16 @@
   font-size: 0.85rem;
   font-weight: 700;
   border-radius: 6px;
-  background: #e50914;
+  background: linear-gradient(135deg, #1f80e0, #0f5cb6);
   color: #ffffff;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(229, 9, 20, 0.35);
+  box-shadow: 0 4px 14px rgba(31, 128, 224, 0.35);
 }
 
 .liveBtn:hover {
-  background: #b81d24;
+  background: linear-gradient(135deg, #2590ff, #1f80e0);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.55);
+  box-shadow: 0 6px 20px rgba(31, 128, 224, 0.55);
 }
 
 .githubBtn {

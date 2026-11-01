@@ -38,11 +38,11 @@ export default function Navigation() {
       <div className={styles.container}>
         <Link href="#home" className={styles.logoWrapper}>
           <div className={styles.logoBadge}>
-            N
+            ★
           </div>
           <div className={styles.logoText}>
             <span className={styles.logo}>PRAKHAR</span>
-            <span className={styles.logoSub}>ORIGINALS</span>
+            <span className={styles.logoSub}>HOTSTAR</span>
           </div>
         </Link>
         

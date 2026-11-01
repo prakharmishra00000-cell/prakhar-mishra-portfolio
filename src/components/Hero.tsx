@@ -15,22 +15,22 @@ export default function Hero() {
 
   return (
     <section id="home" className={styles.hero}>
-      {/* Netflix Cinematic Atmospheric Glow & Backdrops */}
+      {/* Hotstar Disney+ Cinematic Atmospheric Glow & Deep Blue Backdrops */}
       <div className={styles.cinemaBackdropGlow} />
       <div className={styles.vignetteOverlay} />
       
       <div className={styles.fullHdContainer}>
-        {/* Left Column: Netflix Hero Billboard Typography & CTAs */}
+        {/* Left Column: Hotstar Hero Billboard Typography & CTAs */}
         <div className={styles.billboardContent}>
-          {/* Netflix Originals Brand Badge */}
+          {/* Hotstar Specials Brand Badge */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className={styles.netflixBadgeRow}
           >
-            <span className={styles.nBadgeLetter}>N</span>
-            <span className={styles.nBadgeText}>ORIGINAL PORTFOLIO &bull; FULL-STACK AI SERIES</span>
+            <span className={styles.nBadgeLetter}>★</span>
+            <span className={styles.nBadgeText}>HOTSTAR SPECIALS &bull; FULL-STACK AI PRODUCTION</span>
           </motion.div>
 
           {/* Title & Headline */}
@@ -49,12 +49,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className={styles.matchScore}>99% Match</span>
+            <span className={styles.matchScore}>★ Top Rated</span>
             <span className={styles.ratingBadge}>U/A 16+</span>
             <span className={styles.badgeSeason}>Graduating 2027</span>
-            <span className={styles.hdPill}>4K ULTRA HD</span>
-            <span className={styles.hdPill}>HDR</span>
-            <span className={styles.hdPill}>5.1 AUDIO</span>
+            <span className={styles.hdPill}>4K DOLBY VISION</span>
+            <span className={styles.hdPill}>DOLBY ATMOS</span>
           </motion.div>
 
           <motion.h2 
@@ -75,7 +74,7 @@ export default function Hero() {
             Final-year student at MMMUT Gorakhpur engineering production AI-native applications, real-time data engines, and enterprise web architectures. Creator of 6 live web platforms and author of 8 technical masterbooks.
           </motion.p>
           
-          {/* Netflix Big Billboard Actions */}
+          {/* Hotstar Big Billboard Actions */}
           <motion.div 
             className={styles.cinemaActions}
             initial={{ opacity: 0, y: 20 }}
@@ -83,10 +82,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.35 }}
           >
             <a href="#projects" className={styles.playBtn}>
-              <Play size={20} fill="#000000" /> Play Experience
+              <Play size={20} fill="#ffffff" /> Watch Now
             </a>
             <a href="#about" className={styles.moreInfoBtn}>
-              <Info size={20} /> More Info
+              <Info size={20} /> Details
             </a>
             <a href="#books" className={styles.subActionBtn}>
               <BookOpen size={18} /> Masterbooks
@@ -153,7 +152,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Full-width Netflix Metrics Showcase */}
+      {/* Full-width Hotstar Metrics Showcase */}
       <motion.div 
         className={styles.netflixStatsRibbon}
         initial={{ opacity: 0, y: 30 }}
