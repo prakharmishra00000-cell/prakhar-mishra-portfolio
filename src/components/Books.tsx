@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { BookOpen, Download, FileText, Code2, Layers, Cpu, Sparkles, Bot } from 'lucide-react';
+import { BookOpen, Download, FileText, Code2, Layers, Cpu, Sparkles, Bot, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './Books.module.css';
 
 interface BookItem {
@@ -127,41 +127,72 @@ export default function Books() {
           </p>
         </motion.div>
 
-        <div className={styles.booksGrid}>
-          {booksList.map((book, idx) => (
-            <motion.div 
-              key={book.id}
-              className={styles.bookCard}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
+        <div className={styles.topControlRow}>
+          <div className={styles.categoryPill}>
+            <span>All 8 Masterbooks &amp; Handbooks</span>
+          </div>
+
+          <div className={styles.scrollNavControls}>
+            <button 
+              className={styles.scrollNavBtn} 
+              onClick={() => {
+                const el = document.getElementById('booksCarouselTrack');
+                if (el) el.scrollBy({ left: -420, behavior: 'smooth' });
+              }}
+              aria-label="Previous Book"
             >
-              <div className={styles.bookTop}>
-                <div className={styles.iconWrap}>{book.icon}</div>
-                <span className={styles.badge}>{book.badge}</span>
-              </div>
+              <ChevronLeft size={20} />
+            </button>
+            <button 
+              className={styles.scrollNavBtn} 
+              onClick={() => {
+                const el = document.getElementById('booksCarouselTrack');
+                if (el) el.scrollBy({ left: 420, behavior: 'smooth' });
+              }}
+              aria-label="Next Book"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
 
-              <h3 className={styles.bookTitle}>{book.title}</h3>
-              <p className={styles.bookDesc}>{book.description}</p>
+        {/* Running Form Carousel Track for Books */}
+        <div 
+          id="booksCarouselTrack"
+          className={styles.carouselContainer}
+        >
+          <div className={styles.carouselTrack}>
+            {[...booksList, ...booksList].map((book, idx) => (
+              <div 
+                key={`${book.id}-${idx}`}
+                className={styles.bookCard}
+              >
+                <div className={styles.bookTop}>
+                  <div className={styles.iconWrap}>{book.icon}</div>
+                  <span className={styles.badge}>{book.badge}</span>
+                </div>
 
-              <div className={styles.metaRow}>
-                <span className={styles.metaItem}><strong>Scope:</strong> {book.pages}</span>
-                <span className={styles.metaItem}><strong>Format:</strong> {book.format}</span>
-              </div>
+                <h3 className={styles.bookTitle}>{book.title}</h3>
+                <p className={styles.bookDesc}>{book.description}</p>
 
-              <div className={styles.actions}>
-                <a 
-                  href={book.filePath} 
-                  download={book.fileName}
-                  className={styles.readBtn}
-                  aria-label={`Download ${book.title} PDF`}
-                >
-                  <Download size={16} /> Download PDF
-                </a>
+                <div className={styles.metaRow}>
+                  <span className={styles.metaItem}><strong>Scope:</strong> {book.pages}</span>
+                  <span className={styles.metaItem}><strong>Format:</strong> {book.format}</span>
+                </div>
+
+                <div className={styles.actions}>
+                  <a 
+                    href={book.filePath} 
+                    download={book.fileName}
+                    className={styles.readBtn}
+                    aria-label={`Download ${book.title} PDF`}
+                  >
+                    <Download size={16} /> Download PDF
+                  </a>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

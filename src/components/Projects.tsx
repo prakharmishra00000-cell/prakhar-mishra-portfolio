@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Code2, Sparkles, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Code2, Sparkles, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './Projects.module.css';
 
 interface Project {
@@ -152,31 +152,55 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Filter Navigation */}
-        <div className={styles.filterBar}>
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`${styles.filterBtn} ${activeCategory === category ? styles.filterActive : ''}`}
-              onClick={() => setActiveCategory(category)}
+        {/* Filter Navigation & Scroll Controls */}
+        <div className={styles.topControlRow}>
+          <div className={styles.filterBar}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`${styles.filterBtn} ${activeCategory === category ? styles.filterActive : ''}`}
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <div className={styles.scrollNavControls}>
+            <button 
+              className={styles.scrollNavBtn} 
+              onClick={() => {
+                const el = document.getElementById('projectsCarouselTrack');
+                if (el) el.scrollBy({ left: -420, behavior: 'smooth' });
+              }}
+              aria-label="Previous Project"
             >
-              {category}
+              <ChevronLeft size={20} />
             </button>
-          ))}
+            <button 
+              className={styles.scrollNavBtn} 
+              onClick={() => {
+                const el = document.getElementById('projectsCarouselTrack');
+                if (el) el.scrollBy({ left: 420, behavior: 'smooth' });
+              }}
+              aria-label="Next Project"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
 
-        {/* Grid of Projects */}
-        <motion.div layout className={styles.projectGrid}>
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div 
-                layout
-                key={project.name}
+        {/* Running Form Carousel Track */}
+        <div 
+          id="projectsCarouselTrack"
+          className={styles.carouselContainer}
+        >
+          <div className={styles.carouselTrack}>
+            {/* Render duplicated list for continuous running flow */}
+            {[...filteredProjects, ...filteredProjects].map((project, idx) => (
+              <div 
+                key={`${project.name}-${idx}`}
                 className={styles.projectCard}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
               >
                 <div className={styles.imageWrapper}>
                   <img 
@@ -199,8 +223,8 @@ export default function Projects() {
                   <p className={styles.solutionText}>{project.solution}</p>
 
                   <div className={styles.metricsRow}>
-                    {project.metrics.map((metric, idx) => (
-                      <div key={idx} className={styles.metricItem}>
+                    {project.metrics.map((metric, mIdx) => (
+                      <div key={mIdx} className={styles.metricItem}>
                         <span className={styles.metricVal}>{metric.value}</span>
                         <span className={styles.metricLabel}>{metric.label}</span>
                       </div>
@@ -235,10 +259,10 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
