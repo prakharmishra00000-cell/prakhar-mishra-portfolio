@@ -7,10 +7,10 @@ import styles from './Hero.module.css';
 
 export default function Hero() {
   const stats = [
-    { value: "6+", label: "Deployed AI Platforms" },
-    { value: "50K+", label: "Opportunities Indexed" },
-    { value: "7", label: "Authored Masterbooks" },
-    { value: "100%", label: "Live Web Applications" },
+    { value: "6+", label: "Production Web Applications" },
+    { value: "7", label: "Authored Masterbooks & Handbooks" },
+    { value: "MMMUT", label: "Final-Year B.Tech (2026)" },
+    { value: "100%", label: "Live Deployed on Vercel" },
   ];
 
   return (
@@ -85,7 +85,7 @@ export default function Hero() {
             View My Work <ArrowRight size={17} />
           </a>
           <a href="#books" className={`${styles.btn} ${styles.secondary}`}>
-            <BookOpen size={16} /> View Books
+            <BookOpen size={16} /> View Books (PDF)
           </a>
           <a href="#agent-terminal" className={`${styles.btn} ${styles.secondary}`}>
             <Terminal size={16} /> Live AI Twin
@@ -95,7 +95,7 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Live Metrics Ribbon */}
+        {/* Live Metrics Ribbon - 100% Real Prakhar Credentials */}
         <motion.div 
           className={styles.statsBar}
           initial={{ opacity: 0, y: 30 }}
