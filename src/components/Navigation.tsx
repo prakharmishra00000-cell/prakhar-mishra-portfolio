@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import styles from './Navigation.module.css';
 
 export default function Navigation() {
@@ -18,40 +18,81 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Workflow', href: '#services' },
+    { name: 'AI Console', href: '#agent-terminal' },
+    { name: 'Masterbook', href: '/book' },
   ];
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="#home" className={styles.logo}>
-          Prakhar Mishra
+        <Link href="#home" className={styles.logoWrapper}>
+          <div className={styles.logoBadge}>
+            <Sparkles size={18} />
+          </div>
+          <div className={styles.logoText}>
+            <span className={styles.logo}>Prakhar Mishra</span>
+            <span className={styles.logoSub}>AI Full-Stack Systems</span>
+          </div>
         </Link>
         
-        <div className={styles.links}>
+        <div className={styles.centerPill}>
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href} className={styles.link}>
               {link.name}
             </Link>
           ))}
-          <Link href="mailto:prakharmishraflp@gmail.com" className={styles.cta}>
-            Let's Talk
-          </Link>
         </div>
 
-        <button 
-          className={styles.mobileMenuBtn}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className={styles.rightActions}>
+          <div className={styles.statusPill}>
+            <span className="pulse-dot" />
+            <span>Open for Hire</span>
+          </div>
+          <Link href="#contact" className={styles.cta}>
+            Connect <ArrowUpRight size={14} />
+          </Link>
+          <button 
+            className={styles.mobileMenuBtn}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
       
-      {/* Mobile Menu implementation can be expanded here */}
+      {mobileOpen && (
+        <div className={styles.mobileDrawer}>
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.href} 
+              className={styles.mobileLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link 
+            href="/resume" 
+            className={styles.mobileLink}
+            onClick={() => setMobileOpen(false)}
+          >
+            View Full Resume
+          </Link>
+          <Link 
+            href="#contact" 
+            className={styles.mobileCta}
+            onClick={() => setMobileOpen(false)}
+          >
+            Get In Touch
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

@@ -1,95 +1,153 @@
 .about {
-  padding: 8rem 2rem;
+  padding: 6rem 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .header {
+  text-align: center;
   margin-bottom: 4rem;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-.text {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.narrativeCard {
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(13, 18, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.narrativeCard p {
+  font-size: 1.05rem;
+  color: #cbd5e1;
   line-height: 1.8;
 }
 
-.text p {
-  margin-bottom: 1.5rem;
-}
-
-.text strong {
-  color: var(--text-primary);
+.narrativeCard strong {
+  color: #ffffff;
   font-weight: 600;
 }
 
-.differentiator {
-  background: var(--bg-glass);
-  border: 1px solid var(--border-color);
-  padding: 2.5rem;
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
+.highlightQuote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #94a3b8;
+  background: rgba(56, 189, 248, 0.04);
+  padding: 1rem 1.25rem;
+  border-radius: 0 12px 12px 0;
 }
 
-.diffTitle {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
+.authorSignature {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.diffList {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
+.authorMeta h4 {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.authorMeta p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.diffGrid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-.diffItem {
+.diffCard {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(13, 18, 38, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s ease;
+}
+
+.diffCard:hover {
+  background: rgba(22, 31, 66, 0.7);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(4px);
 }
 
 .diffIcon {
-  color: var(--accent-color);
-  margin-top: 0.25rem;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.diffText h4 {
-  color: var(--text-primary);
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+.diffContent h4 {
+  font-size: 1.05rem;
+  color: #f1f5f9;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
 }
 
-.diffText p {
-  color: var(--text-muted);
+.diffContent p {
   font-size: 0.9rem;
-  line-height: 1.5;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .content {
+@media (max-width: 960px) {
+  .mainGrid {
     grid-template-columns: 1fr;
-    gap: 3rem;
   }
 }

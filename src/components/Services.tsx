@@ -1,44 +1,85 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Lightbulb, PenTool, Code, Cpu, Database, CheckCircle, Rocket, RefreshCw, Layout, Smartphone, Workflow } from 'lucide-react';
+import { 
+  Lightbulb, 
+  PenTool, 
+  Code, 
+  Cpu, 
+  CheckCircle2, 
+  Rocket, 
+  Workflow, 
+  Layers, 
+  Database, 
+  ShieldCheck, 
+  Compass, 
+  Sparkles 
+} from 'lucide-react';
 import styles from './Services.module.css';
 
-const workflow = [
-  { icon: <Lightbulb size={24} />, title: "Understand", desc: "Understand the problem, users and desired outcome." },
-  { icon: <PenTool size={24} />, title: "Architect", desc: "Plan the product structure, features and technical workflow." },
-  { icon: <Code size={24} />, title: "Generate", desc: "Use AI-assisted development to accelerate implementation." },
-  { icon: <Cpu size={24} />, title: "Integrate", desc: "Connect APIs, AI models, databases and application logic." },
-  { icon: <CheckCircle size={24} />, title: "Validate", desc: "Test functionality, responsiveness, usability and edge cases." },
-  { icon: <Rocket size={24} />, title: "Deploy", desc: "Move the product into a production-ready environment." },
-  { icon: <RefreshCw size={24} />, title: "Iterate", desc: "Continuously improve the product based on feedback." }
+const workflowSteps = [
+  { 
+    step: "01",
+    icon: <Compass size={22} />, 
+    title: "System Deconstruction", 
+    desc: "Break down the core problem into inputs, state transformations, API requirements, and failure modes." 
+  },
+  { 
+    step: "02",
+    icon: <PenTool size={22} />, 
+    title: "AI & Schema Architecture", 
+    desc: "Design structured prompts, JSON schemas, rate-limiting guards, and high-conversion UX wireframes." 
+  },
+  { 
+    step: "03",
+    icon: <Code size={22} />, 
+    title: "AI-Augmented Build", 
+    desc: "Utilize elite AI harnesses (Antigravity, Claude Code, Turbopack) to assemble production code at 10x velocity." 
+  },
+  { 
+    step: "04",
+    icon: <Rocket size={22} />, 
+    title: "Edge Deploy & Hardening", 
+    desc: "Deploy instantly to Vercel/Edge with automated CI/CD, analytics, error tracking, and performance verification." 
+  }
 ];
 
-const services = [
+const capabilities = [
   {
-    icon: <Cpu size={32} />,
-    title: "AI-Powered Websites",
-    desc: "Modern websites enhanced with AI functionality to create intelligent user experiences."
+    icon: <Cpu size={26} />,
+    title: "AI-Native Web Applications",
+    desc: "Production web applications leveraging LLM chains, live scraping, streaming inference, and prompt engineering.",
+    tags: ["Gemini 1.5", "Claude API", "Streaming UX", "Vector RAG"]
   },
   {
-    icon: <Database size={32} />,
-    title: "AI Web Applications",
-    desc: "Interactive applications powered by AI models and APIs for complex data processing."
+    icon: <Database size={26} />,
+    title: "Real-Time Data Aggregators",
+    desc: "High-throughput engines that crawl, aggregate, deduplicate, and index disparate live web APIs with zero mock data.",
+    tags: ["Data Pipelines", "MTProto", "Fast Ingestion", "Normalization"]
   },
   {
-    icon: <Layout size={32} />,
-    title: "SaaS Development",
-    desc: "Building scalable SaaS-style web products from concept to deployment."
+    icon: <Layers size={26} />,
+    title: "Next.js Full-Stack SaaS",
+    desc: "End-to-end applications with responsive design, secure authentication, database integrations, and clean state management.",
+    tags: ["App Router", "TypeScript", "Tailwind CSS", "Server Actions"]
   },
   {
-    icon: <Smartphone size={32} />,
-    title: "Web Application Development",
-    desc: "End-to-end modern web applications built for speed, SEO, and user retention."
+    icon: <ShieldCheck size={26} />,
+    title: "Systems Automation & Bot Engines",
+    desc: "Headless scripts, Telegram bots, and automated workflows that streamline repetitive processes and file conversions.",
+    tags: ["Automation", "Webhooks", "Cloud Functions", "Node.js"]
   },
   {
-    icon: <PenTool size={32} />,
-    title: "Website Redesign",
-    desc: "Transforming outdated websites into modern, responsive digital experiences."
+    icon: <Workflow size={26} />,
+    title: "Interactive UI/UX Prototypes",
+    desc: "Dark-mode, glassmorphic digital interfaces designed for developer tools, SaaS dashboards, and consumer software.",
+    tags: ["Framer Motion", "Micro-Interactions", "Responsive", "Glassmorphism"]
+  },
+  {
+    icon: <Lightbulb size={26} />,
+    title: "Technical Writing & Curriculum",
+    desc: "Deep technical documentation, curriculum authoring, and engineering masterbooks bridging foundational theory to real software.",
+    tags: ["Masterbook", "System Specs", "Open Source", "Documentation"]
   }
 ];
 
@@ -47,47 +88,7 @@ export default function Services() {
     <section id="services" className={styles.services}>
       <div className={styles.container}>
         
-        <div className={styles.philosophy}>
-          <motion.div 
-            className={styles.header}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className={`${styles.title} text-gradient`}>From Idea to Product</h2>
-            <p className={styles.subtitle}>My AI-First Development Workflow</p>
-          </motion.div>
-
-          <div className={styles.workflow}>
-            {workflow.map((step, idx) => (
-              <motion.div 
-                key={step.title}
-                className={styles.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-              >
-                <div className={styles.stepNumber}>0{idx + 1}</div>
-                <div className={styles.stepIcon}>{step.icon}</div>
-                <h4>{step.title}</h4>
-                <p>{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.p 
-            className={styles.closing}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            "I don't just build pages. I build usable digital products."
-          </motion.p>
-        </div>
-
+        {/* Header */}
         <motion.div 
           className={styles.header}
           initial={{ opacity: 0, y: 20 }}
@@ -95,26 +96,57 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={`${styles.title} text-gradient`}>What I Can Build</h2>
-          <p className={styles.subtitle}>Services I offer to turn ideas into reality.</p>
+          <div className={styles.eyebrow}>
+            <Workflow size={14} /> Execution Framework
+          </div>
+          <h2 className={`${styles.title} text-gradient`}>How I Build &amp; What I Deliver</h2>
+          <p className={styles.subtitle}>
+            A rigorous engineering process designed to take ambitious concepts to production-grade web systems.
+          </p>
         </motion.div>
 
-        <div className={styles.grid}>
-          {services.map((service, idx) => (
+        {/* 4-Step Engineering Pipeline */}
+        <div className={styles.workflowTimeline}>
+          {workflowSteps.map((step, idx) => (
             <motion.div 
-              key={service.title}
+              key={step.step}
+              className={styles.workflowCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+            >
+              <span className={styles.stepIndex}>{step.step}</span>
+              <div className={styles.stepIcon}>{step.icon}</div>
+              <h3 className={styles.stepTitle}>{step.title}</h3>
+              <p className={styles.stepDesc}>{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Core Offerings Grid */}
+        <div className={styles.servicesGrid}>
+          {capabilities.map((item, idx) => (
+            <motion.div 
+              key={item.title}
               className={styles.serviceCard}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
             >
-              <div className={styles.serviceIcon}>{service.icon}</div>
-              <h3 className={styles.serviceTitle}>{service.title}</h3>
-              <p className={styles.serviceDesc}>{service.desc}</p>
+              <div className={styles.serviceIcon}>{item.icon}</div>
+              <h3 className={styles.serviceTitle}>{item.title}</h3>
+              <p className={styles.serviceDesc}>{item.desc}</p>
+              <div className={styles.servicePills}>
+                {item.tags.map((t) => (
+                  <span key={t} className={styles.servicePill}>{t}</span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,98 +1,138 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Code2, Sparkles, Layers, Cpu, ArrowUpRight } from 'lucide-react';
 import styles from './Projects.module.css';
 
-const projects = [
+interface Project {
+  name: string;
+  category: string;
+  role: string;
+  problem: string;
+  solution: string;
+  positioning: string;
+  metrics: { label: string; value: string }[];
+  technologies: string[];
+  liveLink: string;
+  githubLink: string;
+  image: string;
+}
+
+const projectsData: Project[] = [
   {
     name: "CareerHub AI",
-    role: "AI-Powered Real-Time Career & Job Discovery Engine",
-    problem: "Job seekers and engineering graduates struggle with fragmented job portals, gated sign-in barriers, and outdated mock listings that fail to provide genuine real-time opportunities across tech and core engineering domains.",
-    solution: "A unified real-time job discovery engine aggregating live opportunities from LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, and Arbeitnow with 0% mock data, instant direct-apply links, and multi-source indexing across 40+ engineering degrees.",
-    positioning: "Every Opportunity. One Search. AI-powered real-time career discovery across 9+ trusted sources.",
+    category: "Career Tech & Aggregation",
+    role: "AI Real-Time Opportunity & Job Discovery Engine",
+    problem: "Job seekers struggle with fragmented job portals, gated paywalls, and outdated mock listings across tech and core engineering domains.",
+    solution: "A unified real-time job discovery engine aggregating live opportunities from 9+ platforms (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Shine, Apna, Remotive, Arbeitnow) with 0% mock data, instant direct-apply links, and indexing for 40+ engineering degrees.",
+    positioning: "Every Opportunity. One Search. AI-powered real-time discovery.",
     metrics: [
-      { label: "Opportunities Indexed", value: "50K+" },
+      { label: "Opportunities", value: "50K+" },
       { label: "Live Sources", value: "9+" },
-      { label: "Degrees & Branches", value: "40+" }
+      { label: "Degrees Mapped", value: "40+" }
     ],
+    technologies: ["Next.js", "TypeScript", "Multi-Source Scraper", "API Aggregator", "Tailwind CSS"],
     liveLink: "https://careerhub-ai-ruby.vercel.app/",
     githubLink: "https://github.com/prakharmishra00000-cell/careerhub-ai",
     image: "/careerhub.png"
   },
   {
     name: "ExamIntel",
-    role: "AI-Powered Competitive Exam Intelligence & Preparation Platform",
-    problem: "Aspirants preparing for competitive exams lack unified analytical intelligence—navigating fragmented sources for syllabus breakdowns, prerequisite relationships, and cross-exam overlaps.",
+    category: "AI & Education",
+    role: "AI Competitive Exam Intelligence & Prep Ecosystem",
+    problem: "Aspirants preparing for competitive exams lack unified analytical intelligence—navigating fragmented sources for syllabus breakdowns and prerequisites.",
     solution: "An enterprise-grade 17-feature exam intelligence platform featuring real-time Exam Comparison, Prerequisite Dependency Mapping, Personalized Paper Generation, and interactive AI mentoring powered by Google Gemini.",
     positioning: "A full-scale AI exam intelligence and preparation ecosystem.",
     metrics: [
-      { label: "AI Features", value: "17" },
-      { label: "Engine", value: "Gemini AI" }
+      { label: "AI Capabilities", value: "17" },
+      { label: "Intelligence", value: "Gemini AI" },
+      { label: "User Flow", value: "Real-Time" }
     ],
+    technologies: ["Gemini 1.5 Pro API", "Next.js", "React", "Vector Reasoning", "Vercel"],
     liveLink: "https://my-project-teal-two-91.vercel.app/",
     githubLink: "https://github.com/prakharmishra00000-cell/examintel",
     image: "/examintel.png"
   },
   {
     name: "Nexron AI",
-    role: "Living AI Learning Roadmap & Personal Career Mentor",
+    category: "AI & Education",
+    role: "Living AI Learning Roadmap & Adaptive Career Mentor",
     problem: "Self-directed learners struggle with rigid, static study curricula that fail to adapt when schedules change, daily availability fluctuates, or career goals shift.",
     solution: "An intelligent, adaptive roadmap engine featuring live AI curriculum generation, dynamic schedule replanning, and personalized career mentoring.",
     positioning: "A living AI learning roadmap and career mentor tailored to any skill or goal.",
     metrics: [
-      { label: "Personalization", value: "Dynamic" },
-      { label: "Architecture", value: "AI-First" }
+      { label: "Curriculum", value: "Adaptive" },
+      { label: "Replanning", value: "Dynamic" },
+      { label: "Design", value: "AI-First" }
     ],
+    technologies: ["Generative AI", "Next.js", "TypeScript", "Prompt Orchestration"],
     liveLink: "https://studyflow-ai-tau-drab.vercel.app/",
-    githubLink: "#", // Placeholder
+    githubLink: "https://github.com/prakharmishra00000-cell",
     image: "/nexron.png"
   },
   {
     name: "ExamArena",
+    category: "Career Tech & Aggregation",
     role: "AI-Powered Engineering Career & Exam Discovery Platform",
     problem: "Engineering students face difficulty discovering suitable exams matching their branch, qualification, and career goals across fragmented sources.",
     solution: "A unified career intelligence platform integrating a 500+ exam ecosystem with multi-dimensional filtering, comparison, and AI career guidance.",
     positioning: "A unified career intelligence platform for engineering students.",
     metrics: [
       { label: "Exams Explored", value: "500+" },
-      { label: "Approach", value: "AI-First" }
+      { label: "Branches", value: "All Eng." },
+      { label: "Filters", value: "Multi-Dim" }
     ],
+    technologies: ["React", "Next.js", "Search Algorithms", "Vercel"],
     liveLink: "https://exam-arena-two.vercel.app/",
-    githubLink: "#", // Placeholder
+    githubLink: "https://github.com/prakharmishra00000-cell",
     image: "/examarena.png"
   },
   {
     name: "PrepOS AI",
+    category: "Developer & Productivity",
     role: "Enterprise-Style AI Career Preparation Operating System",
     problem: "Students use disconnected tools for resume prep, coding, mock interviews, and skill-gap analysis, leading to inefficient career preparation.",
     solution: "A unified AI operating system offering an AI Placement Digital Twin, Mock Simulator, AI Coding IDE, and comprehensive career intelligence tools.",
     positioning: "A unified AI operating system for career preparation.",
     metrics: [
-      { label: "AI/Career Capabilities", value: "50+" },
-      { label: "Products", value: "2 Major" }
+      { label: "AI Modules", value: "50+" },
+      { label: "Interactive Tools", value: "IDE + Twin" },
+      { label: "Simulation", value: "Full-Stack" }
     ],
+    technologies: ["Next.js", "AI Agent Runtime", "In-Browser Code Exec", "Tailwind CSS"],
     liveLink: "https://placement-prep-ai-tau.vercel.app/",
-    githubLink: "#", // Placeholder
+    githubLink: "https://github.com/prakharmishra00000-cell",
     image: "/prepos.png"
   },
   {
     name: "Telegram Document Downloader AI",
+    category: "Developer & Productivity",
     role: "AI-Powered Telegram Document Intelligence & Cloud Downloader",
     problem: "Extracting, organizing, and analyzing specific documents from large Telegram channels natively is cumbersome and lacks content understanding.",
     solution: "A modern web utility featuring secure MTProto authentication, automated channel file extraction, and Gemini-powered AI document summarization, smart tagging, and content categorization.",
     positioning: "AI-augmented document intelligence and extraction for Telegram.",
     metrics: [
-      { label: "AI Engine", value: "Gemini" },
-      { label: "Auth", value: "Encrypted MTProto" }
+      { label: "Auth Protocol", value: "MTProto" },
+      { label: "AI Extraction", value: "Gemini AI" },
+      { label: "Throughput", value: "Batch Cloud" }
     ],
+    technologies: ["Node.js", "MTProto API", "Gemini 1.5", "Next.js", "Vercel"],
     liveLink: "https://telegram-file-downloader.vercel.app/",
     githubLink: "https://github.com/prakharmishra00000-cell/Telegram-file-downloader",
     image: "/telegram.png"
   }
 ];
 
+const categories = ["All Systems", "AI & Education", "Career Tech & Aggregation", "Developer & Productivity"];
+
 export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All Systems");
+
+  const filteredProjects = activeCategory === "All Systems"
+    ? projectsData
+    : projectsData.filter(p => p.category === activeCategory);
+
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.container}>
@@ -103,68 +143,104 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={`${styles.title} text-gradient`}>Featured Work</h2>
-          <p className={styles.subtitle}>Building intelligent products to solve complex user problems.</p>
+          <div className={styles.eyebrow}>
+            <Sparkles size={14} /> Production Portfolio
+          </div>
+          <h2 className={`${styles.title} text-gradient`}>Featured AI &amp; Web Systems</h2>
+          <p className={styles.subtitle}>
+            Deployed live applications built from the ground up to solve complex discovery, career, and data challenges.
+          </p>
         </motion.div>
 
-        <div className={styles.timeline}>
-          {projects.map((project, idx) => (
-            <motion.div 
-              key={project.name}
-              className={styles.project}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+        {/* Filter Navigation */}
+        <div className={styles.filterBar}>
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`${styles.filterBtn} ${activeCategory === category ? styles.filterActive : ''}`}
+              onClick={() => setActiveCategory(category)}
             >
-              <div className={styles.visual}>
-                <img src={project.image} alt={`${project.name} Preview`} className={styles.projectImage} />
-              </div>
-              
-              <div className={styles.content}>
-                <div>
-                  <h3 className={styles.projName}>{project.name}</h3>
-                  <p className={styles.projRole}>{project.role}</p>
-                </div>
-                
-                <div className={styles.story}>
-                  <div className={styles.storyBlock}>
-                    <h4>The Problem</h4>
-                    <p>{project.problem}</p>
-                  </div>
-                  <div className={styles.storyBlock}>
-                    <h4>The Solution</h4>
-                    <p>{project.solution}</p>
-                  </div>
-                  <div className={styles.storyBlock}>
-                    <h4>Product Positioning</h4>
-                    <p><em>"{project.positioning}"</em></p>
-                  </div>
-                </div>
-
-                <div className={styles.metrics}>
-                  {project.metrics.map((metric) => (
-                    <div key={metric.label} className={styles.metric}>
-                      <span className={styles.metricVal}>{metric.value}</span>
-                      <span className={styles.metricLabel}>{metric.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className={styles.actions}>
-                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.primary}`}>
-                    Live Demo <ExternalLink size={16} />
-                  </a>
-                  {project.githubLink !== "#" && (
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.secondary}`}>
-                      View Code <Code size={16} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
+              {category}
+            </button>
           ))}
         </div>
+
+        {/* Grid of Projects */}
+        <motion.div layout className={styles.projectGrid}>
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
+              <motion.div 
+                layout
+                key={project.name}
+                className={styles.projectCard}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src={project.image} 
+                    alt={`${project.name} Interface`} 
+                    className={styles.projectImage} 
+                  />
+                  <div className={styles.imageOverlay} />
+                  <span className={styles.categoryTag}>{project.category}</span>
+                </div>
+
+                <div className={styles.cardBody}>
+                  <div className={styles.cardHeader}>
+                    <div>
+                      <h3 className={styles.projectName}>{project.name}</h3>
+                      <p className={styles.projectRole}>{project.role}</p>
+                    </div>
+                  </div>
+
+                  <p className={styles.solutionText}>{project.solution}</p>
+
+                  <div className={styles.metricsRow}>
+                    {project.metrics.map((metric, idx) => (
+                      <div key={idx} className={styles.metricItem}>
+                        <span className={styles.metricVal}>{metric.value}</span>
+                        <span className={styles.metricLabel}>{metric.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className={styles.techTags}>
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className={styles.techTag}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={styles.cardFooter}>
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={styles.liveBtn}
+                    >
+                      Launch Live App <ArrowUpRight size={15} />
+                    </a>
+                    {project.githubLink !== "#" && (
+                      <a 
+                        href={project.githubLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={styles.githubBtn}
+                        aria-label="View Source Code"
+                      >
+                        <Code2 size={16} /> Code
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
