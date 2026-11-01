@@ -8,7 +8,7 @@ import styles from './Hero.module.css';
 export default function Hero() {
   const stats = [
     { value: "6+", label: "Production Web Applications" },
-    { value: "7", label: "Authored Masterbooks & Handbooks" },
+    { value: "8", label: "Authored Masterbooks & Handbooks" },
     { value: "MMMUT", label: "B.Tech (Graduating 2027)" },
     { value: "100%", label: "Live Deployed on Vercel" },
   ];

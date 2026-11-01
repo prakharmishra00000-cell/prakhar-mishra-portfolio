@@ -28,13 +28,14 @@ Production AI Projects:
 6. Telegram Document Downloader AI (https://telegram-file-downloader.vercel.app/): MTProto-authenticated document intelligence and cloud extraction engine using Gemini AI.
 
 Authored Books & Publications:
-1. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)
-2. The Ultimate Mechanical Engineering Masterbook / Handbook
-3. Computer Science & Engineering (CSE) Career Intelligence Encyclopedia
-4. Mechanical Engineering Career Intelligence Encyclopedia
-5. SSC CGL 2027 Master Preparation Handbook
-6. Mechanical Supply Chain Management (SCM) Complete Guide
-7. Motion Graphics & Visual Design Masterbook
+1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
+2. Full Stack Web Development Complete Masterbook (400+ pages, 20 volumes, 81 modules)
+3. The Ultimate Mechanical Engineering Masterbook / Handbook
+4. Computer Science & Engineering (CSE) Career Intelligence Encyclopedia (500+ pages)
+5. Mechanical Engineering Career Intelligence Encyclopedia
+6. SSC CGL 2027 Master Preparation Handbook
+7. Mechanical Supply Chain Management (SCM) Complete Guide
+8. Motion Graphics & Visual Design Masterbook
 
 Core Skills:
 - AI & LLMs: Gemini 1.5 Pro/Flash, Claude 3.5 Sonnet, GPT-4o, Prompt Chaining, Vector RAG, Agent Runtimes.

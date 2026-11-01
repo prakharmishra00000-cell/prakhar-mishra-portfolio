@@ -88,7 +88,7 @@ export default function ResumePage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Professional Summary</h2>
           <p className={styles.paragraph}>
-            AI Full-Stack Web Developer and final-year B.Tech student at MMMUT Gorakhpur, combining systems engineering principles with modern web technologies to architect intelligent digital products. Leverages state-of-the-art AI developer platforms (Claude, Antigravity, Codex, ChatGPT, Gemini) to build production-ready applications, live API aggregation engines, and responsive UI/UX. Deployed multiple live platforms on Vercel with a focus on product thinking and rapid iteration.
+            AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), specializing in building intelligent web products with Next.js, React, and Generative AI APIs. Deployed 6+ production web applications on Vercel and authored 8 comprehensive technical masterbooks spanning AI engineering, full-stack web architecture, and career intelligence.
           </p>
         </section>
 
@@ -235,6 +235,29 @@ export default function ResumePage() {
               <li>Architected an AI-powered document intelligence and extractor utility integrating official Telegram MTProto APIs with persistent encrypted session state and multi-user authentication.</li>
               <li>Integrated Google Gemini for automated document summarization, topic extraction, and semantic search across channel files.</li>
             </ul>
+          </div>
+        </section>
+
+        {/*-----------AUTHORED PUBLICATIONS & MASTERBOOKS-----------*/}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Authored Publications &amp; Technical Masterbooks</h2>
+          <div className={styles.skillsBlock}>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Full-Stack &amp; AI:</strong>
+              <span> Full Stack Web Development Complete Masterbook (400+ Pages, 20 Vols) &bull; AI Engineer Career Roadmap &amp; Strategy Guide (2026–2030)</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Career Intelligence:</strong>
+              <span> Computer Science &amp; Engineering (CSE) Career Intelligence Encyclopedia (500+ Pages) &bull; Mechanical Engineering Career Intelligence Encyclopedia</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>Core &amp; Civil Services:</strong>
+              <span> The Ultimate Mechanical Engineering Masterbook &amp; Handbook &bull; SSC CGL 2027 Master Preparation Handbook &bull; Mechanical Supply Chain Management (SCM) Complete Guide</span>
+            </div>
+            <div className={styles.skillLine}>
+              <strong className={styles.skillLabel}>UI/UX &amp; Design:</strong>
+              <span> Motion Graphics &amp; Visual Systems Masterbook (UI Physics, Kinetic Typography &amp; Easing Dynamics)</span>
+            </div>
           </div>
         </section>
 
