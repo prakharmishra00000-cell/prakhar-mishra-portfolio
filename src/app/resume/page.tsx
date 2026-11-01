@@ -144,7 +144,7 @@ export default function ResumePage() {
               <span className={styles.rightText}>Gorakhpur, UP</span>
             </div>
             <div className={styles.entryRow}>
-              <span className={styles.italicLeft}>Bachelor of Technology (B.Tech) – <strong>CGPA: 4.18</strong> (Final Year)</span>
+              <span className={styles.italicLeft}>Bachelor of Technology (B.Tech)</span>
               <span className={styles.italicRight}>2023 – 2027</span>
             </div>
             <ul className={styles.bulletList}>
