@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Cpu, Lightbulb, Rocket, Bot, Sparkles } from 'lucide-react';
+import { Cpu, Lightbulb, Rocket, Bot, Sparkles, Palette } from 'lucide-react';
 import styles from './About.module.css';
 
 export default function About() {
@@ -17,14 +17,14 @@ export default function About() {
       description: "Crafting fast, responsive web applications using Next.js, React 19, TypeScript, and modern backend integrations with clean state management."
     },
     {
-      icon: <Lightbulb size={24} />,
-      title: "Zero-Mock Product Instinct",
-      description: "Focusing on solving actual user problems with real-time indexing, direct actions, and usable tools rather than static or mock prototypes."
+      icon: <Palette size={24} />,
+      title: "Brand Systems & 8K Visual Design",
+      description: "Architecting cohesive design languages, production logo suites, and high-fidelity 8K cyberpunk concept art series with moving marquee displays."
     },
     {
       icon: <Rocket size={24} />,
-      title: "Rapid Shipping Velocity",
-      description: "Moving swiftly from product idea to interactive UI, API integration, and production deployment on Vercel with high craft and attention to detail."
+      title: "Zero-Mock Shipping Velocity",
+      description: "Moving swiftly from product idea to interactive UI, authored technical masterbooks, and production deployment on Vercel with meticulous craft."
     }
   ];
 
@@ -43,7 +43,7 @@ export default function About() {
           </div>
           <h2 className={`${styles.title} text-gradient`}>About Me</h2>
           <p className={styles.subtitle}>
-            Building intelligent, usable digital products at the intersection of generative AI and modern web technologies.
+            Building intelligent, usable digital products at the intersection of generative AI, brand identity systems, and modern web technologies.
           </p>
         </motion.div>
 
@@ -57,16 +57,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p>
-              I am a final-year student at <strong>Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur</strong>, specializing in <strong>AI-native full-stack web development</strong> and modern software products.
+              I am a final-year student at <strong>Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur</strong>, specializing in <strong>AI-native full-stack web development</strong>, brand identity architecture, and digital product design.
             </p>
             <p>
-              My approach focuses on harnessing modern AI capabilities—including <strong>multimodal APIs, prompt architecture, and intelligent agent workflows</strong>—to build responsive, production-ready web applications that solve real-world problems.
+              My approach focuses on harnesssing modern AI capabilities—including <strong>multimodal APIs, prompt architecture, and autonomous agent workflows</strong>—combined with high-craft UI/UX, brand identity systems, and an 8K visual art practice.
             </p>
             <div className={styles.highlightQuote}>
-              &ldquo;I don&apos;t just study tools; I deploy production software. Every system I build addresses real user friction with live data, zero mockups, and modern AI intelligence.&rdquo;
+              &ldquo;I don&apos;t just study tools; I deploy production software and craft visual universes. Every system I build addresses real user friction with live data, zero mockups, and high visual craft.&rdquo;
             </div>
             <p>
-              Over the last two years, I have architected and deployed over six distinct AI-driven applications, compiled a 400+ page full-stack masterbook, and established an end-to-end shipping velocity that bridges idea to production in record time.
+              Over the last two years, I have architected and deployed over six distinct AI-driven applications, published an 8K moving cyberpunk poster series, authored a 400+ page full-stack masterbook, and established an end-to-end shipping velocity that bridges idea to production in record time.
             </p>
             <div className={styles.authorSignature}>
               <div className={styles.authorMeta}>
