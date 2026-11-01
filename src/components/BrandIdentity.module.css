@@ -44,6 +44,47 @@
 }
 
 /* ==========================================================================
+   BRAND SELECTOR BAR (NOIRÉ vs AURELLE)
+   ========================================================================== */
+
+.brandSelectorRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.brandPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c3cad9;
+  transition: all 0.25s ease;
+}
+
+.brandPill:hover {
+  background: rgba(22, 34, 62, 0.95);
+  color: #ffffff;
+  border-color: #00d2ff;
+  transform: translateY(-2px);
+}
+
+.brandPillActive {
+  background: linear-gradient(135deg, #382820, #221813);
+  color: #f1e9dc;
+  border-color: #a77959;
+  box-shadow: 0 4px 20px rgba(56, 40, 32, 0.6), 0 0 25px rgba(167, 121, 89, 0.4);
+}
+
+/* ==========================================================================
    TAB NAVIGATION
    ========================================================================== */
 
@@ -81,8 +122,330 @@
 }
 
 /* ==========================================================================
-   TAB 1: PRIMARY SHOWCASE CANVAS (WARM IVORY LUXURY BOARD)
+   NOIRÉ SPECIALTY COFFEE CANVAS & TYPOGRAPHY
    ========================================================================== */
+
+.noireCanvasWarmCream {
+  background-color: #F1E9DC;
+  padding: 5.5rem 3rem;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 80%),
+    linear-gradient(to right, rgba(56, 40, 32, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 40, 32, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+.canvasMetaTopNoire,
+.canvasMetaBottomNoire {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #382820;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.noireWordmarkCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3.5rem 0;
+}
+
+.noireSymbolWrap {
+  margin-bottom: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.noireSymbolWrap:hover {
+  transform: rotate(90deg) scale(1.06);
+}
+
+.noireWordmarkText {
+  font-family: -apple-system, BlinkMacSystemFont, "Didot", "Cinzel", "Times New Roman", serif;
+  font-size: clamp(3.5rem, 8vw, 7.8rem);
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: #382820;
+  margin-right: -0.28em;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(56, 40, 32, 0.08);
+}
+
+.noireSubDescriptorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.noireSubDescriptor {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: #382820;
+  opacity: 0.85;
+}
+
+.noireSubDot {
+  color: #A77959;
+  font-size: 0.75rem;
+}
+
+/* NOIRÉ Monogram Cards */
+.noireMonogramCream,
+.noireMonogramEspresso,
+.noireMonogramCopper {
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 380px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.noireMonogramCream:hover,
+.noireMonogramEspresso:hover,
+.noireMonogramCopper:hover {
+  transform: translateY(-6px);
+}
+
+.noireMonogramCream {
+  background-color: #F1E9DC;
+  border: 1px solid rgba(56, 40, 32, 0.15);
+}
+
+.noireMonogramEspresso {
+  background-color: #382820;
+  border: 1px solid rgba(167, 121, 89, 0.4);
+}
+
+.noireMonogramCopper {
+  background-color: #A77959;
+  border: 1px solid rgba(56, 40, 32, 0.2);
+}
+
+.cardHeaderSmallNoire {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #382820;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
+
+.cardHeaderSmallCream {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #F1E9DC;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.monogramCaptionNoire {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #382820;
+  letter-spacing: 0.05em;
+}
+
+/* NOIRÉ Packaging Visuals */
+.packagingCardVisualNoire {
+  height: 290px;
+  background: #F1E9DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Coffee Cup CSS */
+.coffeeCup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cupLid {
+  width: 90px;
+  height: 18px;
+  background: #382820;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cupBody {
+  width: 82px;
+  height: 120px;
+  background: #ffffff;
+  clip-path: polygon(4% 0%, 96% 0%, 82% 100%, 18% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.cupSleeve {
+  width: 100%;
+  height: 55px;
+  background: #A77959;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+}
+
+.cupBrand {
+  font-family: serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #F1E9DC;
+  letter-spacing: 0.18em;
+}
+
+.cupRoast {
+  font-size: 0.35rem;
+  font-weight: 700;
+  color: #382820;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Coffee Pouch CSS */
+.coffeePouch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pouchSeal {
+  width: 110px;
+  height: 12px;
+  background: #251a15;
+  border-radius: 4px 4px 0 0;
+}
+
+.pouchBody {
+  width: 120px;
+  height: 155px;
+  background: #382820;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pouchLabel {
+  width: 95px;
+  height: 115px;
+  background: #F1E9DC;
+  border: 1px solid #A77959;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+}
+
+.pouchBrand {
+  font-family: serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #382820;
+  letter-spacing: 0.18em;
+}
+
+.pouchSub {
+  font-size: 0.42rem;
+  font-weight: 700;
+  color: #A77959;
+  letter-spacing: 0.1em;
+  margin: 3px 0;
+}
+
+.pouchTasting {
+  font-size: 0.38rem;
+  color: #555550;
+  margin-bottom: 6px;
+}
+
+.pouchNet {
+  font-size: 0.35rem;
+  color: #888880;
+  text-transform: uppercase;
+}
+
+/* Horizontal Noire Lockup */
+.horizontalNoireLockup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: #F1E9DC;
+  border: 1px solid rgba(56, 40, 32, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.horizNMonogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizNoireDivider {
+  width: 1px;
+  height: 48px;
+  background-color: #A77959;
+}
+
+.horizNoireText {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizNoireTitle {
+  font-family: serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  color: #382820;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.horizNoireTag {
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  color: #A77959;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
 
 .showcaseCanvas {
   width: 100%;
