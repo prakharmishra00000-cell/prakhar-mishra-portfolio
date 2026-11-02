@@ -208,6 +208,20 @@ export default function ResumePage() {
           <div className={styles.entry}>
             <div className={styles.entryRow}>
               <span className={styles.boldLeft}>
+                MatrixMind AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Google Gemini Flash, React, Node.js, Mermaid.js, PptxGenJS, Vercel</em>
+              </span>
+              <span className={styles.italicRight}>2025 – 2026</span>
+            </div>
+            <ul className={styles.bulletList}>
+              <li>Architected and deployed a multimodal AI platform with 3 persona engines (Standard, Architect, Analyst), Multiverse Matrix Simulation modeling counterfactual realities, and automated PowerPoint (.pptx) synthesis.</li>
+              <li>Engineered client-side entity anonymization, Multi-Agent adversarial Council Room debate orchestration, and 10 dynamic cosmic visual themes with 100% unrestricted prompt access.</li>
+              <li>Live Production URL: <a href="https://ai-chat-bot-app-generate-bot-s-projects.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: '#00f2fe' }}>ai-chat-bot-app-generate-bot-s-projects.vercel.app</a></li>
+            </ul>
+          </div>
+
+          <div className={styles.entry}>
+            <div className={styles.entryRow}>
+              <span className={styles.boldLeft}>
                 CareerHub AI <span className={styles.sepPipe}>|</span> <em className={styles.projectTech}>Next.js, RapidAPI JSearch, Vercel, AI Search</em>
               </span>
               <span className={styles.italicRight}>2025 – 2026</span>
