@@ -80,7 +80,7 @@ export default function Footer() {
                   6 Cyberpunk 8K Posters (Moving Marquee)
                 </Link>
                 <Link href="#brand-identity" className={styles.footerLink}>
-                  6 Luxury Brand Identity Systems (8K)
+                  AURELLE Luxury Brand Identity System (8K)
                 </Link>
                 <Link href="#books" className={styles.footerLink}>
                   8 Authored Masterbooks (PDF)

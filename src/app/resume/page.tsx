@@ -103,7 +103,7 @@ export default function ResumePage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Professional Summary</h2>
           <p className={styles.paragraph}>
-            AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), specializing in building intelligent web products with Next.js, React, and Generative AI APIs. Deployed 6+ production web applications on Vercel, authored 8 comprehensive technical masterbooks, and engineered 6 luxury vector brand identity systems with 4-view architectures.
+            AI Full-Stack Web Developer and B.Tech student at MMMUT Gorakhpur (Graduating 2027), specializing in building intelligent web products with Next.js, React, and Generative AI APIs. Deployed 6+ production web applications on Vercel, authored 8 comprehensive technical masterbooks, and engineered bespoke luxury vector brand identity systems with 4-view architectures.
           </p>
         </section>
 
@@ -263,7 +263,7 @@ export default function ResumePage() {
           <div className={styles.skillsBlock}>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Vector Brand Systems (8K / 4-View Architecture):</strong>
-              <span> FORMA (Swiss Architectural Modernism) &bull; &Eacute;LORA (Parisian Haute Parfumerie) &bull; NEXORA (Frontier Deep-Tech Nexus) &bull; SOLV&Eacute; (Kyoto Botanical Living) &bull; NOIR&Eacute; (Scandinavian Specialty Coffee) &bull; AURELLE (Haute European Skincare)</span>
+              <span> AURELLE (Haute European Skincare &amp; Celestial Horlogerie &bull; Gen&egrave;ve &bull; Paris &Eacute;dition Priv&eacute;e)</span>
             </div>
             <div className={styles.skillLine}>
               <strong className={styles.skillLabel}>Cyberpunk Metropolis 8K Poster Masterworks:</strong>

@@ -23,21 +23,16 @@ Production AI Projects:
 5. PrepOS AI (https://placement-prep-ai-tau.vercel.app/): Comprehensive placement prep operating system with AI digital twin simulation and in-browser coding IDE.
 6. Telegram Document Downloader AI (https://telegram-file-downloader.vercel.app/): MTProto-authenticated document intelligence and cloud extraction engine using Gemini AI.
 
-Curated Luxury Brand Identity Systems (8K Vector Systems with 4-View Architecture):
-1. FORMA: Architectural Design Atelier (Swiss modernism, blueprint grid geometry, graphite #292929, stone grey #B9B6AE, pure white #F8F8F6).
-2. ÉLORA: Parisian Haute Parfumerie (French Didone editorial serif, fragrance vessel silhouette, champagne ivory #EFE5D7, dark brown #302721, soft gold #B9A17A).
-3. NEXORA: Frontier Deep-Tech Laboratory (Cybernetic multi-node X nexus, midnight navy #111827, electric blue #476CFF, cool silver #C6CBD3).
-4. SOLVÉ: Botanical Restoration & Living (Japanese organic modernism, zen ensō circularity, muted sage #A3AA92, warm sand #D8C9B4, forest charcoal #30382F, soft ivory #F5F1E9).
-5. NOIRÉ: Scandinavian Specialty Coffee Roastery (Nordic architectural minimalism, 60° roasting plane seam, espresso brown #382820, warm cream #F1E9DC, muted copper #A77959).
-6. AURELLE: European High Skincare House (Quiet luxury, 51.8° golden-ratio pyramid apex monogram, warm ivory #EDE8DF, deep charcoal #282825, champagne beige #C5B6A2).
+Curated Luxury Brand Identity System (8K Vector Architecture with 4-View Deep Studio):
+1. AURELLE: European High Skincare House & Celestial Horlogerie (Geneva • Paris Édition Privée, classical Roman triumphal arch, radiant solar rays, fluted Corinthian columns, warm ivory #EDE8DF, deep charcoal #282825, champagne beige #C5B6A2).
 
 Cyberpunk Metropolis // 8K Aesthetic Poster Series (Moving Marquee & Master Collector Exhibition):
 1. NEO-SHINJUKU 2099 // The Vertical Megalopolis (+3,200m vertical axis, brutalist megatowers, volumetric neon rain).
 2. SHIBUYA SUB-LEVEL 04 // The Neon Labyrinth (-180m subterranean bazaar, paper lanterns, synthetic ramen, cybernetic crowds).
 3. ORBITAL ELEVATOR // Apex of the Megalopolis (+36,000km carbon-nanotube tether, cyan plasma propulsion rings, dusk exosphere).
-4. AERODYNE HIGHWAY // Cloud Runners (+1,800m high-speed transit corridor, flying aerodynes, light trails through rain).
-5. CYBERNETIC SHRINE // Digital Shinto (+450m vermilion Torii gate reinforced with fiber optics in misty bamboo glade).
-6. NEO-DOCKS SECTOR 12 // The Industrial Basin & Dark Waters (Automated robotic cargo cranes, oil-slicked harbor reflections).
+4. KOWLOON GRID 09 // The Neon Data Canyon (+850m vertical high-rise canyon, rain-slicked asphalt reflections, multi-tier signage).
+5. SYNTHETIC SKYLINE // Apex Megalopolis 2099 (+2,400m stratospheric spires, luminous illuminated spires, transit light trails).
+6. MIDNIGHT DRIFT // Highway Interceptor 01 (+600m expressway apex, kinetic pursuit keyframe, anamorphic flare volumetrics).
 
 Authored Books & Publications (PDF):
 1. AI Engineer Career Roadmap & Strategy Guide (2026–2030)
