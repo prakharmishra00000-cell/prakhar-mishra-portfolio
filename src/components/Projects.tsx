@@ -21,6 +21,23 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "MatrixMind AI",
+    category: "Autonomous AI & Generative Intelligence",
+    role: "Multiverse AI Reasoning, Presentation Generator & Multi-Agent Council Platform",
+    problem: "Standard LLM chatbots operate with single-dimension responses, rigid token gates, and lack autonomous multi-perspective adversarial evaluation and document synthesis.",
+    solution: "A full-scale multimodal AI platform featuring Multiverse Matrix Simulation modeling counterfactual realities, automated PowerPoint (.pptx) slide deck synthesis, multi-agent adversarial Council debates, local client-side entity anonymization, and 10 dynamic cosmic visual themes.",
+    positioning: "Unrestricted Multimodal AI with Multiverse Simulations & Automated PPT Synthesis.",
+    metrics: [
+      { label: "AI Personas", value: "3 Modes" },
+      { label: "PPT Synthesis", value: "Direct .pptx" },
+      { label: "Access Tier", value: "Unlimited" }
+    ],
+    technologies: ["Google Gemini Flash", "React", "Express", "Mermaid.js", "PptxGenJS", "Vercel"],
+    liveLink: "https://ai-chat-bot-app-generate-bot-s-projects.vercel.app",
+    githubLink: "https://github.com/prakharmishra00000-cell/ai-chat-bot",
+    image: "/matrixmind.png"
+  },
+  {
     name: "CareerHub AI",
     category: "Career Tech & Aggregation",
     role: "AI Real-Time Opportunity & Job Discovery Engine",
